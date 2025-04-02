@@ -102,29 +102,90 @@
     </div>
   </div>
 
-  <div class="untree_co-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-12 col-md-10 col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="line-bottom text-center mb-4">Course Description</h2>
-          <p>Unlock the potential of Tally ERP 9 with Shah Skill Academy! Our comprehensive course equips you with the skills to manage accounting, inventory, and payroll efficiently. Learn to navigate Tally's features, including GST compliance, financial reporting, and data security. With hands-on training and expert guidance, you'll gain the confidence to handle real-world business scenarios. Join us to master Tally ERP 9 and take your career to the next level!</p>
+  <div class="container" style="max-width: 1200px; margin: auto; padding: 16px; font-family: 'Inter', sans-serif;">
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-9 col-md-12" style="width: 70%; margin-bottom: 24px;">
+        <div class="course-info-panel d-flex" style="display: flex; gap: 16px;">
+          <!-- Course Thumbnail -->
+          <div style="flex: 30%;">
+            <img src="images/course-thumbnail-tally.jpg" alt="Course Thumbnail" style="width: 100%; max-width: 350px; height: auto; border-radius: 4px;">
+            <p style="text-align: center; font-size: 14px; color: #888;">Available on Android & iOS</p>
+          </div>
+          <!-- Course Details -->
+          <div class="course-details">
+            <h2 class="course-title" style="font-size: 24px; font-weight: bold; color: #333;">Tally ERP 9</h2>
+            <p class="course-rating">
+              <span class="rating-stars" style="color: #f39c12;">★★★★★</span> 4.8 (120 ratings)
+            </p>
+            <p class="course-instructor">
+              <span>Instructor:</span> <a href="#" style="color: #4f46e5;">John Doe</a>
+            </p>
+            <p class="course-language">
+              <span>Language:</span> English
+            </p>
+            <p class="course-validity">
+              <span>Validity Period:</span> 180 days
+            </p>
+            <div class="course-pricing">
+              <p class="original-price">₹5,200</p>
+              <p class="discount">9% OFF</p>
+              <p class="current-price">
+                ₹4,799 <span class="gst-note">Inclusive of GST</span>
+              </p>
+            </div>
+            <button class="btn-add-to-cart" style="background: #4f46e5; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Add to Cart</button>
+          </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="mb-4">Key Highlights</h3>
-          <ul class="list-unstyled ul-check primary">
-            <li>Comprehensive Accounting Features</li>
-            <li>Inventory Management</li>
-            <li>GST Compliance</li>
-            <li>Payroll Management</li>
-            <li>Data Security and Backup</li>
+        <!-- Navigation Tabs -->
+        <div class="tabs" style="display: flex; border-bottom: 1px solid #eeeeee; margin-top: 24px;">
+          <div id="tab-description" onclick="showTabContent('description')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; border-bottom: 2px solid #4f46e5; color: #333;">Description</div>
+          <div id="tab-content" onclick="showTabContent('content')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">Course Content</div>
+          <div id="tab-how-to-use" onclick="showTabContent('how-to-use')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">How to Use</div>
+        </div>
+        <!-- Tab Content -->
+        <div id="description" class="tab-content" style="padding: 24px; z-index: 1;">
+          <h3 style="font-size: 22px; font-weight: bold; color: #333;">Course Description</h3>
+          <p style="font-size: 16px; line-height: 1.5; color: #555;">Master Tally ERP 9 and streamline your accounting and inventory management processes. This course covers ledger creation, GST implementation, payroll management, and more.</p>
+        </div>
+        <div id="content" class="tab-content" style="padding: 24px; z-index: 0; display: none;">
+          <h3 style="font-size: 22px; font-weight: bold; color: #333;">Course Content</h3>
+          <ul style="padding-left: 20px; font-size: 16px; color: #555;">
+            <li style="margin-bottom: 16px;"><strong>Day 1:</strong> Introduction to Tally ERP 9 and Basic Features (30:00)</li>
+            <li style="margin-bottom: 16px;"><strong>Day 2:</strong> Ledger Creation and Voucher Entry (45:00)</li>
+            <!-- Add more content as needed -->
           </ul>
         </div>
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="mb-4">What You'll Learn</h3>
-          <p>Gain expertise in Tally ERP 9, mastering its accounting, inventory, and payroll features. Learn to generate financial reports, manage GST compliance, and secure your data. This course provides practical training to ensure you're job-ready, equipped to handle real-world business challenges with confidence.</p>
+        <div id="how-to-use" class="tab-content" style="padding: 24px; z-index: 0; display: none;">
+          <h3 style="font-size: 22px; font-weight: bold; color: #333;">How to Use</h3>
+          <p style="font-size: 16px; line-height: 1.5; color: #555;">After a successful purchase, this item will be added to the library section. You can access your courses in the following ways:</p>
+          <ul style="padding-left: 20px; font-size: 16px; color: #555;">
+            <li>For Android and iOS devices, download the app from Google Play Store or iOS App Store.</li>
+            <li>The product can be used only on a single device.</li>
+            <li>Log in to the app to access your library and watch your lectures.</li>
+          </ul>
+        </div>
+        <script>
+          function showTabContent(tabId) {
+            const tabs = ['description', 'content', 'how-to-use'];
+            tabs.forEach(id => {
+              document.getElementById(id).style.display = id === tabId ? 'block' : 'none';
+              document.getElementById(`tab-${id}`).style.borderBottom = id === tabId ? '2px solid #4f46e5' : 'none';
+              document.getElementById(`tab-${id}`).style.color = id === tabId ? '#333' : '#777';
+            });
+          }
+        </script>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-3 col-md-12" style="width: 30%; background: #f9f9f9; padding: 16px; border-radius: 4px;">
+        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
+          <img src="images/related-course-tally.jpg" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
+          <div style="padding: 12px;">
+            <h4 style="font-size: 16px; font-weight: bold; color: #333;">Accounting Basics</h4>
+            <p style="font-size: 14px; color: #888;">Instructor: John Doe</p>
+            <p style="font-size: 16px; font-weight: bold; color: #333;">₹3,499</p>
+            <button style="width: 100%; background: #4f46e5; color: white; font-size: 14px; font-weight: bold; padding: 8px 16px; border-radius: 4px; border: none;">Buy Now</button>
+          </div>
         </div>
       </div>
     </div>
