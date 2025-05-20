@@ -6,8 +6,8 @@
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+  <meta name="description" content="Explore a variety of courses to enhance your skills." />
+  <meta name="keywords" content="courses, training, skill development, education" />
 
   <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
@@ -23,6 +23,49 @@
   <link rel="stylesheet" href="css/style.css">
 
   <title>Courses - Shah Skill Academy</title>
+  <style>
+    .custom-media.card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth scaling */
+    }
+    .custom-media.card:hover {
+      transform: scale(1.08); /* Slightly larger scaling for a smoother effect */
+    }
+    .custom-media.card .hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 123, 255, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      z-index: 1;
+      transform: scale(1.2); /* Start slightly larger */
+      transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade and scale */
+      text-align: center;
+    }
+    .custom-media.card:hover .hover-overlay {
+      opacity: 1; /* Make the overlay visible */
+      transform: scale(1); /* Scale down to normal size */
+    }
+    .custom-media.card .hover-overlay h3,
+    .custom-media.card .hover-overlay p {
+      color: white;
+      margin: 0;
+    }
+    .custom-media.card .hover-overlay a {
+      margin-top: 10px;
+    }
+    .card-title {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -32,19 +75,13 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-6 col-lg-9">
-            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
+            <a href="contact.html" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a question?</span></a> 
+            <a href="tel:+120123456" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">+1 20 123 456</span></a> 
+            <a href="mailto:info@mydomain.com" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
           </div>
           <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
-              <span class="icon-lock"></span>
-              Log In
-            </a>
-            <a href="register.html" class="small">
-              <span class="icon-person"></span>
-              Register
-            </a>
+            <a href="login.html" class="small mr-3"><span class="icon-lock"></span> Log In</a>
+            <a href="register.html" class="small"><span class="icon-person"></span> Register</a>
           </div>
         </div>
       </div>
@@ -55,17 +92,21 @@
           <a href="index.html" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="courses.html">Courses</a></li>
+            <li class="has-children">
+              <a href="courses.html">Courses</a>
+              <ul class="dropdown">
+                <li><a href="sap-fico.html">SAP-FICO</a></li>
+                <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+                <li><a href="advance-excel.html">Advance Excel</a></li>
+              </ul>
+            </li>
             <li><a href="staff.html">Recruitment</a></li>
             <li><a href="news.html">Blog</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
-          <a href="./register.html" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
+          <a href="register.html" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
         </div>
       </div>
     </div>
@@ -77,7 +118,7 @@
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-7 text-center">
           <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Explore Our Courses</h1>
-          <p class="text-white" data-aos="fade-up" data-aos-delay="200">Enhance your skills with our expert-led training programs.</p>
+          <p class="text-white" data-aos="fade-up" data-aos-delay="200">Enhance your skills with our expert-led training programs and achieve your goals.</p>
         </div>
       </div>
     </div>
@@ -95,34 +136,58 @@
       <div class="row">
         <!-- Course Card 1 -->
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="custom-media"></div>
-            <a href="./sap-fico.html"><img src="images/img-school-1-min.jpg" alt="SAP FICO" class="img-fluid"></a>
-            <div class="custom-media-body">
+          <div class="custom-media card h-100 shadow-sm border-0">
+            <a href="./sap-fico.html">
+              <div class="card-icon text-center py-5">
+                <span class="icon-briefcase" style="font-size: 50px; color: #007bff;"></span>
+              </div>
+            </a>
+            <div class="card-body">
+              <h3 class="card-title">SAP-FICO</h3>
+              <p class="card-text">SAP or Systems Applications and Products, is a widely-used enterprise resource planning (ERP) software.</p>
+            </div>
+            <div class="hover-overlay">
               <h3>SAP FICO Training</h3>
-              <p>Master SAP Financial Accounting (FI) and Controlling (CO) modules for financial reporting and cost accounting.</p>
-              <a href="./sap-fico.html" class="btn btn-primary btn-sm">Learn More</a>
+              <p>Master SAP Financial Accounting (FI) and Controlling (CO) modules with hands-on training.</p>
+              <a href="./sap-fico.html" class="btn btn-light btn-sm">Learn More</a>
             </div>
           </div>
         </div>
         <!-- Course Card 2 -->
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="custom-media">
-            <a href="./tally-erp-9.html"><img src="images/img-school-2-min.jpg" alt="Tally ERP 9" class="img-fluid"></a>
-            <div class="custom-media-body">
+          <div class="custom-media card h-100 shadow-sm border-0">
+            <a href="./tally-erp-9.html">
+              <div class="card-icon text-center py-5">
+                <span class="icon-calculator" style="font-size: 50px; color: #007bff;"></span>
+              </div>
+            </a>
+            <div class="card-body">
+              <h3 class="card-title">Tally ERP 9</h3>
+              <p class="card-text">Learn Tally ERP 9 for efficient financial management and accounting practices.</p>
+            </div>
+            <div class="hover-overlay">
               <h3>Tally ERP 9</h3>
-              <p>Learn Tally ERP 9 for efficient financial management and accounting solutions.</p>
-              <a href="./tally-erp-9.html" class="btn btn-primary btn-sm">Learn More</a>
+              <p>Learn Tally ERP 9 for efficient financial management and accounting practices.</p>
+              <a href="./tally-erp-9.html" class="btn btn-light btn-sm">Learn More</a>
             </div>
           </div>
         </div>
         <!-- Course Card 3 -->
         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="custom-media">
-            <a href="./advance-excel.html"><img src="images/img-school-3-min.jpg" alt="Advance Excel" class="img-fluid"></a>
-            <div class="custom-media-body">
-              <h3>Advance Excel</h3>
-              <p>Enhance your Excel skills with advanced techniques for data analysis and reporting.</p>
-              <a href="./advance-excel.html" class="btn btn-primary btn-sm">Learn More</a>
+          <div class="custom-media card h-100 shadow-sm border-0">
+            <a href="./advance-excel.html">
+              <div class="card-icon text-center py-5">
+                <span class="icon-bar-chart" style="font-size: 50px; color: #007bff;"></span>
+              </div>
+            </a>
+            <div class="card-body">
+              <h3 class="card-title">Advanced Excel</h3>
+              <p class="card-text">Enhance your Excel skills with advanced techniques and practical applications.</p>
+            </div>
+            <div class="hover-overlay">
+              <h3>Advanced Excel</h3>
+              <p>Enhance your Excel skills with advanced techniques and practical applications.</p>
+              <a href="./advance-excel.html" class="btn btn-light btn-sm">Learn More</a>
             </div>
           </div>
         </div>
@@ -205,28 +270,28 @@
 
       <div class="row mt-5">
         <div class="col-12 text-center">
-          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
-          </div>
+          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>. Distributed by <a href="https://themewagon.com">ThemeWagon</a>.</p>
         </div>
-      </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
-
-    <div id="overlayer"></div>
-    <div class="loader">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
       </div>
-    </div>
+    </div> <!-- /.container -->
+  </div> <!-- /.site-footer -->
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/custom.js"></script>
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/custom.js"></script>
 </body>
 </html>
