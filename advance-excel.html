@@ -53,13 +53,13 @@
         <div class="site-navigation text-center">
           <a href="index.html" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li class="has-children">
-              <a href="#">Programs</a>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-children active">
+              <a href="#">Courses</a>
               <ul class="dropdown">
                 <li><a href="./sap-fico.html">SAP-FICO</a></li>
-                <li><a href="#">Tally ERP 9</a></li>
-                <li><a href="#">Advance Excel</a></li>
+                <li><a href="./tally-erp.html">Tally ERP 9</a></li>
+                <li><a href="./advance-excel.html">Advance Excel</a></li>
                 <li class="has-children">
                   <a href="#">Menu Two</a>
                   <ul class="dropdown">
@@ -108,14 +108,14 @@
     <div class="row">
       <!-- Main Content -->
       <div class="col-lg-9 col-md-12" style="width: 70%; margin-bottom: 24px;">
-        <div class="course-info-panel d-flex" style="display: flex; gap: 16px;">
+        <div class="course-info-panel d-flex" style="display: flex; gap: 16px;" data-aos="fade-up" data-aos-delay="200">
           <!-- Course Thumbnail -->
-          <div style="flex: 30%;">
+          <div style="flex: 30%;" data-aos="zoom-in" data-aos-delay="300">
             <img src="images/course-thumbnail.jpg" alt="Course Thumbnail" style="width: 100%; max-width: 350px; height: auto; border-radius: 4px;">
-            <p style="text-align: center; font-size: 14px; color: #888;">Available on Android & iOS</p>
+            <p style="text-align: center; font-size: 14px; color: #888;" data-aos="fade-up" data-aos-delay="400">Available on Android & iOS</p>
           </div>
           <!-- Course Details -->
-          <div class="course-details">
+          <div class="course-details" data-aos="fade-left" data-aos-delay="500">
             <h2 class="course-title" style="font-size: 24px; font-weight: bold; color: #333;">Advanced Excel</h2>
             <p class="course-rating">
               <span class="rating-stars" style="color: #f39c12;">★★★★★</span> 4.8 (120 ratings)
@@ -136,29 +136,37 @@
                 ₹4,799 <span class="gst-note">Inclusive of GST</span>
               </p>
             </div>
-            <button class="btn-add-to-cart" style="background: #4f46e5; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Add to Cart</button>
+            <button class="btn-add-to-cart">Add to Cart</button>
           </div>
         </div>
         <!-- Navigation Tabs -->
-        <div class="tabs" style="display: flex; border-bottom: 1px solid #eeeeee; margin-top: 24px;">
+        <div class="tabs" style="display: flex; border-bottom: 1px solid #eeeeee; margin-top: 24px;" data-aos="fade-up" data-aos-delay="600">
           <div id="tab-description" onclick="showTabContent('description')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; border-bottom: 2px solid #4f46e5; color: #333;">Description</div>
           <div id="tab-content" onclick="showTabContent('content')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">Course Content</div>
           <div id="tab-how-to-use" onclick="showTabContent('how-to-use')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">How to Use</div>
         </div>
         <!-- Tab Content -->
-        <div id="description" class="tab-content" style="padding: 24px; z-index: 1;">
+        <div id="description" class="tab-content" style="padding: 24px; z-index: 1;" data-aos="fade-up" data-aos-delay="700">
           <h3 style="font-size: 22px; font-weight: bold; color: #333;">Course Description</h3>
-          <p style="font-size: 16px; line-height: 1.5; color: #555;">Enhance your Excel skills and become a data analysis expert with our Advanced Excel course. This course covers advanced formulas, pivot tables, macros, and much more.</p>
+          <p style="font-size: 16px; line-height: 1.5; color: #555;"> In this module student learns many complex functions such as cells formatting, macro, using graphical representations in spreadsheets, financial formulas, logical complex formulas, uses of advanced filters and the list keeps on going. Advanced Excel course enables the student to utilize, the advance features taught in this course in an office environment with maximum efficiency.</p>
         </div>
-        <div id="content" class="tab-content" style="padding: 24px; z-index: 0; display: none;">
+        <div id="content" class="tab-content" style="padding: 24px; z-index: 0; display: none;" data-aos="fade-up" data-aos-delay="700">
           <h3 style="font-size: 22px; font-weight: bold; color: #333;">Course Content</h3>
-          <ul style="padding-left: 20px; font-size: 16px; color: #555;">
-            <li style="margin-bottom: 16px;"><strong>Day 1:</strong> Part 1 - What are Mutual Funds? Why we need to invest in Mutual Funds? (26:00)</li>
-            <li style="margin-bottom: 16px;"><strong>Day 2:</strong> Part 1 - Basic Terminology and Concepts AUM | NAV | Expense Ratio (38:00)</li>
-            <!-- Add more content as needed -->
-          </ul>
+            <ul style="padding-left: 20px; font-size: 16px; color: #555;">
+            <li style="margin-bottom: 16px;">Introduction to MS Excel</li>
+            <li style="margin-bottom: 16px;">Formatting Cells, Rows, Columns and Sheets</li>
+            <li style="margin-bottom: 16px;">Sorting Data</li>
+            <li style="margin-bottom: 16px;">Lookup and Reference Functions</li>
+            <li style="margin-bottom: 16px;">Logical Functions</li>
+            <li style="margin-bottom: 16px;">Statistical Functions</li>
+            <li style="margin-bottom: 16px;">Date and Time Functions</li>
+            <li style="margin-bottom: 16px;">Math and Trigonometric Functions</li>
+            <li style="margin-bottom: 16px;">Creating Pivot Tables using Pivot Table options</li>
+            <li style="margin-bottom: 16px;">Hyper/Data Linking</li>
+            <li style="margin-bottom: 16px;">Security and Protection for Worksheets</li>
+            </ul>
         </div>
-        <div id="how-to-use" class="tab-content" style="padding: 24px; z-index: 0; display: none;">
+        <div id="how-to-use" class="tab-content" style="padding: 24px; z-index: 0; display: none;" data-aos="fade-up" data-aos-delay="700">
           <h3 style="font-size: 22px; font-weight: bold; color: #333;">How to Use</h3>
           <p style="font-size: 16px; line-height: 1.5; color: #555;">After a successful purchase, this item will be added to the library section. You can access your courses in the following ways:</p>
           <ul style="padding-left: 20px; font-size: 16px; color: #555;">
@@ -179,14 +187,32 @@
         </script>
       </div>
       <!-- Sidebar -->
-      <div class="col-lg-3 col-md-12" style="width: 30%; background: #f9f9f9; padding: 16px; border-radius: 4px; font-family: 'Inter', sans-serif;">
+      <div class="col-lg-3 col-md-12" style="width: 30%; background: #f9f9f9; padding: 16px; border-radius: 4px;" data-aos="fade-left" data-aos-delay="800">
         <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
           <img src="images/related-course.jpg" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
           <div style="padding: 12px;">
             <h4 style="font-size: 16px; font-weight: bold; color: #333;">Excel Basics</h4>
             <p style="font-size: 14px; color: #888;">Instructor: Jane Smith</p>
             <p style="font-size: 16px; font-weight: bold; color: #333;">₹2,999</p>
-            <button style="width: 100%; background: #4f46e5; color: white; font-size: 14px; font-weight: bold; padding: 8px 16px; border-radius: 4px; border: none;">Buy Now</button>
+            <button class="btn-add-to-cart">Buy Now</button>
+          </div>
+        </div>
+        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
+          <img src="images/sap-fico.jpg" alt="SAP-FICO Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
+          <div style="padding: 12px;">
+            <h4 style="font-size: 16px; font-weight: bold; color: #333;">SAP-FICO</h4>
+            <p style="font-size: 14px; color: #888;">Instructor: Michael Brown</p>
+            <p style="font-size: 16px; font-weight: bold; color: #333;">₹6,499</p>
+            <button class="btn-add-to-cart">Buy Now</button>
+          </div>
+        </div>
+        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
+          <img src="images/tally-erp.jpg" alt="Tally ERP 9 Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
+          <div style="padding: 12px;">
+            <h4 style="font-size: 16px; font-weight: bold; color: #333;">Tally ERP 9</h4>
+            <p style="font-size: 14px; color: #888;">Instructor: Sarah Johnson</p>
+            <p style="font-size: 16px; font-weight: bold; color: #333;">₹3,999</p>
+            <button class="btn-add-to-cart">Buy Now</button>
           </div>
         </div>
       </div>
@@ -282,4 +308,3 @@
 
 </body>
 </html>
-``` 
