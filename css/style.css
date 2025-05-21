@@ -760,6 +760,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .untree_co-section .heading strong {
     font-weight: 700; }
 
+.purchase-department-page .untree_co-section {
+  padding: 50px 0; /* Reduced padding by half */
+}
+
 .position-relative {
   position: relative; }
 
@@ -1788,6 +1792,49 @@ button[style*="Buy Now"] {
 .btn-add-to-cart:hover,
 button[style*="Buy Now"]:hover {
   background: #0f5bb5; /* Darker shade of primary color */
+}
+
+/* Custom Media Card */
+.custom-media.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth scaling */
+}
+.custom-media.card:hover {
+  transform: scale(1.08); /* Slightly larger scaling for a smoother effect */
+}
+.custom-media.card .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 1;
+  transform: scale(1.2); /* Start slightly larger */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade and scale */
+  text-align: center;
+}
+.custom-media.card:hover .hover-overlay {
+  opacity: 1; /* Make the overlay visible */
+  transform: scale(1); /* Scale down to normal size */
+}
+.custom-media.card .hover-overlay h3,
+.custom-media.card .hover-overlay p {
+  color: white;
+  margin: 0;
+}
+.custom-media.card .hover-overlay a {
+  margin-top: 10px;
+}
+.card-title {
+  text-align: center;
 }
 
 
