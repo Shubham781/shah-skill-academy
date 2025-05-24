@@ -330,5 +330,17 @@ $(function(){
 	};
 	siteSticky();
 
+	document.addEventListener("DOMContentLoaded", function () {
+		const stickyWrapper = document.getElementById("sticky-wrapper");
+		const stickyNav = document.querySelector(".sticky-nav");
+
+		window.addEventListener("scroll", function () {
+			if (window.scrollY > 50) {
+				stickyWrapper.classList.add("is-sticky");
+			} else {
+				stickyWrapper.classList.remove("is-sticky");
+			}
+		});
+	});
 
 })

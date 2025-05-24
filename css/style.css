@@ -228,6 +228,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .logo:hover {
     color: #ffffff; }
 
+.logo-img {
+  background-color: white; /* Add white background */
+  padding: 5px; /* Add padding around the logo */
+  border-radius: 8px; /* Round the corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  height: 50px; /* Maintain the height */
+}
+
+.logo-icon {
+  display: none;
+}
+
+#sticky-wrapper.is-sticky .logo-text {
+  display: none;
+}
+
+#sticky-wrapper.is-sticky .logo-icon {
+  display: inline-block !important; /* Ensure visibility */
+}
+
 .menu-absolute {
   position: absolute !important; }
 
