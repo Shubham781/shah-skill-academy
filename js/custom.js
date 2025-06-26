@@ -331,14 +331,14 @@ $(function(){
 	siteSticky();
 
 	document.addEventListener("DOMContentLoaded", function () {
-		const stickyWrapper = document.getElementById("sticky-wrapper");
-		const stickyNav = document.querySelector(".sticky-nav");
-
-		window.addEventListener("scroll", function () {
-			if (window.scrollY > 50) {
-				stickyWrapper.classList.add("is-sticky");
+		$(window).on('scroll', function() {
+			var scroll = $(window).scrollTop();
+			if (scroll >= 50) {
+			  $('.logo-default').css('display', 'none');
+			  $('.logo-sticky').css('display', 'block');
 			} else {
-				stickyWrapper.classList.remove("is-sticky");
+			  $('.logo-default').css('display', 'block');
+			  $('.logo-sticky').css('display', 'none');
 			}
 		});
 	});

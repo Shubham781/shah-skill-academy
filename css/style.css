@@ -1940,3 +1940,13 @@ button[style*="Buy Now"]:hover {
   }
 }
 
+/* Animation for data-aos-background */
+[data-aos-background="true"] {
+  background: linear-gradient(to corner, #ffffff, #f7f7f7);
+  transition: background-color 1s ease-in-out;
+}
+
+[data-aos-background="true"].aos-animate {
+  background: linear-gradient(to corner, #e0f7fa, #f1f8e9); /* Example animated colors */
+}
+
