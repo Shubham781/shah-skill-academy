@@ -112,6 +112,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       background: #136ad5;
       color: #ffffff; }
 
+.btn-hover-animate {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-hover-animate:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0, 174, 255, 0.5);
+}
+
 .form-control, .custom-select {
   border: none;
   font-size: 16px;
@@ -126,6 +135,38 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     -webkit-box-shadow: none;
     box-shadow: none;
     background: transparent; }
+  .form-control:focus {
+    animation: input-focus-animation 0.3s ease-in-out;
+    border-color: #00aeff;
+    box-shadow: 0 0 8px rgba(0, 174, 255, 0.5);
+  }
+  .form-control:hover {
+    animation: input-hover-animation 0.3s ease-in-out;
+    border-color: #00aeff;
+    box-shadow: 0 0 8px rgba(0, 174, 255, 0.5);
+  }
+  @keyframes input-focus-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes input-hover-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   .form-control::-webkit-input-placeholder, .custom-select::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(0, 0, 0, 0.5); }
