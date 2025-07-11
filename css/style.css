@@ -255,6 +255,31 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   right: 0;
   bottom: 0; }
 
+  .learn-more-btn {
+    padding: 8px 16px;
+    background: white;
+    color: rgb(153, 153, 153);
+    border: 1px solid rgb(131, 130, 130);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: -2px;
+    margin-right: 8px; /* Adds spacing between buttons */
+    display: inline-block;
+  }
+
+  
+  .learn-more-btn:hover {
+    color: rgb(105, 105, 105);
+    border: 1px solid rgb(173, 173, 173);
+  }
+  .course-actions-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
 .loader {
   z-index: 7700;
   position: fixed;
@@ -1700,7 +1725,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   margin-bottom: 30px; }
 
 .site-footer {
-  background: #136ad5;
+  background: #0d4182;
   font-size: 14px;
   color: #ffffff;
   padding: 70px 0; }
@@ -2229,16 +2254,22 @@ button[style*="Buy Now"]:hover {
 }
 
 .course-actions .btn-secondary {
-  background: transparent;
-  color: #2c3e50;
+  /* background: transparent; */
+  color: white;
   border: 1px solid #ecf0f1;
 }
 
 .course-actions .btn-secondary:hover {
-  background: #f8f9fa;
+  background: #37c0ff;
   border-color: #bdc3c7;
 }
-
+.enroll-button {
+  background:#136AD5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 .navigation-arrows {
   display: flex;
   justify-content: center;
