@@ -154,14 +154,14 @@
                     </li>
                   </ul>
             </li>
-            <li><a href="staff.html">Recruitment</a></li>
+            <!-- <li><a href="staff.html">Recruitment</a></li> -->
             <li><a href="news.html">Blog</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
 
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
+          <a href="./register.html" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
 
           <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
@@ -172,7 +172,7 @@
     </div>
   </nav>
 
-  <div class="untree_co-hero overlay" style="background-image: url('images/hero-img-1-min.jpg');">
+  <div class="untree_co-hero overlay" style="background-image: linear-gradient(135deg, #1737F1 0%, #3083F8 100%);">
 
 
     <div class="container">
@@ -182,15 +182,21 @@
 
           <div class="row justify-content-center ">
 
-            <div class="col-lg-8 text-center ">
-              <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up" data-aos-delay="0" class="caption mb-4 d-inline-block">Watch the video</a>
+            <div class="col-lg-8">
+              <!-- Centered video link -->
+              <div class="text-center mb-4">
+                <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up" data-aos-delay="0" class="caption d-inline-block">Watch the video</a>
+              </div>
 
-                <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Build Your Professional Carrer With <br>Shah Skill Academy
+              <!-- Left-aligned textual content -->
+              <div class="text-center">
+                <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100" style="font-family: 'Inter', sans-serif;">Build Your Professional Carrer With Shah Skill Academy
                 </h1>
-                <h3 class="mb-3 text-white" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 1.1px;">SAP-FICO, TALLY ERP 9, ADVANCE EXCEL</h3>
-              <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
-              <a href="#" class="btn btn-secondary">Expert Training in Accounting</a>
-              </p>
+                <h3 class="mb-3 text-white" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 1.1px; font-family: 'Inter', sans-serif;">SAP-FICO, TALLY ERP 9, ADVANCE EXCEL</h3>
+                <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
+                <a href="#" class="btn btn-secondary" style="font-family: 'Inter', sans-serif;">Expert Training in Accounting</a>
+                </p>
+              </div>
 
             </div>
 
@@ -206,111 +212,92 @@
 
   <div class="untree_co-section bg-light">
     <div class="container"> 
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="line-bottom text-center mb-4">The Right Course For You</h2>
-          <p>Learn skills from experts and advance your career with our training programs.</p>
+      <section class="courses-section">
+        <div class="section-header">
+          <h2 class="section-title">The Right Course For You</h2>
+          <p class="section-subtitle">Learn skills from experts and advance your career with our training programs.</p>
         </div>
-      </div>
-      <div class="row" data-aos="fade-up" data-aos-delay="0">
-        <!-- First Card -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <!-- FRONT: Original content preserved -->
-              <div class="flip-card-front">
-                <div class="custom-media">
-                  <a href="./pams.html"><img src="images/img-school-1-min.jpg" alt="SAP-FICO" class="img-fluid"></a>
-                  <div class="custom-media-body">
-                    <div class="d-flex justify-content-between pb-3">
-                      <div class="text-primary"><span class="uil uil-tag-alt"></span> <span>₹1999.00</span></div>
-                      <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
-                    </div>
-                    <h3>Professional Accounting & MIS Specialist</h3>
-                    <p class="mb-4" style="min-height: 120px;">Learn the practical side of manual and automated accounting, taxation and banking system with the cutting edge IT technology.</p>
-                  </div>
+
+        <div class="courses-container">
+          <!-- First Card -->
+          <div class="course-card">
+            <div class="course-image caregiving">
+              <div class="certificate-badge">CERTIFICATE</div>
+              <div class="level-badge">BEGINNER</div>
+            </div>
+            <div class="course-content">
+              <div class="course-category">Accounting & Finance</div>
+              <h3 class="course-title">Professional Accounting & MIS Specialist</h3>
+              <p class="course-description">Learn the practical side of manual and automated accounting, taxation and banking system with the cutting edge IT technology.</p>
+              <div class="course-meta">
+                <span class="course-duration">₹1999.00</span>
+                <span class="course-students">4.8 ★</span>
+              </div>
+              <div class="course-actions">
+                <div class="course-actions-btns">
+                  <a href="./pams.html" class="btn btn-secondary">Learn More</a>
+                  <a href="./pams.html" class="btn btn-secondary btn-sm btn-book enroll-now-btn">Enroll Now</a>
                 </div>
               </div>
-              <!-- BACK: Custom back layout -->
-              <div class="flip-card-back">
-                <div class="card-icon text-center py-5">
-                  <span class="icon-calculator" style="font-size: 50px; color: #007bff;"></span>
+            </div>
+          </div>
+
+          <!-- Second Card -->
+          <div class="course-card">
+            <div class="course-image hipaa">
+              <div class="certificate-badge">CERTIFICATE</div>
+              <div class="level-badge">INTERMEDIATE</div>
+            </div>
+            <div class="course-content">
+              <div class="course-category">Enterprise Software</div>
+              <h3 class="course-title">SAP</h3>
+              <p class="course-description">SAP or Systems Applications and Products, is a widely-used enterprise resource planning (ERP) software</p>
+              <div class="course-meta">
+                <span class="course-duration">₹1999.00</span>
+                <span class="course-students">4.8 ★</span>
+              </div>
+              <div class="course-actions">
+                <div class="course-actions-btns">
+                  <a href="./sap.html" class="btn btn-secondary">Learn More</a>
+                  <a href="./sap.html" class="btn btn-secondary btn-sm btn-book enroll-now-btn">Enroll Now</a>
                 </div>
-                <h3>Professional Accounting & MIS Specialist</h3>
-                <p>Business Accounting and Taxation knowledge with real world application of IT and Business Analytics</p>
-                <a href="./pams.html" class="btn btn-secondary mb-3">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Card -->
+          <div class="course-card">
+            <div class="course-image medication">
+              <div class="certificate-badge">CERTIFICATE</div>
+              <div class="level-badge">ADVANCED</div>
+            </div>
+            <div class="course-content">
+              <div class="course-category">Business Intelligence</div>
+              <h3 class="course-title">Business Analytics</h3>
+              <p class="course-description">Understand the leadership role of Management Information Systems in achieving business competitive advantage through informed decision making.</p>
+              <div class="course-meta">
+                <span class="course-duration">₹1999.00</span>
+                <span class="course-students">4.8 ★</span>
+              </div>
+              <div class="course-actions">
+                <div class="course-actions-btns">
+                  <a href="./business-analytics.html" class="btn btn-secondary">Learn More</a>
+                  <a href="./business-analytics.html" class="btn btn-secondary btn-sm btn-book enroll-now-btn">Enroll Now</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Second Card -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <!-- FRONT: Original content preserved -->
-              <div class="flip-card-front">
-                <div class="custom-media">
-                  <a href="./sap.html"><img src="images/img-school-1-min.jpg" alt="SAP-FICO" class="img-fluid"></a>
-                  <div class="custom-media-body">
-                    <div class="d-flex justify-content-between pb-3">
-                      <div class="text-primary"><span class="uil uil-tag-alt"></span> <span>₹1999.00</span></div>
-                      <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
-                    </div>
-                    <h3>SAP</h3>
-                    <p class="mb-4" style="min-height: 120px;">SAP or Systems Applications and Products, is a widely-used enterprise resource planning (ERP) software</p>
-                  </div>
-                </div>
-              </div>
-              <!-- BACK: Custom back layout -->
-              <div class="flip-card-back">
-                <div class="card-icon text-center py-5">
-                  <span class="icon-calculator" style="font-size: 50px; color: #007bff;"></span>
-                </div>
-                <h3>SAP</h3>
-                <p>SAP creates a centralized system for businesses that enables every department to access and share common data to create a better work environment for every employee in the company.</p>
-                <a href="./sap.html" class="btn btn-secondary mb-3">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Third Card -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="flip-card">
-            <div class="flip-card-inner"> 
-              <!-- FRONT: Original content preserved -->
-              <div class="flip-card-front">
-                <div class="custom-media">
-                  <a href="./business-analytics.html"><img src="images/img-school-1-min.jpg" alt="SAP-FICO" class="img-fluid"></a>
-                  <div class="custom-media-body">
-                    <div class="d-flex justify-content-between pb-3">
-                      <div class="text-primary"><span class="uil uil-tag-alt"></span> <span>₹1999.00</span></div>
-                      <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
-                    </div>
-                    <h3>Business Analytics</h3>
-                    <p class="mb-4" style="min-height: 120px;"> Understand the leadership role of Management Information Systems in achieving business competitive advantage through informed decision making.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- BACK: Custom back layout -->
-              <div class="flip-card-back">
-                <div class="card-icon text-center py-5">
-                  <span class="icon-calculator" style="font-size: 50px; color: #007bff;"></span>
-                </div>
-                <h3>Business Analytics</h3>
-                <p>Analyze and synthesize business information and systems to faciliate evaluation of strategic alternatives. Effectively communicate strategic alternatives to facilitate decision making.</p>
-                <a href="./business-analytics.html" class="btn btn-secondary mb-3">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        <!-- <div class="navigation-arrows">
+          <div class="nav-arrow">←</div>
+          <div class="nav-arrow">→</div>
+        </div> -->
+      </section>
     </div>
   </div>
 
-  <div class="services-section" data-aos="fade-in" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-background="true">
+  <div class="services-section bg-white" data-aos="fade-in" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-background="true">
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-lg-4 mb-5 mb-lg-0">
@@ -341,7 +328,7 @@
     </div>
   </div> <!--  Instructor -->
 
-  <div class="untree_co-section">
+  <div class="untree_co-section bg-light">
     <div class="container"> 
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
@@ -398,17 +385,6 @@
 </div>
  <!-- /section -->
 
-  <div class="untree_co-section pt-0 bg-img overlay" style="background-image: url('images/img-school-1-min.jpg');">
-    <div class="container">
-      <div class="row align-items-center justify-content-center text-center">
-        <div class="col-lg-7">
-          <h2 class="text-white mb-3" data-aos="fade-up" data-aos-delay="0">Training for Future Accounting Professionals</h2>
-          <p class="text-white h5 mb-4" data-aos="fade-up" data-aos-delay="100">Master essential accounting skills with expert guidance and unlock new career opportunities</p>
-          <p><a href="#" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="200">Enroll Now</a></p>
-        </div>
-      </div>
-    </div>  
-  </div> <!-- /section -->
 
   <div class="untree_co-section">
     <div class="container">
@@ -703,84 +679,77 @@
   </div>
   
   <div class="site-footer">
-
-
     <div class="container">
-
       <div class="row">
+        <!-- About Widget -->
         <div class="col-lg-3 mr-auto">
           <div class="widget">
-            <h3>About Us<span class="text-primary">.</span> </h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div> <!-- /.widget -->
+            <h3>About Shah Skill Academy<span class="text-primary">.</span></h3>
+            <p>Shah Skill Academy is dedicated to providing industry-relevant courses in SAP, Accounting, Analytics, and Business Tools. We help professionals and students upskill and stay ahead in their careers with practical training.</p>
+          </div>
           <div class="widget">
-            <h3>Connect</h3>
+            <h3>Follow Us</h3>
             <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-instagram"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
               <li><a href="#"><span class="icon-facebook"></span></a></li>
               <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              <li><a href="#"><span class="icon-pinterest"></span></a></li>
-              <li><a href="#"><span class="icon-dribbble"></span></a></li>
+              <li><a href="#"><span class="icon-instagram"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
             </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-        <div class="col-lg-2 ml-auto">
-          <div class="widget">
-            <h3>Projects</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-              <li><a href="#">jQuery</a></li>
-              <li><a href="#">Bootstrap</a></li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-        <div class="col-lg-3">
-          <div class="widget">
-            <h3>Gallery</h3>
-            <ul class="instafeed instagram-gallery list-unstyled">
-              <li><a class="instagram-item" href="images/gal_1.jpg" data-fancybox="gal"><img src="images/gal_1.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_2.jpg" data-fancybox="gal"><img src="images/gal_2.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_3.jpg" data-fancybox="gal"><img src="images/gal_3.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_4.jpg" data-fancybox="gal"><img src="images/gal_4.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_5.jpg" data-fancybox="gal"><img src="images/gal_5.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="images/gal_6.jpg" alt="" width="72" height="72"></a>
-              </li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-
-        <div class="col-lg-3">
-          <div class="widget">
-            <h3>Contact</h3>
-            <address>43 Raymouth Rd. Baltemoer, London 3910</address>
-            <ul class="list-unstyled links mb-4">
-              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-              <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-      </div> <!-- /.row -->
-
-      <div class="row mt-5">
-        <div class="col-12 text-center">
-          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
           </div>
         </div>
-      </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+  
+        <!-- Quick Links -->
+        <div class="col-lg-2 ml-auto">
+          <div class="widget">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled float-left links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="staff.html">Recruitment</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Popular Courses -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3>Popular Courses</h3>
+            <ul class="list-unstyled float-left links">
+              <li><a href="sap-fico.html">SAP FICO</a></li>
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advanced Excel</a></li>
+              <li><a href="business-analytics.html">Business Analytics</a></li>
+              <li><a href="sap-hana.html">SAP HANA</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Contact Info -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3>Contact Us</h3>
+            <address>Shah Skill Academy, 43 Raymouth Rd., New Delhi, India</address>
+            <ul class="list-unstyled links mb-4">
+              <li><a href="tel://+911234567890">+91-12345-67890</a></li>
+              <li><a href="mailto:info@ssainstitute.com">info@ssainstitute.com</a></li>
+            </ul>
+            <p>Working Hours: Mon - Sat, 9:00AM - 6:00PM</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p class="copyright">
+            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with ❤️ by Shah Skill Academy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
     <div id="overlayer"></div>
     <div class="loader">
@@ -799,6 +768,104 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/custom.js"></script>
+
+    <script>
+        // Course card navigation functionality
+        const cards = document.querySelectorAll('.course-card');
+        const leftArrow = document.querySelector('.nav-arrow:first-child');
+        const rightArrow = document.querySelector('.nav-arrow:last-child');
+        
+        let currentIndex = 0;
+        
+        // Check if we're on mobile
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+        
+        function showCards() {
+            if (isMobile()) {
+                // Mobile: Show only one card at a time
+                cards.forEach((card, index) => {
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+            } else {
+                // Desktop: Show 3 cards at a time
+                cards.forEach((card, index) => {
+                    card.style.display = index >= currentIndex && index < currentIndex + 3 ? 'block' : 'none';
+                    card.classList.remove('active');
+                });
+            }
+        }
+        
+        function updateArrowStates() {
+            if (isMobile()) {
+                // Mobile: Enable/disable arrows based on current index
+                leftArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                rightArrow.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
+            } else {
+                // Desktop: Enable/disable arrows based on current index
+                leftArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                rightArrow.style.opacity = currentIndex >= cards.length - 3 ? '0.5' : '1';
+            }
+        }
+        
+        if (leftArrow && rightArrow) {
+            leftArrow.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    showCards();
+                    updateArrowStates();
+                }
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                if (isMobile()) {
+                    if (currentIndex < cards.length - 1) {
+                        currentIndex++;
+                        showCards();
+                        updateArrowStates();
+                    }
+                } else {
+                    if (currentIndex < cards.length - 3) {
+                        currentIndex++;
+                        showCards();
+                        updateArrowStates();
+                    }
+                }
+            });
+        }
+        
+        // Initialize on page load
+        showCards();
+        updateArrowStates();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            showCards();
+            updateArrowStates();
+        });
+        
+        // Add smooth scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 
   </body>
 
