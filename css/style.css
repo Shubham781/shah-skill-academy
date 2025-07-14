@@ -2464,3 +2464,97 @@ button[style*="Buy Now"]:hover {
   }
 }
 
+/* Navigation arrows - only visible on small screens */
+.navigation-arrows {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none; /* Allow clicks to pass through to cards */
+}
+
+.nav-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: #7f8c8d;
+  pointer-events: auto; /* Re-enable clicks on arrows */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-arrow:first-child {
+  left: -20px; /* Position on left center */
+}
+
+.nav-arrow:last-child {
+  right: -20px; /* Position on right center */
+}
+
+.nav-arrow:hover {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+  transform: scale(1.05);
+}
+
+/* Show navigation arrows only on small screens */
+@media (max-width: 750px) {
+  .navigation-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .courses-container {
+    position: relative; /* For absolute positioning of arrows */
+  }
+}
+
+/* Fix button overlapping on small screens */
+@media (max-width: 768px) {
+  .course-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .course-actions-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .learn-more-btn,
+  .enroll-now-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  
+  .learn-more-btn {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+}
+
+/* Make typed skills content bold */
+#typed-skills {
+  font-weight: bold !important;
+  color: #ffffff;
+}
+
