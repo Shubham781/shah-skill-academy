@@ -8,6 +8,19 @@
 * Facebook: https://web.facebook.com/Untree.co/
 * Pinterest: https://pinterest.com/Untree_co/
 */
+
+/* Minimal overflow prevention - doesn't affect layout */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Ensure all elements respect container boundaries */
+* {
+  box-sizing: border-box;
+}
+
 body, h1, h2, h3, h4, h5, h6, .section-title, .section-subtitle, .course-title, .course-category, .course-description, .btn, .course-meta, .certificate-badge, .level-badge, .site-footer, .feature, .custom-media, .section-header, .site-nav, .site-menu, .site-navigation, .ul-check, .accordion-item, .widget, .copyright {
   font-family: "Inter", sans-serif !important;
 }
@@ -21,7 +34,7 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   background-color: #ffffff;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-size: 16px;
   color: #666; }
   body:before {
