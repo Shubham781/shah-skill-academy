@@ -334,11 +334,11 @@ $(function(){
 		$(window).on('scroll', function() {
 			var scroll = $(window).scrollTop();
 			if (scroll >= 50) {
-			  $('.logo-default').css('display', 'none');
-			  $('.logo-sticky').css('display', 'block');
+			  $('.site-nav').addClass('is-sticky');
+			  $('.js-sticky-header').addClass('is-sticky');
 			} else {
-			  $('.logo-default').css('display', 'block');
-			  $('.logo-sticky').css('display', 'none');
+			  $('.site-nav').removeClass('is-sticky');
+			  $('.js-sticky-header').removeClass('is-sticky');
 			}
 		});
 	});
