@@ -1178,30 +1178,78 @@ h4,
 }
 
 @media (max-width: 767.98px) {
-
   .untree_co-hero,
   .untree_co-hero>.container>.row,
   .bg-img,
   .bg-img>.container>.row {
     min-height: 750px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .untree_co-hero .container,
+  .bg-img .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .untree_co-hero .container .row,
+  .bg-img .container .row {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .untree_co-hero .heading,
+  .bg-img .heading {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .untree_co-hero .desc,
+  .bg-img .desc {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
-.untree_co-hero.inner-page,
-.untree_co-hero.inner-page>.container>.row,
-.bg-img.inner-page,
-.bg-img.inner-page>.container>.row {
-  height: 50vh;
-  min-height: 450px;
-}
-
 @media (max-width: 767.98px) {
-
   .untree_co-hero.inner-page,
   .untree_co-hero.inner-page>.container>.row,
   .bg-img.inner-page,
   .bg-img.inner-page>.container>.row {
     min-height: 450px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .untree_co-hero.inner-page .container,
+  .bg-img.inner-page .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .untree_co-hero.inner-page .container .row,
+  .bg-img.inner-page .container .row {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
 }
 
@@ -2893,17 +2941,18 @@ button[style*="Buy Now"]:hover {
 .course-card {
   background: white;
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all 0.4s ease;
   max-width: 350px;
   margin: 0 auto;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .course-image {
@@ -3085,6 +3134,7 @@ button[style*="Buy Now"]:hover {
   justify-content: center;
   gap: 15px;
   margin-top: 30px;
+  position: relative;
 }
 
 .nav-arrow {
@@ -3100,13 +3150,30 @@ button[style*="Buy Now"]:hover {
   transition: all 0.3s ease;
   font-size: 1rem;
   color: #7f8c8d;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-arrow .arrow-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .nav-arrow:hover {
   background: #3498db;
-  color: white;
   border-color: #3498db;
   transform: scale(1.05);
+}
+
+.nav-arrow:hover .arrow-img {
+  filter: brightness(0) invert(1);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
 }
 
 /* Responsive Design */
@@ -3337,23 +3404,37 @@ button[style*="Buy Now"]:hover {
   pointer-events: auto;
   /* Re-enable clicks on arrows */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.nav-arrow .arrow-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .nav-arrow:first-child {
-  left: -20px;
-  /* Position on left center */
+  left: 10px;
 }
 
 .nav-arrow:last-child {
-  right: -20px;
-  /* Position on right center */
+  right: 10px;
 }
 
 .nav-arrow:hover {
   background: #3498db;
-  color: white;
   border-color: #3498db;
   transform: scale(1.05);
+}
+
+.nav-arrow:hover .arrow-img {
+  filter: brightness(0) invert(1);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
 }
 
 /* Show navigation arrows only on small screens */
@@ -3434,13 +3515,13 @@ button[style*="Buy Now"]:hover {
     top: 50%;
     transform: translateY(-50%);
     pointer-events: auto;
-    left: -28px;
+    left: 5px;
     right: auto;
   }
 
   .nav-arrow:last-child {
     left: auto;
-    right: -28px;
+    right: 5px;
   }
 }
 
