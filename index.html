@@ -12,8 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Replace with local hosting if necessary -->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -24,178 +23,280 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
 
   <style>
-    .logo-icon {
-      position: absolute;
-      top: -35px;
-      left: 0;
-      transition: opacity 0.3s ease;
+    /* Your existing CSS styles */
+    body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        background-color: #ffffff;
+        overflow-x: hidden !important;
+        font-size: 1rem;
+        color: #666;
     }
 
-    .logo {
-      position: relative;
-      display: inline-block;
-      height: 45px;
-      width: auto;
+    .site-nav {
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+        top: 0;
     }
 
-    /* Responsive logo sizing */
-    @media (max-width: 1200px) {
-      .logo-icon {
-        height: 7rem !important;
-      }
-    }
-    @media (max-width: 992px) {
-      .logo-icon {
-        height: 6rem !important;
-      }
-    }
-    @media (max-width: 768px) {
-      .logo-icon {
-        height: 5rem !important;
-      }
-    }
-    @media (max-width: 576px) {
-      .logo-icon {
-        height: 4rem !important;
-      }
+    .site-nav .site-navigation {
+        position: relative;
     }
 
-    /* Mobile logo in sticky nav */
+    .site-nav .site-navigation .site-menu {
+        margin-bottom: 0;
+    }
+
+    .site-nav .site-navigation .site-menu > li {
+        display: inline-block;
+    }
+
+    .site-nav .site-navigation .site-menu > li > a {
+        font-size: 0.875rem;
+        padding: 0.625rem 0.9375rem;
+        display: inline-block;
+        text-decoration: none !important;
+        color: #000000;
+        position: relative;
+    }
+
+    .site-nav .site-navigation .site-menu > li > a:hover {
+        color: #136ad5;
+    }
+
+    .site-nav .site-navigation .site-menu > li.active > a {
+        color: #136ad5;
+    }
+
+    .logo-sticky {
+        height: 60px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
     .mobile-logo {
-      display: none;
-    }
-    @media (max-width: 989px) {
-      .mobile-logo {
-        display: block;
         height: 5.5rem;
         max-width: 100%;
         object-fit: contain;
-      }
     }
 
-    /* Remove border bottom from top bar */
-    .top-bar {
-      border-bottom: none !important;
-    }
-    /* Hide top bar on screens smaller than 990px */
-    @media (max-width: 989px) {
-      .top-bar {
-        display: none !important;
-      }
+    .btn-book {
+        position: absolute;
+        right: 15px;
+        margin-top: -2px;
     }
 
-    /* Sticky logo switching styles */
-    .logo-sticky {
-      display: none !important;
-    }
-    .site-nav.is-sticky .logo-default {
-      display: none !important;
-    }
-    .site-nav.is-sticky .logo-sticky {
-      display: block !important;
-      height: 3.5rem !important;
-      max-height: 48px;
-      margin: 0 0 0 10px;
-      object-fit: contain;
-      vertical-align: middle;
-    }
-    .js-sticky-header.is-sticky .logo-sticky {
-      display: block !important;
-      height: 3.5rem !important;
-      max-height: 48px;
-      margin: 0 0 0 10px;
-      object-fit: contain;
-      vertical-align: middle;
+    @media (max-width: 991.98px) {
+        .btn-book {
+            position: static !important;
+            right: auto !important;
+            margin-top: 0 !important;
+        }
     }
 
-    /* Hide original Enroll Now and hamburger on mobile */
-    @media (max-width: 989px) {
-      .btn-book.menu-absolute,
-      .site-navigation > .burger {
-        display: none !important;
-      }
+    .btn {
+        padding-top: 0.9375rem;
+        padding-bottom: 0.9375rem;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+        border-radius: 1.875rem;
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .05rem;
     }
 
-    /* Responsive hero text sizes */
-    @media (max-width: 769px) and (min-width: 470px) {
-      .untree_co-hero .heading {
-        font-size: 1.5rem !important;
-      }
-      .untree_co-hero .caption {
-        font-size: 0.8rem !important;
-      }
-      .untree_co-hero h3 {
-        font-size: 1.4rem !important;
-      }
-    }
-    @media (max-width: 469px) {
-      .untree_co-hero .heading {
-        font-size: 1.4rem !important;
-      }
-      .untree_co-hero .caption {
-        font-size: 0.6rem !important;
-      }
-      .untree_co-hero h3 {
-        font-size: 1.1rem !important;
-      }
+    .btn.btn-secondary {
+        background: #00aeff;
+        border-color: #00aeff;
     }
 
-    @media (max-width: 769px) {
-      .untree_co-hero {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        height: 100vh;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      .untree_co-hero > .container > .row {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0 !important;
-        padding: 0 !important;
-        min-height: unset !important;
-        height: unset !important;
-      }
-      .untree_co-hero .heading,
-      .untree_co-hero h3,
-      .untree_co-hero .caption {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
+    .btn.btn-secondary:hover {
+        border-color: #14b4ff;
+        background: #14b4ff;
     }
 
-    /* Multi-level dropdown: show submenus to the right */
+    .btn.btn-sm {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+    }
+
+    /* Burger menu styles */
+    .burger {
+        width: 28px;
+        height: 32px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .burger.light:before,
+    .burger.light span,
+    .burger.light:after {
+        background: #ffffff;
+    }
+
+    .burger:before,
+    .burger span,
+    .burger:after {
+        width: 100%;
+        height: 2px;
+        display: block;
+        background: #000;
+        border-radius: 2px;
+        position: absolute;
+        opacity: 1;
+    }
+
+    .burger:before {
+        top: 4px;
+        content: "";
+    }
+
+    .burger span {
+        top: 15px;
+    }
+
+    .burger:after {
+        top: 26px;
+        content: "";
+    }
+
+    /* Dropdown styles */
+    .site-nav .site-navigation .site-menu .has-children {
+        position: relative;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown {
+        visibility: hidden;
+        opacity: 0;
+        top: 100%;
+        z-index: 999;
+        position: absolute;
+        text-align: left;
+        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        margin-top: 20px;
+        margin-left: 0px;
+        background: #ffffff;
+        transition: 0.2s 0s;
+        min-width: 180px;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
+        padding: 5px 20px;
+        display: block;
+        color: #000000;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
+        color: #136ad5;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
+        transition-delay: 0s;
+        margin-top: 0px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Multi-level dropdown */
     .site-menu .dropdown .has-children > .dropdown {
-      left: 100%;
-      top: 0;
-      margin-top: 0;
-      margin-left: 0;
-      position: absolute;
-      min-width: 200px;
-      display: none;
+        left: 100%;
+        top: 0;
+        margin-top: 0;
+        margin-left: 0;
+        position: absolute;
+        min-width: 200px;
+        display: none;
     }
-    .site-menu .dropdown .has-children:hover > .dropdown,
-    .site-menu .dropdown .has-children:focus-within > .dropdown {
-      display: block;
+
+    .site-menu .dropdown .has-children:hover > .dropdown {
+        display: block;
     }
-    .site-menu .dropdown .has-children {
-      position: relative;
+
+    /* Sticky navigation styles */
+    .sticky-nav {
+        transition: .3s all ease;
+        background: white;
+        box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1rem);
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
-    .section-subtitle {
-  font-size: 1.125rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-  text-align: center;
+
+    .sticky-nav .site-menu > li > a {
+        color: #000000 !important;
+    }
+
+    .sticky-nav .site-menu > li > a:hover,
+    .sticky-nav .site-menu > li > a.active {
+        color: #136ad5 !important;
+    }
+
+    .sticky-nav .burger:before,
+    .sticky-nav .burger span,
+    .sticky-nav .burger:after {
+        background: #000000;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 989px) {
+        .desktop-nav-content {
+            display: none !important;
+        }
+        
+        .mobile-nav-content {
+            display: flex !important;
+        }
+    }
+
+    @media (min-width: 990px) {
+        .desktop-nav-content {
+            display: flex !important;
+        }
+        
+        .mobile-nav-content {
+            display: none !important;
+        }
+    }
+    /* Parallax effect for hero section */
+/* Make hero image layer GPU-friendly */
+.untree_co-hero {
+  will-change: transform; /* Hint browser for smooth animation */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-  </style>
+
+/* Override the column-reverse for the newsletter section on small screens */
+@media (max-width: 991.98px) {
+  .newsletter-section .row {
+    flex-direction: column; /* stack normally (left then right) */
+  }
+}
+
+@media (max-width: 991.98px) {
+    .what-to-expect-section .row {
+        flex-direction: row; /* default Bootstrap row flow */
+        flex-wrap: wrap;
+    }
+}
+
+</style>
+
 
   <title>Shah Skill Academy</title>
 </head>
@@ -213,142 +314,132 @@
 
   
   <nav class="site-nav mb-5">
-    <div class="pb-2 top-bar mb-3">
-      <div class="container">
-        <div class="row align-items-center flex-column flex-lg-row">
-          <div class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-start mb-2 mb-lg-0">
-            <a href="index.html" class="logo menu-absolute m-0" style="display: flex; align-items: center; justify-content: center; width: 100%;">
-              <img src="images/logo1.png" alt="Logo Icon" class="logo-icon logo-default" style="height: 9.0625rem; max-width: 100%; object-fit: contain; object-position: center; display: block;">
-              <img src="images/1000001414.png" alt="Logo Icon" class="logo-icon logo-sticky" style="height: 80px; max-width: 100%; object-fit: contain; object-position: center; display: none;">
-            </a>
-          </div>
-          <div class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center mb-2 mb-lg-0">
-            <div class="d-flex flex-wrap justify-content-center align-items-center gap-2">
-              <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block fw-bold">Have a questions?</span></a> 
-              <!-- <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a>  -->
-              <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
+    <div class="sticky-nav js-sticky-header">
+        <div class="container position-relative">
+            <div class="site-navigation">
+                
+                <!-- Single unified navigation row -->
+                <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
+                    
+                    <!-- Logo - Left side -->
+                    <div class="nav-logo">
+                        <!-- Desktop Logo -->
+                        <a href="index.html" class="desktop-nav-content">
+                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
+                        </a>
+                        <!-- Mobile Logo -->
+                        <a href="index.html" class="mobile-nav-content">
+                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Menu - Center -->
+                    <div class="nav-menu desktop-nav-content">
+                        <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="has-children">
+                                <a href="courses.html">Courses</a>
+                                <ul class="dropdown">
+                                    <li><a href="pams.html">PAMS</a></li>
+                                    <li class="has-children">
+                                        <a href="#">SAP</a>
+                                        <ul class="dropdown">
+                                            <li><a href="sap-fico.html">SAP-FICO</a></li>
+                                            <li><a href="sap-hana.html">SAP-HANA</a></li>
+                                            <li><a href="sap-mm.html">SAP-MM</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="business-analytics.html">Business Analytics</a></li>
+                                    <li class="has-children">
+                                        <a href="#">Others</a>
+                                        <ul class="dropdown">
+                                            <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+                                            <li><a href="advance-excel.html">Advance Excel</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Right side - Button and Mobile Menu -->
+                    <div class="nav-actions d-flex align-items-center">
+                        <!-- Enroll Button -->
+                        <a href="./register.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
+                        
+                        <!-- Mobile Menu Toggle -->
+                        <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" 
+                           data-toggle="collapse" data-target="#main-navbar">
+                            <span></span>
+                        </a>
+                    </div>
+
+                </div>
+                
             </div>
-          </div>
-          <div class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end">
-            <a href="login.html" class="small mr-3">
-              <span class="icon-lock"></span>
-              Log In
-            </a>
-            <a href="register.html" class="small">
-              <span class="icon-person"></span>
-              Register
-            </a>
+        </div>
+    </div>
+</nav>
+
+
+
+  <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
+    url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
+    <div class="container mt-0">
+      <div class="row align-items-center justify-content-between">
+        <!-- Left Text -->
+        <div class="col-lg-8 mb-5 mb-lg-0">
+          <div class="text-white">
+            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Build Your Professional Carrer<br>With Shah Skill Academy</h1>
+            <h3 class="mb-3 sub-heading text-white" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 1.1px; font-family: 'Inter', sans-serif;">Advance Your Career with <span id="typed-skills"></span></h3>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
+            <a href="#" class="btn btn-secondary" style="font-family: 'Inter', sans-serif;">Enroll Now</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="sticky-nav js-sticky-header">
-      <div class="container position-relative">
-        <div class="site-navigation text-center">
-          <!-- Mobile nav row for screens smaller than 990px -->
-          <div class="d-lg-none d-flex align-items-center justify-content-between mb-2 px-2" style="min-height: 5.5rem;">
-            <a href="index.html" class="mobile-logo-link d-flex align-items-center" style="flex:0 0 auto;">
-              <img src="images/logo1.png" alt="Shah Skill Academy" class="mobile-logo">
-            </a>
-            <a href="./register.html" class="btn btn-secondary btn-sm mx-2 text-center">Enroll Now</a>
-            <a href="#" class="burger site-menu-toggle js-menu-toggle d-inline-block d-lg-none light ml-2" data-toggle="collapse" data-target="#main-navbar" style="flex:0 0 auto;">
-              <span></span>
-            </a>
-          </div>
-
-          <!-- Desktop logo for sticky navigation -->
-          <div class="d-none d-lg-block text-left mb-2">
-            <a href="index.html" class="sticky-logo-link">
-              <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky" style="height: 60px; max-width: 100%; object-fit: contain;">
-            </a>
-          </div>
-          
-          <!-- logo is already above -->
-
-              <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-                <li><a href="index.html">Home</a></li>
-                <li class="has-children">
-                  <a href="courses.html">Courses</a>
-                  <ul class="dropdown">
-                    <li><a href="pams.html">PAMS</a></li>
-                    <li class="has-children">
-                      <a href="#">SAP</a>
-                      <ul class="dropdown">
-                        <li><a href="sap-fico.html">SAP-FICO</a></li>
-                        <li><a href="sap-hana.html">SAP-HANA</a></li>
-                        <li><a href="sap-mm.html">SAP-MM</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                    <li class="has-children">
-                      <a href="#">Others</a>
-                      <ul class="dropdown">
-                        <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                        <li><a href="advance-excel.html">Advance Excel</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-            </li>
-            <!-- <li><a href="staff.html">Recruitment</a></li> -->
-            <li><a href="news.html">Blog</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+  </div>
+  
+  <div class="untree_co-section mt-4">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-1"></div>
+          <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
+            <span class="play-wrap"><span class="icon-play"></span></span>
+            <img src="images/img-school-4-min.jpg" alt="Image" class="img-fluid rounded">
+          </a>
+        </div>
+        <div class="col-lg-5 mb-5">
+          <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
+          <p data-aos="fade-up" data-aos-delay="100">
+            At Shah Skill Academy, we are committed to shaping future leaders in the finance and accounting industry through our specialized training programs. Our primary focus is on providing exceptional courses in SAP-FICO, Tally ERP 9, Advanced Excel, and various other accounting disciplines. We understand the crucial role these skills play in securing a successful future career, and we are here to guide you every step of the way.
+          </p>
+          <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
+            <li>Specialized training in finance and accounting</li>
+            <li>Expert courses in SAP-FICO, Tally ERP 9, and Advanced Excel</li>
+            <li>Guidance for a successful future career</li>
           </ul>
 
-          <a href="./register.html" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
-
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
-
+          <p data-aos="fade-up" data-aos-delay="200">
+            <a href="#" class="btn btn-primary mr-1">Enroll Now</a>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </p>
         </div>
+       
       </div>
     </div>
-  </nav>
+  </div> <!-- /section -->
 
-  <div class="untree_co-hero overlay" style="background-image: linear-gradient(135deg, #1737F1 0%, #3083F8 100%);">
-
-
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-
-        <div class="col-12">
-
-          <div class="row justify-content-center ">
-
-            <div class="col-lg-8">
-              <!-- Centered video link -->
-              <div class="text-center mb-4">
-                <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up" data-aos-delay="0" class="caption d-inline-block">Watch the video</a>
-              </div>
-
-              <!-- Left-aligned textual content -->
-              <div class="text-center">
-                <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100" style="font-family: 'Inter', sans-serif;">Build Your Professional Carrer With Shah Skill Academy
-                </h1>
-                <h3 class="mb-3 text-white" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 1.1px; font-family: 'Inter', sans-serif;">Advance Your Career with <span id="typed-skills"></span></h3>
-                <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
-                <a href="#" class="btn btn-secondary" style="font-family: 'Inter', sans-serif;">Expert Training in Accounting</a>
-                </p>
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-
-  </div> <!-- /hero -->
 
   <div class="untree_co-section bg-light">
     <div class="container"> 
       <section class="courses-section">
-        <div class="section-title mb-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+        <div class="section-title mb-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
           <h2 class="line-bottom mb-4 text-center">The Right Course For You</h2>
         </div>
         <p data-aos="fade-up" data-aos-delay="100" class="text-center mb-4">
@@ -357,7 +448,7 @@
 
         <div class="courses-container">
           <!-- First Card -->
-          <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="course-card" data-aos="fade-up" data-aos-delay="200">
             <div class="course-image caregiving">
               <div class="certificate-badge">CERTIFICATE</div>
               <div class="level-badge">BEGINNER</div>
@@ -380,12 +471,12 @@
           </div>
 
           <!-- Second Card -->
-          <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="course-card" data-aos="fade-up" data-aos-delay="400">
             <div class="course-image hipaa">
               <div class="certificate-badge">CERTIFICATE</div>
               <div class="level-badge">INTERMEDIATE</div>
             </div>
-            <div class="course-content">
+            <div class="course-content" >
               <div class="course-category">Enterprise Software</div>
               <h3 class="course-title">SAP</h3>
               <p class="course-description">Systems Applications and Products in Data Processing, is a globally recognized and widely-used Enterprise Resource Planning (ERP) software. </p>
@@ -403,7 +494,7 @@
           </div>
 
           <!-- Third Card -->
-          <div class="course-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="course-card" data-aos="fade-up" data-aos-delay="600">
             <div class="course-image medication">
               <div class="certificate-badge">CERTIFICATE</div>
               <div class="level-badge">ADVANCED</div>
@@ -437,10 +528,10 @@
     </div>
   </div>
 
-  <div class="services-section bg-white" data-aos="fade-in" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-background="true">
+  <div class="services-section bg-white mt-6" data-aos="fade-in" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-background="true">
     <div class="container">
       <div class="row justify-content-between">
-        <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="col-lg-5 mb-5 mb-lg-0">
 
           <div class="section-title mb-3" data-aos="fade-up" data-aos-delay="0">
             <h2 class="line-bottom mb-4">Become an Instructor</h2>
@@ -455,8 +546,22 @@
           </ul>
 
           <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Get Started</a></p>
-
+          <div class="row count-numbers mt-5 mb-5">
+            <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+              <span class="counter d-block"><span data-number="12023">0</span><span>+</span></span>
+              <span class="caption-2">No. Students</span>
+            </div>
+            <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <span class="counter d-block"><span data-number="49">0</span><span></span></span>
+              <span class="caption-2">No. Teachers</span>
+            </div>
+            <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <span class="counter d-block"><span data-number="12">0</span><span></span></span>
+              <span class="caption-2">No. Awards</span>
+            </div>
+          </div>
         </div>
+        
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
           <figure class="img-wrap-2">
             <img src="images/teacher-min.jpg" alt="Image" class="img-fluid">
@@ -468,7 +573,7 @@
     </div>
   </div> <!--  Instructor -->
 
-  <div class="untree_co-section bg-light">
+  <div class="untree_co-section what-to-expect-section bg-light">
     <div class="container"> 
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
@@ -525,55 +630,8 @@
 </div>
  <!-- /section -->
 
-
-  <div class="untree_co-section">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-5 mb-5">
-          <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
-          <p data-aos="fade-up" data-aos-delay="100">
-            At Shah Skill Academy, we are committed to shaping future leaders in the finance and accounting industry through our specialized training programs. Our primary focus is on providing exceptional courses in SAP-FICO, Tally ERP 9, Advanced Excel, and various other accounting disciplines. We understand the crucial role these skills play in securing a successful future career, and we are here to guide you every step of the way.
-          </p>
-          <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
-            <li>Specialized training in finance and accounting</li>
-            <li>Expert courses in SAP-FICO, Tally ERP 9, and Advanced Excel</li>
-            <li>Guidance for a successful future career</li>
-          </ul>
-
-          <div class="row count-numbers mb-5">
-            <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-              <span class="counter d-block"><span data-number="12023">0</span><span>+</span></span>
-              <span class="caption-2">No. Students</span>
-            </div>
-            <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <span class="counter d-block"><span data-number="49">0</span><span></span></span>
-              <span class="caption-2">No. Teachers</span>
-            </div>
-            <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <span class="counter d-block"><span data-number="12">0</span><span></span></span>
-              <span class="caption-2">No. Awards</span>
-            </div>
-          </div>
-
-          <p data-aos="fade-up" data-aos-delay="200">
-            <a href="#" class="btn btn-primary mr-1">Admission</a>
-            <a href="#" class="btn btn-outline-primary">Learn More</a>
-          </p>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="bg-1"></div>
-          <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
-            <span class="play-wrap"><span class="icon-play"></span></span>
-            <img src="images/img-school-4-min.jpg" alt="Image" class="img-fluid rounded">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div> <!-- /section -->
-
-
   
-  <div class="untree_co-section bg-light">
+  <div class="untree_co-section">
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
@@ -613,7 +671,7 @@
   </div> <!-- /.untree_co-section -->
 
 
-  <div class="untree_co-section">
+  <div class="untree_co-section bg-light>
     <div class="container">
       <div class="row">
         <div class="col-lg-7 text-center mx-auto">
@@ -666,10 +724,10 @@
   </div>
 
 
-  <div class="untree_co-section bg-light">
+  <div class="untree_co-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 mr-auto mb-5 mb-lg-0"  data-aos="fade-up" data-aos-delay="0">
+        <div class="col-lg-5 mr-auto mb-5 mb-lg-0 why-section"  data-aos="fade-up" data-aos-delay="0">
           <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid">
         </div>
         <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -744,25 +802,58 @@
     </div>
   </div> <!-- /.untree_co-section -->
 
-  <div class="untree_co-section">
-    <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-lg-7 text-center">
-          <h2 class="line-bottom text-center mb-3">Subscribe to Our Newsletter</h2>
-          <p class="mb-4">Stay updated with the latest courses and offers. Subscribe now!</p>
-        </div>
+  <!-- Newsletter / Inquiry Section -->
+<div class="untree_co-section newsletter-section bg-light">
+  <div class="container" style="background: url(./images/internet-lessons-searching-remote-university-educational-programs-online-classes-website-high-school/20944332.jpg);">
+    <div class=" row  align-items-center bg-light">
+      
+      <!-- Left Content -->
+      <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="line-bottom mb-4">Inquire About Our Courses</h2>
+        <p>
+          Sign up with your primary email to receive our skill development tips and updates on our latest professional courses.
+        </p>
+        <ul class="list-unstyled ul-check primary mt-4">
+          <li>Expert-led courses with practical industry experience</li>
+          <li>Flexible learning schedules to fit your lifestyle</li>
+          <li>Certificate upon completion with job placement support</li>
+        </ul>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 col-sm-10">
-          <form class="d-flex flex-column flex-sm-row align-items-center bg-white p-3 shadow-sm rounded">
-            <input type="email" class="form-control mb-2 mb-sm-0 mr-sm-2 border-0" placeholder="Enter your email to get course updates" required>
-            <button type="submit" class="btn btn-primary px-4 btn-hover-animate">Subscribe Now</button>
+
+      <!-- Right Form -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 p-lg-5 bg-white rounded shadow-sm">
+          <form id="newsletterForm">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="email" class="form-control" placeholder="Email Address" required>
+            </div>
+            <div class="form-group mb-4">
+              <select class="form-control" required>
+                <option value="">Select Course Interest</option>
+                <option value="advance-excel">Advance Excel</option>
+                <option value="tally-prime">Tally Prime</option>
+                <option value="zoho-books">ZOHO Books</option>
+                <option value="gst">GST</option>
+                <option value="busy-software">Busy Software</option>
+                <option value="power-bi">Power BI</option>
+                <option value="sap-fico">SAP S4HANA FICO</option>
+                <option value="sap-mm">SAP S4HANA MM</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-block w-100">
+              Submit Inquiry
+            </button>
           </form>
         </div>
       </div>
+
     </div>
   </div>
-  
+</div>
+
   <div class="site-footer">
     <div class="container">
       <div class="row">
@@ -828,7 +919,7 @@
       <div class="row mt-2">
         <div class="col-12 text-center">
           <p class="copyright">
-            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with ❤️ by Shah Skill Academy.
+            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with by Shah Skill Academy.
           </p>
         </div>
       </div>
@@ -853,16 +944,51 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/custom.js"></script>
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Typed('#typed-skills', {
+          strings: ['SAP-FICO', 'Tally ERP 9', 'Advanced Excel', 'Business Analytics'],
+          typeSpeed: 50,
+          backSpeed: 60,
+          backDelay: 1500,
+          loop: true
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800 });
+    </script>    
+    </script>
+    
+<script>
+  document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const course = this.querySelector('select').value;
+    
+    if (!name || !email || !course) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    alert(`Thank you ${name}! We've received your inquiry for ${this.querySelector('select option:checked').textContent}. Our team will contact you soon with course details.`);
+    this.reset();
+  });
+  </script>
+  
+    
     <script>
 
-  var typedMain = new Typed("#typed-skills", {
-    strings: ["SAP-FICO", "Tally ERP 9", "Advanced Excel"],
-    typeSpeed: 60,
-    backSpeed: 40,
-    backDelay: 1200,
-    loop: true
-  });
+  // var typedMain = new Typed("#typed-skills", {
+  //   strings: ["SAP-FICO", "Tally ERP 9", "Advanced Excel"],
+  //   typeSpeed: 60,
+  //   backSpeed: 40,
+  //   backDelay: 1200,
+  //   loop: true
+  // });
 
         // Course card navigation functionality
         const cards = document.querySelectorAll('.course-card');

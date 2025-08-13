@@ -293,10 +293,15 @@ h4,
   margin-left: -20px;
 }
 
+
+
 @media (max-width: 991.98px) {
   .gutter-v1 {
     margin-left: -15px;
     margin-right: -15px;
+  }
+  .untree_co-section .row .newsletter-section{
+    flex-direction: column;
   }
 }
 
@@ -503,7 +508,6 @@ h4,
 }
 
 .site-nav {
-  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -1216,7 +1220,7 @@ h4,
 
 .untree_co-hero .heading,
 .bg-img .heading {
-  font-size: 2.8125rem;
+  font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -1270,7 +1274,7 @@ h4,
 }
 
 .untree_co-section {
-  padding: 100px 0;
+  padding: 3rem 0;
   position: relative;
 }
 
@@ -1279,6 +1283,7 @@ h4,
     text-align: center;
     margin-bottom: 1rem;
   }
+
 
   .video-wrap img {
     max-width: 100%;
@@ -1301,9 +1306,41 @@ h4,
   color: #000000;
 }
 
+
 @media (max-width: 991.98px) {
   .untree_co-section .heading {
     font-size: 1.25rem;
+  }
+
+  .untree_co-section .row {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 770px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .untree_co-section .why-section {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+  }
+
+  .untree_co-hero .container {
+    text-align: center;
   }
 }
 
@@ -1531,7 +1568,7 @@ h4,
   position: absolute;
   width: 150%;
   height: 70%;
-  right: -100%;
+  left: -100%;
   top: -40px;
   z-index: -1;
   background: rgba(19, 106, 213, 0.2);
@@ -3152,9 +3189,10 @@ button[style*="Buy Now"]:hover {
   }
 
   .course-card {
-    max-width: 100%;
+    max-width: 300px
   }
 }
+
 
 @media (max-width: 768px) {
   .courses-section {
@@ -3178,7 +3216,7 @@ button[style*="Buy Now"]:hover {
   }
 
   .course-card {
-    max-width: 280px;
+    max-width: 350px;
     /* Smaller max-width for mobile */
     margin: 0 auto;
     padding: 0;

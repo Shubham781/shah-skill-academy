@@ -39,110 +39,90 @@
   </div>
 
   <nav class="site-nav mb-5">
-    <div class="pb-2 top-bar mb-3">
-      <div class="container">
-        <div class="row align-items-center">
-
-          <div class="col-6 col-lg-9">
-            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
-          </div>
-
-          <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
-              <span class="icon-lock"></span>
-              Log In
-            </a>
-            <a href="register.html" class="small">
-              <span class="icon-person"></span>
-              Register
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
     <div class="sticky-nav js-sticky-header">
-      <div class="container position-relative">
-        <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">
-            <img src="images/logo1.png" alt="Logo Icon" class="logo-icon logo-default" style="height: 45px; object-fit: cover; object-position: center; display: block;">
-            <img src="images/1000001414.png" alt="Logo Icon" class="logo-icon logo-sticky" style="height: 45px; object-fit: cover; object-position: center; display: none;">
-          </a>
+        <div class="container position-relative">
+            <div class="site-navigation">
+                
+                <!-- Single unified navigation row -->
+                <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
+                    
+                    <!-- Logo - Left side -->
+                    <div class="nav-logo">
+                        <!-- Desktop Logo -->
+                        <a href="index.html" class="desktop-nav-content">
+                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
+                        </a>
+                        <!-- Mobile Logo -->
+                        <a href="index.html" class="mobile-nav-content">
+                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
+                        </a>
+                    </div>
 
-              <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-                <li><a href="index.html">Home</a></li>
-                <li class="has-children">
-                  <a href="courses.html">Courses</a>
-                  <ul class="dropdown">
-                    <li><a href="pams.html">PAMS</a></li>
-                    <li class="has-children">
-                      <a href="#">SAP</a>
-                      <ul class="dropdown">
-                        <li><a href="sap-fico.html">SAP-FICO</a></li>
-                        <li><a href="sap-hana.html">SAP-HANA</a></li>
-                        <li><a href="sap-mm.html">SAP-MM</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                    <li class="has-children">
-                      <a href="#">Others</a>
-                      <ul class="dropdown">
-                        <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                        <li><a href="advance-excel.html">Advance Excel</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-            </li>
-            <!-- <li><a href="staff.html">Recruitment</a></li> -->
-            <li><a href="news.html">Blog</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+                    <!-- Desktop Menu - Center -->
+                    <div class="nav-menu desktop-nav-content">
+                        <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="has-children active">
+                                <a href="courses.html">Courses</a>
+                                <ul class="dropdown">
+                                    <li><a href="pams.html">PAMS</a></li>
+                                    <li class="has-children active">
+                                        <a href="#">SAP</a>
+                                        <ul class="dropdown">
+                                            <li><a href="sap-fico.html">SAP-FICO</a></li>
+                                            <li><a href="sap-hana.html">SAP-HANA</a></li>
+                                            <li><a href="sap-mm.html">SAP-MM</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="business-analytics.html">Business Analytics</a></li>
+                                    <li class="has-children">
+                                        <a href="#">Others</a>
+                                        <ul class="dropdown">
+                                            <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+                                            <li><a href="advance-excel.html">Advance Excel</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
 
-          <a href="./register.html" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
+                    <!-- Right side - Button and Mobile Menu -->
+                    <div class="nav-actions d-flex align-items-center">
+                        <!-- Enroll Button -->
+                        <a href="./register.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
+                        
+                        <!-- Mobile Menu Toggle -->
+                        <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" 
+                           data-toggle="collapse" data-target="#main-navbar">
+                            <span></span>
+                        </a>
+                    </div>
 
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
-
+                </div>
+                
+            </div>
         </div>
-      </div>
     </div>
-  </nav>
+</nav>
 
-  <div class="untree_co-hero overlay" style="background-image: linear-gradient(135deg, #1737F1 0%, #3083F8 100%);">
-
-
+  <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
+    url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
     <div class="container">
       <div class="row align-items-center justify-content-center">
-
-        <div class="col-12">
-
-          <div class="row justify-content-center ">
-
-            <div class="col-lg-6 text-center ">
-              <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up" data-aos-delay="0" class="caption mb-4 d-inline-block">Watch the video</a>
-
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Take the First Step to Success</h1>
-              <h3 class="mb-3 text-white" data-aos="fade-up" data-aos-delay="200">SAP-FICO, Tally ERP 9, Advance Excel</h3>
-              <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
-              <a href="#" class="btn btn-secondary">Expert Training in Accounting</a>
-              </p>
-
-            </div>
-
-
-          </div>
-
+        <div class="col-lg-7 text-center">
+          <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">SAP Training Programs</h1>
+          <h3 class="mb-3 text-white" data-aos="fade-up" data-aos-delay="200">Master Enterprise Resource Planning with Expert SAP Training</h3>
+          <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
+          <a href="#" class="btn btn-secondary">Explore SAP Courses</a>
+          </p>
         </div>
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-
-  </div> <!-- /hero -->
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content -->
   <div class="untree_co-section">
