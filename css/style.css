@@ -3674,3 +3674,160 @@ span#typed-skills {
     margin-bottom: 8px !important;
   }
 }
+/* --------------------------
+   Top-bar & mobile nav fixes
+   Cleaned & non-conflicting
+   -------------------------- */
+
+/* MOBILE: center Enroll button and avoid overlap with burger */
+@media (max-width: 989.98px) {
+  .site-nav .nav-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 16px;
+    padding-right: 72px; /* reserve space for burger - adjust if needed */
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .site-nav .nav-actions > a.btn {
+    margin: 0;
+    order: 1;
+    white-space: nowrap;
+    max-width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .site-nav .nav-actions .burger,
+  .site-nav .nav-actions .navbar-toggler {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+}
+
+/* Hide top-bar for viewports smaller than 990px */
+@media (max-width: 989.98px) {
+  .top-bar {
+    display: none;
+  }
+}
+
+/* --------------------------
+   Icon font restoration (necessary if global '*' rule exists)
+   -------------------------- */
+/* Font Awesome solid/regular families */
+.fas, .fa, .fa-solid, .fa-regular, .far, .fal {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  speak: none !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Font Awesome brands */
+.fab, .fa-brands {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+}
+
+/* Unicons (if used) */
+.uil,
+[class*="uil-"] {
+  font-family: "Unicons" !important;
+  font-weight: normal !important;
+}
+
+/* --------------------------
+   Top-bar default colors (non-forcing)
+   -------------------------- */
+/* default text / icon color on top-bar; no !important so hover can override */
+.top-bar__left a,
+.top-bar__left i,
+.top-bar__right .social-icon i {
+  color: #333;
+  opacity: 1;
+  transition: color 0.18s ease, transform 0.12s ease;
+}
+
+/* keep top-bar text and icon spacing natural */
+.top-bar__left,
+.top-bar__left span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------
+   Hover actions
+   -------------------------- */
+
+/* Text hover (address / email / phone) -> site blue */
+.top-bar__left a:hover,
+.top-bar__left a:focus,
+.top-bar__left span:hover,
+.top-bar__left span:focus {
+  color: #136ad5;
+  text-decoration: none;
+}
+
+/* Make the icon inside hovered item also blue */
+.top-bar__left span:hover i,
+.top-bar__left a:hover i {
+  color: #136ad5;
+}
+
+/* Social icons: default anchor styling */
+.top-bar__right .social-icon {
+  color: #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: color 0.18s ease, transform 0.12s ease;
+}
+
+/* subtle lift on hover */
+.top-bar__right .social-icon:hover {
+  transform: translateY(-1px);
+}
+
+/* Brand color hover rules — these use !important to reliably show brand color */
+.top-bar__right .social-icon:hover i.fa-instagram,
+.top-bar__right .social-icon:focus i.fa-instagram,
+.top-bar__right .social-icon:hover i.fab.fa-instagram {
+  color: #E4405F !important;   /* Instagram */
+}
+
+.top-bar__right .social-icon:hover i.fa-youtube,
+.top-bar__right .social-icon:focus i.fa-youtube,
+.top-bar__right .social-icon:hover i.fab.fa-youtube {
+  color: #FF0000 !important;   /* YouTube */
+}
+
+.top-bar__right .social-icon:hover i.fa-facebook-f,
+.top-bar__right .social-icon:focus i.fa-facebook-f,
+.top-bar__right .social-icon:hover i.fab.fa-facebook-f {
+  color: #1877F2 !important;   /* Facebook */
+}
+
+.top-bar__right .social-icon:hover i.fa-linkedin-in,
+.top-bar__right .social-icon:focus i.fa-linkedin-in,
+.top-bar__right .social-icon:hover i.fab.fa-linkedin-in {
+  color: #0A66C2 !important;   /* LinkedIn */
+}
+
+/* If icons are inline SVGs, make them follow text color */
+.top-bar__right .social-icon svg {
+  fill: currentColor;
+}
