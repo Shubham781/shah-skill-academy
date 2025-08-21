@@ -26,131 +26,456 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
   <style>
-    /* Your existing CSS styles */
-    body {
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        background-color: #ffffff;
-        overflow-x: hidden !important;
-        font-size: 1rem;
-        color: #666;
-    }
+  /* -------------------------
+   Base / existing styles
+   (preserved + minor cleanup)
+   ------------------------- */
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    overflow-x: hidden !important;
+    font-size: 1rem;
+    color: #666;
+}
 
-    .site-nav {
-        position: absolute;
-        width: 100%;
-        z-index: 9;
-        top: 0;
-    }
+/* NAV FIX for contact.html — match index behaviour and ensure nav sits above hero */
+.site-nav {
+  position: relative !important;   /* keep nav in normal flow (index uses relative) */
+  width: 100%;
+  z-index: 1100;                   /* higher than hero so links are clickable */
+  top: 0;
+}
 
-    .site-nav .site-navigation {
-        position: relative;
-    }
+/* make sure sticky-nav stays above hero when it becomes sticky */
+.sticky-nav, .site-nav .sticky-nav {
+  position: relative;
+  z-index: 1100;
+}
 
-    .site-nav .site-navigation .site-menu {
-        margin-bottom: 0;
-    }
+/* mobile/desktop toggle (keeps behaviour same as index) */
+@media (max-width: 989px) {
+  .desktop-nav-content { display: none !important; }
+  .mobile-nav-content { display: flex !important; }
+}
+@media (min-width: 990px) {
+  .desktop-nav-content { display: flex !important; }
+  .mobile-nav-content { display: none !important; }
+}
 
-    .site-nav .site-navigation .site-menu > li {
-        display: inline-block;
-    }
+.site-nav .site-navigation {
+    position: relative;
+}
 
-    .site-nav .site-navigation .site-menu > li > a {
-        font-size: 0.875rem;
-        padding: 0.625rem 0.9375rem;
-        display: inline-block;
-        text-decoration: none !important;
-        color: #000000;
-        position: relative;
-    }
+.site-nav .site-navigation .site-menu {
+    margin-bottom: 0;
+}
 
-    .site-nav .site-navigation .site-menu > li > a:hover {
-        color: #136ad5;
-    }
+.site-nav .site-navigation .site-menu > li {
+    display: inline-block;
+}
 
-    .site-nav .site-navigation .site-menu > li.active > a {
-        color: #136ad5;
-    }
+.site-nav .site-navigation .site-menu > li > a {
+    font-size: 0.875rem;
+    padding: 0.625rem 0.9375rem;
+    display: inline-block;
+    text-decoration: none !important;
+    color: #000000;
+    position: relative;
+}
 
-    .logo-sticky {
-        height: 60px;
-        max-width: 100%;
-        object-fit: contain;
-    }
+.site-nav .site-navigation .site-menu > li > a:hover {
+    color: #136ad5;
+}
 
-    .mobile-logo {
-        height: 5.5rem;
-        max-width: 100%;
-        object-fit: contain;
-    }
+.site-nav .site-navigation .site-menu > li.active > a {
+    color: #136ad5;
+}
 
+.logo-sticky {
+    height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.mobile-logo {
+    height: 5.5rem;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Book button layout */
+.btn-book {
+    position: absolute;
+    right: 15px;
+    margin-top: -2px;
+}
+
+@media (max-width: 991.98px) {
     .btn-book {
-        position: absolute;
-        right: 15px;
-        margin-top: -2px;
+        position: static !important;
+        right: auto !important;
+        margin-top: 0 !important;
     }
+}
 
-    @media (max-width: 991.98px) {
-        .btn-book {
-            position: static !important;
-            right: auto !important;
-            margin-top: 0 !important;
-        }
-    }
+/* Generic button base */
+.btn {
+    padding-top: 0.9375rem;
+    padding-bottom: 0.9375rem;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+    border-radius: 1.875rem;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05rem;
+}
 
-    .btn {
-        padding-top: 0.9375rem;
-        padding-bottom: 0.9375rem;
-        padding-left: 1.875rem;
-        padding-right: 1.875rem;
-        border-radius: 1.875rem;
-        font-size: 0.6875rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: .05rem;
-    }
+.btn.btn-secondary {
+    background: #00aeff;
+    border-color: #00aeff;
+}
 
-    .btn.btn-secondary {
-        background: #00aeff;
-        border-color: #00aeff;
-    }
+.btn.btn-secondary:hover {
+    border-color: #14b4ff;
+    background: #14b4ff;
+}
 
-    .btn.btn-secondary:hover {
-        border-color: #14b4ff;
-        background: #14b4ff;
-    }
+.btn.btn-sm {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
 
-    .btn.btn-sm {
-        padding-top: 0.625rem;
-        padding-bottom: 0.625rem;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
-    }
+/* Improved checkbox groups styling */
+.form-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
 
-    /* Improved checkbox groups styling */
-    .form-checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #2c3e50;
-    }
+.form-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
 
-    .form-checkbox-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-    }
+.form-checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
 
-    .form-checkbox-item input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-    }
+/* --------------------------------
+   Contact form visual update styles
+   (specific to #contactForm)
+   -------------------------------- */
+
+/* container tweak so form is centered and roomy */
+#contactForm {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 6px;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* header styling (if you already have heading above form this won't conflict) */
+.contact-page-title {
+  font-family: "Display Playfair", serif;
+  font-size: 48px;
+  line-height: 1.05;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #0b0b0b;
+}
+
+.contact-page-sub {
+  color: #4d4d4d;
+  margin-bottom: 1.4rem;
+  max-width: 640px;
+  font-size: 1rem;
+}
+
+/* auto-injected label style (JS places these above inputs) */
+.contact-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #222;
+  letter-spacing: .01em;
+}
+
+/* style for any existing <label> elements too to keep consistency */
+#contactForm label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* styling all form controls inside the contact form (inputs/selects/textarea) */
+#contactForm .form-control {
+  width: 100%;
+  border-radius: 12px;
+  background: #f3f3f3;
+  border: 1px solid #d4d2d2;
+  padding: 14px 18px;
+  font-size: 0.98rem;
+  height: 56px;
+  box-shadow: none;
+  color: #111;
+  transition: all .12s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+/* make smaller text inputs still look neat when inside two-column grid */
+#contactForm .col-md-6 .form-control {
+  height: 56px;
+}
+
+/* focused look */
+#contactForm .form-control:focus {
+  outline: none;
+  border-color: #bdbdbd;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+
+/* textarea (bigger) */
+#contactForm textarea.form-control {
+  min-height: 140px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  height: auto;
+  resize: vertical;
+}
+
+/* select arrow: subtle custom arrow using background gradients */
+#contactForm select.form-control {
+  padding-right: 44px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #666 50%),
+    linear-gradient(135deg, #666 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 14px) calc(1em + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Invalid / required indicator similar to screenshot:
+   the JS adds .error class on empty required fields; kept rule for :invalid too */
+#contactForm .form-control.error,
+#contactForm .form-control:invalid {
+  border-color: #007bff !important;
+}
+
+/* small helper/error text style */
+.contact-help {
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-top: 6px;
+}
+
+/* spacing helpers (preserve nice grid gutters) */
+.col-md-6.mb-3 { padding-right: .75rem; padding-left: .75rem; box-sizing: border-box; }
+.col-12.mb-3 { padding-right: .75rem; padding-left: .75rem; box-sizing: border-box; }
+
+/* Send button styling: lime rounded like screenshot */
+#contactForm .btn-primary,
+#contactForm input[type="submit"].btn-primary,
+#contactForm .btn.btn-primary {
+  display: block;
+  width: 72%;
+  max-width: 360px;
+  margin: 26px auto 10px;
+  border-radius: 30px;
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 1.02rem;
+  border: none;
+  cursor: pointer;
+  background: #007bff;   /* lime */
+  color: #ffffff;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.03);
+  text-align: center;
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+
+/* button hover */
+#contactForm .btn-primary:hover,
+#contactForm input[type="submit"].btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(16,24,40,0.06);
+}
+
+/* small note / privacy text style (keeps similar to screenshot) */
+.contact-privacy {
+  font-size: 0.95rem;
+  color: #2f2f2f;
+  max-width: 640px;
+  margin: 8px 0 18px 0;
+  line-height: 1.45;
+}
+
+/* center the button inside any text-center wrapper */
+.text-center .btn-primary { display: inline-block; }
+
+/* minor utility to keep required-field red icon spacing from overlapping */
+.input-with-icon { position: relative; }
+
+/* shrink mobile paddings and sizes for smaller screens */
+@media (max-width: 768px) {
+  .contact-page-title { font-size: 34px; }
+  #contactForm .form-control { height: 52px; padding: 12px 14px; }
+  #contactForm .btn-primary { width: 86%; }
+  .col-6 { padding-left: .6rem; padding-right: .6rem; } /* keep columns neat on small screens */
+  .contact-page-sub { font-size: 0.97rem; }
+}
+
+/* extra small screens */
+@media (max-width: 420px) {
+  #contactForm { padding-left: 8px; padding-right: 8px; }
+  .contact-page-title { font-size: 28px; }
+  .contact-page-sub { font-size: 0.95rem; }
+  #contactForm .btn-primary { width: 94%; }
+}
+
+/* Accessibility focus visible outline (for keyboard users) */
+#contactForm .form-control:focus-visible {
+  outline: 3px solid rgba(19,106,213,0.12);
+  outline-offset: 2px;
+}
+
+/* If you have extra elements like inline checkboxes left inside same form,
+   keep them visually consistent */
+#contactForm .form-checkbox-group { margin-bottom: 1rem; }
+
+/* Final gentle improvements: ensure form controls don't overflow their columns */
+#contactForm .row { margin-left: -0.75rem; margin-right: -0.75rem; }
+#contactForm .row > [class*="col-"] { padding-left: 0.75rem; padding-right: 0.75rem; }
+
+/* End of CSS */
+/* ===== Location / Map panel enhancements ===== */
+.contact-location-section .map-wrapper iframe { display:block; width:100%; height:100%; min-height:360px; }
+
+/* map-actions */
+.map-actions { color: #555; font-size: 0.95rem; margin-top: 8px; }
+.map-actions .map-link { color: #136ad5; text-decoration: none; margin-right: 10px; }
+.map-actions .map-link:hover { text-decoration: underline; }
+.map-actions .dot { color: #bbb; margin: 0 8px; }
+
+/* info-card container already present but we add tuned styles for this section */
+.contact-location-section .info-card { padding: 22px; border-radius: 12px; background: #ffffff; border: 1px solid #eef0f2; box-shadow: 0 6px 18px rgba(12,20,40,0.04); }
+
+/* info title */
+.info-title { font-size: 1.25rem; margin-bottom: 0.5rem; color: #111; }
+
+/* muted address text */
+.muted { color: #4b4b4b; font-size: 0.95rem; }
+
+/* contact list */
+.contact-list { list-style: none; padding: 0; margin: 0 0 12px 0; }
+.contact-list li { display: flex; align-items: center; gap: 10px; padding: 8px 0; color: #333; font-size: 0.95rem; }
+.contact-list li .icon { color: #136ad5; flex-shrink: 0; }
+
+/* visitor note */
+.visitor-note { font-size: 0.93rem; color: #566; margin-top: 8px; }
+
+/* small cards row inside info panel */
+.info-row { display:flex; gap:12px; margin-top:14px; flex-wrap:wrap; }
+.small-card { background:#fbfbfb; border:1px solid #f0f0f0; padding:10px 12px; border-radius:8px; min-width:120px; box-shadow: 0 2px 8px rgba(12,20,40,0.03); }
+.sc-title { font-size:0.78rem; color:#777; margin-bottom:4px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+.sc-value { font-size:0.98rem; color:#111; font-weight:700; }
+
+/* Buttons (reuse your .btn but add context-specific variations) */
+.info-actions .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:8px; font-weight:700; font-size:0.95rem; text-decoration:none; }
+.info-actions .btn-outline { background: transparent; border: 1px solid #d0d3d7; color: #111; }
+.info-actions .btn-primary { background: #dff24a; color: #0b0b0b; border: none; }
+.info-actions .btn-secondary { background: #136ad5; color: #fff; border: none; }
+
+/* responsiveness tweaks */
+@media (max-width: 991px) {
+  .contact-location-section .map-wrapper iframe { min-height: 300px; }
+  .info-card.h-100 { margin-top: 18px; }
+  .info-row { gap:8px; }
+}
+/* Contact section headings */
+.contact-header .sub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.contact-header .main-title {
+  font-family: "Display Playfair", serif;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #0b0b0b;
+}
+.contact-header .lead {
+  font-size: 1rem;
+  color: #4d4d4d;
+  margin-bottom: 1.6rem;
+}
+
+/* Right-side info cards */
+.info-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.info-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+.info-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+.info-card p {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Map wrapper */
+.map-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Info box next to map */
+.info-card.h-100 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
   </style>
 
   <title>Contact Us - Shah Skill Academy</title>
@@ -170,74 +495,60 @@
   
   <nav class="site-nav mb-5">
     <div class="sticky-nav js-sticky-header">
-        <div class="container position-relative">
-            <div class="site-navigation">
-                
-                <!-- Single unified navigation row -->
-                <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
-                    
-                    <!-- Logo - Left side -->
-                    <div class="nav-logo">
-                        <!-- Desktop Logo -->
-                        <a href="index.html" class="desktop-nav-content">
-                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
-                        </a>
-                        <!-- Mobile Logo -->
-                        <a href="index.html" class="mobile-nav-content">
-                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
-                        </a>
-                    </div>
-
-                    <!-- Desktop Menu - Center -->
-                    <div class="nav-menu desktop-nav-content">
-                        <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="has-children">
-                                <a href="courses.html">Courses</a>
-                                <ul class="dropdown">
-                                    <li><a href="pams.html">PAMS</a></li>
-                                    <li class="has-children">
-                                        <a href="#">SAP</a>
-                                        <ul class="dropdown">
-                                            <li><a href="sap-fico.html">SAP-FICO</a></li>
-                                            <li><a href="sap-hana.html">SAP-HANA</a></li>
-                                            <li><a href="sap-mm.html">SAP-MM</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Others</a>
-                                        <ul class="dropdown">
-                                            <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                                            <li><a href="advance-excel.html">Advance Excel</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li class="active"><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right side - Button and Mobile Menu -->
-                    <div class="nav-actions d-flex align-items-center">
-                        <!-- Enroll Button -->
-                        <a href="./register.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
-                        
-                        <!-- Mobile Menu Toggle -->
-                        <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" 
-                           data-toggle="collapse" data-target="#main-navbar">
-                            <span></span>
-                        </a>
-                    </div>
-
-                </div>
-                
+      <div class="container position-relative">
+        <div class="site-navigation">
+          <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
+            <div class="nav-logo">
+              <a href="index.html" class="desktop-nav-content">
+                <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
+              </a>
+              <a href="index.html" class="mobile-nav-content">
+                <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
+              </a>
             </div>
+  
+            <div class="nav-menu desktop-nav-content">
+              <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <a href="courses.html">Courses</a>
+                  <ul class="dropdown">
+                    <li><a href="pams.html">PAMS</a></li>
+                    <li class="has-children">
+                      <a href="#">SAP</a>
+                      <ul class="dropdown">
+                        <li><a href="sap-fico.html">SAP-FICO</a></li>
+                        <li><a href="sap-hana.html">SAP-HANA</a></li>
+                        <li><a href="sap-mm.html">SAP-MM</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="business-analytics.html">Business Analytics</a></li>
+                    <li class="has-children">
+                      <a href="#">Others</a>
+                      <ul class="dropdown">
+                        <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+                        <li><a href="advance-excel.html">Advance Excel</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+  
+            <div class="nav-actions d-flex align-items-center">
+              <a href="./register.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
+              <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</nav>
+  </nav>
   
   <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
     url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
@@ -246,9 +557,9 @@
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Contact Us</h1>
+              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Get in touch </h1>
               <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <p>Get in touch with us for any questions about our courses, enrollment, or training programs. We're here to help you succeed in your career journey.</p>
+                <p>Want to get in touch? We'd love to hear from you. Here's how you can reach us.</p>
               </div>
             </div>
 
@@ -263,45 +574,21 @@
 
 
 
-  <div class="untree_co-section">
-    <div class="container">
-
-      <div class="row mb-5">
-        <div class="col-lg-4 mb-5 order-2 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-          <div class="contact-info">
-
-            <div class="address mt-4">
-              <i class="icon-room"></i>
-              <h4 class="mb-2">Location:</h4>
-              <p>Shimla Bypass Road, Van Vihar, Dehradun</p>
-            </div>
-
-            <div class="open-hours mt-4">
-              <i class="icon-clock-o"></i>
-              <h4 class="mb-2">Open Hours:</h4>
-              <p>
-                Sunday-Friday:<br>
-                11:00 AM - 2300 PM
-              </p>
-            </div>
-
-            <div class="email mt-4">
-              <i class="icon-envelope"></i>
-              <h4 class="mb-2">Email:</h4>
-              <p>shahskillacademy@gmail.com</p>
-            </div>
-
-            <div class="phone mt-4">
-              <i class="icon-phone"></i>
-              <h4 class="mb-2">Call:</h4>
-              <p>+91 63953 81399</p>
-            </div>
-
-          </div>
+  <div class="container py-5">
+    <div class="row">
+      <!-- Left column: Heading + Form (keep existing fields) -->
+      <div class="col-lg-7 order-1" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-header mb-4">
+          <span class="sub">CONTACT US</span>
+          <h2 class="main-title">Get in touch with sales</h2>
+          <p class="lead">
+            We’ll help you find the right solutions and pricing for your business. Fill out the form below and our team will get back to you shortly.
+          </p>
         </div>
-        <div class="col-lg-7 mr-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="#" id="contactForm">
-            <div class="row">
+  
+        <!-- KEEP YOUR EXISTING FORM CONTENT HERE -->
+        <form id="contactForm">
+           <div class="row">
               <div class="col-6 mb-3">
                 <input type="text" name="fullName" class="form-control" placeholder="Your Name" required>
               </div>
@@ -374,13 +661,56 @@
                 <input type="submit" value="Send Message" class="btn btn-primary">
               </div>
             </div>
-          </form>
+        </form>
+      </div>
+  
+      <!-- Right column: Clean info blocks -->
+      <div class="col-lg-5 order-2" data-aos="fade-up" data-aos-delay="300">
+        <div class="info-card mb-4">
+          <h3>Check Out Courses on Our App</h3>
+          <p>
+            Discover and learn anytime, anywhere. Browse our wide range of courses directly from your mobile device.
+          </p>
+          <h4 class="mt-3">Download Our App</h4>
+          <p>
+            Start learning on the go and track your progress with ease.
+          </p>
+        </div>
+  
+        <div class="info-card">
+          <h3>Talk with us</h3>
+          <p>
+            Give us a call at <strong>+91 63953 81399</strong><br>
+            Available Mon-Sat, 10am-9pm IST
+          </p>
         </div>
       </div>
-
-      
     </div>
-  </div> <!-- /.untree_co-section -->
+  
+    <!-- Map + Address Section -->
+    <div class="row mt-5">
+      <div class="col-lg-7">
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.1234567890!2d78.0322!3d30.3165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929123456789%3A0xabcdef123456789!2sDehradun!5e0!3m2!1sen!2sin!4v1691234567890"
+            width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="info-card h-100">
+          <h3>Our Location</h3>
+          <p>
+            Shimla Bypass Road, Van Vihar,<br>
+            Dehradun, Uttarakhand, India
+          </p>
+          <p><strong>Phone:</strong> +91 63953 81399</p>
+          <p><strong>Email:</strong> shahskillacademy@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <div class="site-footer">
     <div class="container">
@@ -507,7 +837,87 @@
         });
       });
     </script>
-
+<script>
+  /* Dynamically add labels above inputs so we don't need to edit the markup.
+     Also add simple client-side required-field styling on blur/submit to show red borders.
+  */
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+  
+    // Helper: prettify name/placeholder into label text
+    function makeLabelText(el) {
+      // Prefer explicit data-label attribute if set
+      if (el.dataset && el.dataset.label) return el.dataset.label;
+  
+      // If element already has placeholder, use it for label (but trim)
+      if (el.placeholder && el.placeholder.trim().length > 0) {
+        return el.placeholder.trim();
+      }
+  
+      // Otherwise use name/id and convert camel/underscores to Title Case
+      const base = el.name || el.id || '';
+      return base.replace(/[_\-]/g, ' ')
+                 .replace(/([a-z])([A-Z])/g, '$1 $2')
+                 .replace(/\b\w/g, ch => ch.toUpperCase())
+                 .trim();
+    }
+  
+    // Insert labels for inputs/selects/textareas that don't already have a .contact-label before them
+    const controls = form.querySelectorAll('input:not([type="hidden"]):not([type="submit"]), textarea, select');
+    controls.forEach(control => {
+      // do not add labels for plain checkboxes/radios (we want inline ones kept)
+      if (control.type === 'checkbox' || control.type === 'radio') return;
+  
+      // if a label already exists immediately before, skip
+      const prev = control.previousElementSibling;
+      if (prev && prev.classList && prev.classList.contains('contact-label')) return;
+  
+      const labelText = makeLabelText(control);
+      if (!labelText) return;
+  
+      const label = document.createElement('label');
+      label.className = 'contact-label';
+      label.innerText = labelText;
+      control.parentNode.insertBefore(label, control);
+    });
+  
+    // Simple validation visual feedback: add .error on blur if required and empty
+    function checkControl(control) {
+      if (!control.required) return;
+      const val = (control.value || '').trim();
+      if (val === '') {
+        control.classList.add('error');
+      } else {
+        control.classList.remove('error');
+      }
+    }
+  
+    controls.forEach(c => {
+      c.addEventListener('blur', function () { checkControl(c); });
+      c.addEventListener('input', function () { checkControl(c); });
+    });
+  
+    // On submit, show errors and prevent actual submit (if you already had backend, remove preventDefault)
+    form.addEventListener('submit', function (e) {
+      let hasError = false;
+      controls.forEach(c => {
+        checkControl(c);
+        if (c.required && (c.value || '').trim() === '') hasError = true;
+      });
+      if (hasError) {
+        e.preventDefault();
+        // scroll to first error for UX
+        const first = form.querySelector('.form-control.error');
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // allowed to submit — if you want to keep demo testing client-side, comment next line
+        // e.preventDefault(); // <-- remove/comment this if you want actual submission
+      }
+    });
+  });
+  </script>
+  
 </body>
 
 </html>
