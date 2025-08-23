@@ -2955,6 +2955,13 @@ button[style*="Buy Now"]:hover {
   transform: translateY(0);
 }
 
+/* the JS-controlled visible card */
+.course-card.active,
+.course-card.aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .course-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -3152,7 +3159,7 @@ button[style*="Buy Now"]:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, border-color 0.3s;
   font-size: 1rem;
   color: #7f8c8d;
   position: relative;
@@ -3169,16 +3176,16 @@ button[style*="Buy Now"]:hover {
 .nav-arrow:hover {
   background: #3498db;
   border-color: #3498db;
-  transform: scale(1.05);
-}
-
-.nav-arrow:hover .arrow-img {
-  filter: brightness(0) invert(1);
 }
 
 .nav-arrow:active {
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 480px) {
+  .course-image { height: 130px; }
+  .course-title { font-size: 0.95rem; }
+  .course-description { font-size: 0.78rem; }
 }
 
 /* Responsive Design */
@@ -3214,21 +3221,27 @@ button[style*="Buy Now"]:hover {
     position: relative;
     overflow: hidden;
   }
-
+  
+  /* keep cards rendered (don't use display:none) so AOS can detect/animate them */
   .course-card {
+    display: block;                 /* IMPORTANT: not none */
+    opacity: 0;                     /* hidden by default */
+    transform: translateX(40px);    /* slightly offset */
+    transition: opacity .45s ease, transform .45s ease;
     max-width: 350px;
-    /* Smaller max-width for mobile */
     margin: 0 auto;
     padding: 0;
-    display: none;
-    /* Hide all cards by default */
+    box-sizing: border-box;
   }
-
+  
+  /* the JS-controlled visible card */
   .course-card.active {
-    display: block;
-    /* Show only active card */
+    opacity: 1;
+    transform: translateX(0);
   }
-
+  
+  /* Slightly reduce image height for mobile (small tweak only) */
+  .course-image { height: 150px; }
   .course-content {
     padding: 12px;
   }
@@ -3379,102 +3392,43 @@ button[style*="Buy Now"]:hover {
   }
 }
 
-/* Navigation arrows - only visible on small screens */
+/* Navigation arrows - only visible on small screens and centered beside card */
 .navigation-arrows {
   display: none;
-  /* Hidden by default */
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 10;
-  pointer-events: none;
-  /* Allow clicks to pass through to cards */
 }
 
-.nav-arrow {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid #ecf0f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  color: #7f8c8d;
-  pointer-events: auto;
-  /* Re-enable clicks on arrows */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
+@media (max-width: 770px) {
+  .courses-container {
+    position: relative;
+  }
 
-.nav-arrow .arrow-img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-.nav-arrow:first-child {
-  left: 10px;
-}
-
-.nav-arrow:last-child {
-  right: 10px;
-}
-
-.nav-arrow:hover {
-  background: #3498db;
-  border-color: #3498db;
-  transform: scale(1.05);
-}
-
-.nav-arrow:hover .arrow-img {
-  filter: brightness(0) invert(1);
-}
-
-.nav-arrow:active {
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
-}
-
-/* Show navigation arrows only on small screens */
-@media (max-width: 750px) {
   .navigation-arrows {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+    z-index: 10;
   }
 
-  .courses-container {
-    position: relative;
-    /* For absolute positioning of arrows */
-  }
-}
-
-@media (max-width: 770px){
-  .feature [class^="uil uil-"]{
-    display: none;
-  }
-  .feature h3 {
-    font-size: 0.95rem;
-    margin: 1.2rem 0.5rem;
-    padding: 0 0.8rem;
+  .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+    left: 5px;
+    right: auto;
+    transition: background 0.3s, border-color 0.3s;
   }
 
-  .feature p {
-    padding: 0 0.8rem;
+  .nav-arrow:last-child {
+    left: auto;
+    right: 5px;
   }
-
-  .accordion-body .d-flex{
-    flex-direction: column !important;
-  }
-
 }
 
 /* Fix button overlapping on small screens */

@@ -21,169 +21,402 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    .logo-icon {
-      position: absolute;
-      top: -35px;
-      left: 0;
-      transition: opacity 0.3s ease;
+    /* REPLACED: use same CSS as sap-fico.html for navbar, hero and responsive behavior */
+    /* Your existing CSS styles */
+    body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        background-color: #ffffff;
+        overflow-x: hidden !important;
+        font-size: 1rem;
+        color: #666;
     }
 
-    .logo {
-      position: relative;
-      display: inline-block;
-      height: 45px;
-      width: auto;
+    .site-nav {
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+        top: 0;
     }
 
-    /* Responsive logo sizing */
-    @media (max-width: 1200px) {
-      .logo-icon {
-        height: 7rem !important;
-      }
-    }
-    @media (max-width: 992px) {
-      .logo-icon {
-        height: 6rem !important;
-      }
-    }
-    @media (max-width: 768px) {
-      .logo-icon {
-        height: 5rem !important;
-      }
-    }
-    @media (max-width: 576px) {
-      .logo-icon {
-        height: 4rem !important;
-      }
+    .site-nav .site-navigation {
+        position: relative;
     }
 
-    /* Mobile logo in sticky nav */
+    .site-nav .site-navigation .site-menu {
+        margin-bottom: 0;
+    }
+
+    .site-nav .site-navigation .site-menu > li {
+        display: inline-block;
+    }
+
+    .site-nav .site-navigation .site-menu > li > a {
+        font-size: 0.875rem;
+        padding: 0.625rem 0.9375rem;
+        display: inline-block;
+        text-decoration: none !important;
+        color: #000000;
+        position: relative;
+    }
+
+    .site-nav .site-navigation .site-menu > li > a:hover {
+        color: #136ad5;
+    }
+
+    .site-nav .site-navigation .site-menu > li.active > a {
+        color: #136ad5;
+    }
+
+    .logo-sticky {
+        height: 60px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
     .mobile-logo {
-      display: none;
-    }
-    @media (max-width: 989px) {
-      .mobile-logo {
-        display: block;
         height: 5.5rem;
         max-width: 100%;
         object-fit: contain;
-      }
     }
 
-    /* Remove border bottom from top bar */
-    .top-bar {
-      border-bottom: none !important;
-    }
-    /* Hide top bar on screens smaller than 990px */
-    @media (max-width: 989px) {
-      .top-bar {
-        display: none !important;
-      }
+    .btn-book {
+        position: absolute;
+        right: 15px;
+        margin-top: -2px;
     }
 
-    /* Sticky logo switching styles */
-    .logo-sticky {
-      display: none !important;
-    }
-    .site-nav.is-sticky .logo-default {
-      display: none !important;
-    }
-    .site-nav.is-sticky .logo-sticky {
-      display: block !important;
-      height: 3.5rem !important;
-      max-height: 48px;
-      margin: 0 0 0 10px;
-      object-fit: contain;
-      vertical-align: middle;
-    }
-    .js-sticky-header.is-sticky .logo-sticky {
-      display: block !important;
-      height: 3.5rem !important;
-      max-height: 48px;
-      margin: 0 0 0 10px;
-      object-fit: contain;
-      vertical-align: middle;
+    @media (max-width: 991.98px) {
+        .btn-book {
+            position: static !important;
+            right: auto !important;
+            margin-top: 0 !important;
+        }
     }
 
-    /* Hide original Enroll Now and hamburger on mobile */
-    @media (max-width: 989px) {
-      .btn-book.menu-absolute,
-      .site-navigation > .burger {
-        display: none !important;
-      }
+    .btn {
+        padding-top: 0.9375rem;
+        padding-bottom: 0.9375rem;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+        border-radius: 1.875rem;
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .05rem;
     }
 
-    /* Multi-level dropdown: show submenus to the right */
+    .btn.btn-secondary {
+        background: #00aeff;
+        border-color: #00aeff;
+    }
+
+    .btn.btn-secondary:hover {
+        border-color: #14b4ff;
+        background: #14b4ff;
+    }
+
+    .btn.btn-sm {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+    }
+
+    /* Burger menu styles */
+    .burger {
+        width: 28px;
+        height: 32px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .burger.light:before,
+    .burger.light span,
+    .burger.light:after {
+        background: #ffffff;
+    }
+
+    .burger:before,
+    .burger span,
+    .burger:after {
+        width: 100%;
+        height: 2px;
+        display: block;
+        background: #000;
+        border-radius: 2px;
+        position: absolute;
+        opacity: 1;
+    }
+
+    .burger:before {
+        top: 4px;
+        content: "";
+    }
+
+    .burger span {
+        top: 15px;
+    }
+
+    .burger:after {
+        top: 26px;
+        content: "";
+    }
+
+    /* Dropdown styles */
+    .site-nav .site-navigation .site-menu .has-children {
+        position: relative;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown {
+        visibility: hidden;
+        opacity: 0;
+        top: 100%;
+        z-index: 999;
+        position: absolute;
+        text-align: left;
+        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        margin-top: 20px;
+        margin-left: 0px;
+        background: #ffffff;
+        transition: 0.2s 0s;
+        min-width: 180px;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
+        padding: 5px 20px;
+        display: block;
+        color: #000000;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
+        color: #136ad5;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
+        transition-delay: 0s;
+        margin-top: 0px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Multi-level dropdown */
     .site-menu .dropdown .has-children > .dropdown {
-      left: 100%;
-      top: 0;
-      margin-top: 0;
-      margin-left: 0;
-      position: absolute;
-      min-width: 200px;
-      display: none;
+        left: 100%;
+        top: 0;
+        margin-top: 0;
+        margin-left: 0;
+        position: absolute;
+        min-width: 200px;
+        display: none;
     }
-    .site-menu .dropdown .has-children:hover > .dropdown,
-    .site-menu .dropdown .has-children:focus-within > .dropdown {
+
+    .site-menu .dropdown .has-children:hover > .dropdown {
+        display: block;
+    }
+
+    /* Improved dropdown hover behavior */
+    .site-nav .site-navigation .site-menu .has-children .dropdown {
+        visibility: hidden;
+        opacity: 0;
+        top: 100%;
+        z-index: 999;
+        position: absolute;
+        text-align: left;
+        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        margin-top: 20px;
+        margin-left: 0px;
+        background: #ffffff;
+        transition: 0.2s 0s;
+        min-width: 180px;
+        border-radius: 8px;
+    }
+
+    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
+        transition-delay: 0s;
+        margin-top: 0px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Add padding to prevent dropdown from disappearing */
+    .site-nav .site-navigation .site-menu .has-children .dropdown::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        height: 20px;
+    }
+
+    /* Multi-level dropdown improvements */
+    .site-menu .dropdown .has-children > .dropdown::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 20px;
+        height: 100%;
+    }
+
+    /* Sticky navigation styles */
+    .sticky-nav {
+        transition: .3s all ease;
+        background: white;
+        box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1rem);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sticky-nav .site-menu > li > a {
+        color: #000000 !important;
+    }
+
+    .sticky-nav .site-menu > li > a:hover,
+    .sticky-nav .site-menu > li > a.active {
+        color: #136ad5 !important;
+    }
+
+    .sticky-nav .burger:before,
+    .sticky-nav .burger span,
+    .sticky-nav .burger:after {
+        background: #000000;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 989px) {
+        .desktop-nav-content {
+            display: none !important;
+        }
+        
+        .mobile-nav-content {
+            display: flex !important;
+        }
+    }
+
+    @media (min-width: 990px) {
+        .desktop-nav-content {
+            display: flex !important;
+        }
+        
+        .mobile-nav-content {
+            display: none !important;
+        }
+    }
+
+    .untree_co-hero {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 60px 0 90px 0;
+      display: flex;
+      align-items: center;
+      min-height: 320px;
+    }
+    .untree_co-hero .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+    .untree_co-hero .row {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    .untree_co-hero .heading {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .untree_co-hero .desc {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 600px;
+      margin: 0 auto 1rem auto;
+    }
+    .top-bar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      color: #666;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      font-family: 'Inter', sans-serif !important;
+    }
+    .top-bar__left {
+      justify-content: center;
+      margin: auto;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+    }
+    .top-bar__left i {
+      margin-right: 8px;
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
+      color: #136ad5;
+    }
+    .top-bar__right .social-icon {
+      margin-left: 1rem;
+      color: #666;
+      transition: color 0.3s;
+    }
+    .top-bar__left span {
+      margin-right: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .top-bar__left a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .top-bar__left a:hover,
+    .top-bar__left a:focus {
+      color: #136ad5;
+    }
+    .top-bar__right .social-icon:hover i { filter: none; }
+    .top-bar__right .fa-instagram:hover  { color: #E4405F; }
+    .top-bar__right .fa-youtube:hover    { color: #FF0000; }
+    .top-bar__right .fa-facebook:hover   { color: #3b5998; }
+    .top-bar__right .fa-linkedin:hover   { color: #0077B5; }
+    @media (max-width: 991.98px) {
+      .top-bar { display: none; }
+    }
+    .site-nav {
+      position: relative !important;
+      width: 100%;
+      z-index: 9;
+      top: 0;
+    }
+    .logo-sticky {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
       display: block;
     }
-    .site-menu .dropdown .has-children {
-      position: relative;
-    }
-
-    /* Responsive hero text sizes */
-    @media (max-width: 769px) and (min-width: 470px) {
-      .untree_co-hero .heading {
-        font-size: 1.5rem !important;
-      }
-      .untree_co-hero .caption {
-        font-size: 0.8rem !important;
-      }
-      .untree_co-hero h3 {
-        font-size: 1.4rem !important;
-      }
-    }
-    @media (max-width: 469px) {
-      .untree_co-hero .heading {
-        font-size: 1.4rem !important;
-      }
-      .untree_co-hero .caption {
-        font-size: 0.6rem !important;
-      }
-      .untree_co-hero h3 {
-        font-size: 1.1rem !important;
-      }
-    }
-    @media (max-width: 769px) {
-      .untree_co-hero {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        height: 100vh;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      .untree_co-hero > .container > .row {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0 !important;
-        padding: 0 !important;
-        min-height: unset !important;
-        height: unset !important;
-      }
-      .untree_co-hero .heading,
-      .untree_co-hero h3,
-      .untree_co-hero .caption {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
+    .mobile-logo {
+      height: 5.5rem;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
     }
   </style>
 
@@ -191,6 +424,32 @@
 </head>
 
 <body>
+  <div class="top-bar">
+    <address class="top-bar__left">
+      <span>
+        <i class="fa-solid fa-location-dot"></i>
+        <a href="https://www.google.com/maps/search/?api=1&query=Shimla+Bypass+Road,+Van+Vihar,+Dehradun"
+           target="_blank" rel="noopener noreferrer">
+          Shimla Bypass Road, Van Vihar, Dehradun
+        </a>
+      </span>
+      <span>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:shahskillacademy@gmail.com">shahskillacademy@gmail.com</a>
+      </span>
+      <span>
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+916395381399">+91 63953 81399</a>
+      </span>
+    </address>
+    <div class="top-bar__right">
+      <span>Connect with us on social media:</span>
+      <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
 
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
@@ -239,11 +498,11 @@
                                         </ul>
                                     </li>
                                     <li><a href="business-analytics.html">Business Analytics</a></li>
-                                    <li class="has-children active">
+                                    <li class="has-children">
                                         <a href="#">Others</a>
                                         <ul class="dropdown">
                                             <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                                            <li class="active"><a href="advance-excel.html">Advance Excel</a></li>
+                                            <li><a href="advance-excel.html">Advance Excel</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -273,21 +532,292 @@
     </div>
 </nav>
 
-  <main class="container">
-    <h1 class="mb-4">Advanced Excel</h1>
-    <p>Course overview: pivot tables, power query, VBA basics and advanced formulas. (Add syllabus and examples.)</p>
-  </main>
+  <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
+    url('./images/diverse-education-shoot.jpg');">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-7 text-center">
+          <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Advanced Excel</h1>
+          <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+            <p>Enhance your Excel skills and become a data analysis expert with our Advanced Excel course.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main-content -->
+  <div class="container" style="max-width: 1200px; margin: auto; padding: 16px; font-family: 'Inter', sans-serif;">
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-9 col-md-12" style="width: 70%; margin-bottom: 24px;">
+        <div class="course-info-panel d-flex" style="display: flex; gap: 16px;" data-aos="fade-up" data-aos-delay="200">
+          <!-- Course Thumbnail -->
+          <div style="flex: 30%;" data-aos="zoom-in" data-aos-delay="300">
+            <img src="images/1x/998_sap-768x512.webp" alt="Course Thumbnail" style="width: 100%; max-width: 350px; height: auto; border-radius: 4px;">
+            <p style="text-align: center; font-size: 14px; color: #888;" data-aos="fade-up" data-aos-delay="400">Available on Android & iOS</p>
+          </div>
+          <!-- Course Details -->
+          <div class="course-details" style="flex: 1 1 65%;" data-aos="fade-left" data-aos-delay="500">
+            <h2 class="course-title" style="font-size: 28px; font-weight: bold; color: #333; margin-bottom: 16px;">Advanced Excel</h2>
+            <p class="course-rating" style="margin-bottom: 8px;">
+              <span class="rating-stars" style="color: #f4b400; font-size: 18px;">★★★★★</span> 
+              <span style="font-size: 16px; color: #555;">4.8 (120 ratings)</span>
+            </p>
+            <p class="course-instructor" style="font-size: 16px; margin-bottom: 8px;">
+              <strong>Instructor:</strong> <a href="#" style="color: #0066cc; text-decoration: none;">John Doe</a>
+            </p>
+            <p class="course-language" style="font-size: 16px; margin-bottom: 8px;">
+              <strong>Language:</strong> English
+            </p>
+            <p class="course-validity" style="font-size: 16px; margin-bottom: 16px;">
+              <strong>Validity Period:</strong> 180 days
+            </p>
+            <div class="course-pricing" style="margin-bottom: 16px;">
+              <p class="original-price" style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹5,200</p>
+              <p class="discount" style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">9% OFF</p>
+              <p class="current-price" style="font-size: 24px; font-weight: bold; color: #4caf50;">
+                ₹4,799 <span class="gst-note" style="font-size: 14px; color: #888;">Inclusive of GST</span>
+              </p>
+            </div>
+            <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Navigation Tabs -->
+        <div class="tabs" style="display: flex; border-bottom: 1px solid #eeeeee; margin-top: 24px;" data-aos="fade-up" data-aos-delay="600">
+          <div id="tab-description" onclick="showTabContent('description')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; border-bottom: 2px solid #4f46e5; color: #333;">Description</div>
+          <div id="tab-content" onclick="showTabContent('content')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">Course Content</div>
+          <div id="tab-how-to-use" onclick="showTabContent('how-to-use')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">How to Use</div>
+        </div>
+        <!-- Tab Content -->
+        <div id="description" class="tab-content" style="padding: 32px; background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" data-aos="fade-up" data-aos-delay="700">
+          <h2 style="font-size: 24px; font-weight: bold; color: #333;">Advanced Excel Course</h2>
+          <p style="font-size: 16px; color: #555;"><strong>Course Overview:</strong> Master Advanced Excel techniques to become a power user and gain an edge in data analysis, reporting, and business intelligence. This course takes you beyond the basics, teaching you to work with complex formulas, pivot tables, automation, and visualization tools that are essential in today’s data-driven workplaces.</p>
+        
+          <h3 style="font-size: 20px; font-weight: bold; color: #333;">Key Highlights:</h3>
+          <ul style="font-size: 16px; color: #555;">
+            <li>💼 Course Type: Beginner to Advanced Level</li>
+            <li>🕒 Duration: 40 Hours (Weekday/Weekend Batches Available)</li>
+            <li>🎓 Eligibility: Students, Working Professionals, Accountants, Analysts</li>
+            <li>🖥️ Mode: Online / Offline</li>
+            <li>📚 Certification: Institute Certificate with Project Completion</li>
+            <li>💼 Placement Support: Resume Building & Interview Preparation</li>
+          </ul>
+        
+          <h3>What You Will Learn:</h3>
+          <ul>
+            <li>Advanced cell formatting and data validation techniques</li>
+            <li>Logical, statistical, text, and lookup functions</li>
+            <li>Data visualization with advanced charting</li>
+            <li>Pivot tables and pivot charts for dynamic analysis</li>
+            <li>Conditional formatting for dashboards</li>
+            <li>Advanced filters, sorting, and data cleaning methods</li>
+            <li>Introduction to Macros and basic VBA for automation</li>
+            <li>Working with external data connections and importing data</li>
+          </ul>
+        
+          <h3>Who Should Enroll:</h3>
+          <ul>
+            <li>Data Analysts & Business Intelligence Professionals</li>
+            <li>Finance and Accounting Executives</li>
+            <li>Students aiming for careers in data analysis or MIS</li>
+            <li>Anyone wanting to upgrade their Excel skills for better productivity</li>
+          </ul>
+        
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li>✅ Experienced Industry Trainers</li>
+            <li>✅ Practical Assignments & Real-World Case Studies</li>
+            <li>✅ Interactive Live Sessions with Expert Support</li>
+            <li>✅ Flexible Learning Options (Weekday & Weekend)</li>
+            <li>✅ Certificate to boost your career prospects</li>
+          </ul>
+        </div>        
+        <div id="content" class="tab-content" style="padding: 24px; z-index: 0; display: none;" data-aos="fade-up" data-aos-delay="700">
+          <h3 style="font-size: 22px; font-weight: bold; color: #333;">Course Content</h3>
+            <ul style="padding-left: 20px; font-size: 16px; color: #555;">
+            <li style="margin-bottom: 16px;">Introduction to MS Excel</li>
+            <li style="margin-bottom: 16px;">Formatting Cells, Rows, Columns and Sheets</li>
+            <li style="margin-bottom: 16px;">Sorting Data</li>
+            <li style="margin-bottom: 16px;">Lookup and Reference Functions</li>
+            <li style="margin-bottom: 16px;">Logical Functions</li>
+            <li style="margin-bottom: 16px;">Statistical Functions</li>
+            <li style="margin-bottom: 16px;">Date and Time Functions</li>
+            <li style="margin-bottom: 16px;">Math and Trigonometric Functions</li>
+            <li style="margin-bottom: 16px;">Creating Pivot Tables using Pivot Table options</li>
+            <li style="margin-bottom: 16px;">Hyper/Data Linking</li>
+            <li style="margin-bottom: 16px;">Security and Protection for Worksheets</li>
+            </ul>
+        </div>
+        <div id="how-to-use" class="tab-content" style="padding: 24px; z-index: 0; display: none;" data-aos="fade-up" data-aos-delay="700">
+          <h3 style="font-size: 22px; font-weight: bold; color: #333;">How to Use</h3>
+          <p style="font-size: 16px; line-height: 1.5; color: #555;">After a successful purchase, this item will be added to the library section. You can access your courses in the following ways:</p>
+          <ul style="padding-left: 20px; font-size: 16px; color: #555;">
+            <li>For Android and iOS devices, download the app from Google Play Store or iOS App Store.</li>
+            <li>The product can be used only on a single device.</li>
+            <li>Log in to the app to access your library and watch your lectures.</li>
+          </ul>
+        </div>
+        <script>
+          function showTabContent(tabId) {
+            const tabs = ['description', 'content', 'how-to-use'];
+            tabs.forEach(id => {
+              document.getElementById(id).style.display = id === tabId ? 'block' : 'none';
+              document.getElementById(`tab-${id}`).style.borderBottom = id === tabId ? '2px solid #4f46e5' : 'none';
+              document.getElementById(`tab-${id}`).style.color = id === tabId ? '#333' : '#777';
+            });
+          }
+        </script>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-3 col-md-12" style="width: 30%; background: #f9f9f9; padding: 16px; border-radius: 4px;" data-aos="fade-left" data-aos-delay="800">
+        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
+          <img src="images/1x/998_sap-768x512.webp" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
+          <div style="padding: 12px;">
+            <h4 style="font-size: 16px; font-weight: bold; color: #333;">Excel Basics</h4>
+            <p style="font-size: 14px; color: #888;">Instructor: Jane Smith</p>
+            <p style="font-size: 16px; font-weight: bold; color: #333;">₹2,999</p>
+            <button class="btn-add-to-cart">Buy Now</button>
+          </div>
+        </div>
+        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
+          <img src="images/1x/998_sap-768x512.webp" alt="SAP-FICO Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
+          <div style="padding: 12px;">
+            <h4 style="font-size: 16px; font-weight: bold; color: #333;">SAP-FICO</h4>
+            <p style="font-size: 14px; color: #888;">Instructor: Michael Brown</p>
+            <p style="font-size: 16px; font-weight: bold; color: #333;">₹6,499</p>
+            <button class="btn-add-to-cart">Buy Now</button>
+          </div>
+        </div>
+        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 4px; background: white;">
+          <img src="images/1x/998_sap-768x512.webp" alt="Tally ERP 9 Course" style="width: 100%; aspect-ratio: 16/9; border-radius: 4px 4px 0 0;">
+          <div style="padding: 12px;">
+            <h4 style="font-size: 16px; font-weight: bold; color: #333;">Tally ERP 9</h4>
+            <p style="font-size: 14px; color: #888;">Instructor: Sarah Johnson</p>
+            <p style="font-size: 16px; font-weight: bold; color: #333;">₹3,999</p>
+            <button class="btn-add-to-cart">Buy Now</button>
+          </div>
+        </div>
+        <div class="extra-content" style="margin-top: 24px; padding: 16px; background: #fff; border: 1px solid #eeeeee; border-radius: 4px;">
+          <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">Why Advanced Excel?</h4>
+          <ul style="font-size: 14px; color: #555; line-height: 1.6;">
+            <li>Master advanced data analysis and reporting skills.</li>
+            <li>Boost productivity with automation and visualization tools.</li>
+            <li>Essential for finance, analytics, and business intelligence roles.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/custom.js"></script>
+  <div class="untree_co-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-7 text-center">
+          <h2 class="line-bottom text-center mb-3">Subscribe to Our Newsletter</h2>
+          <p class="mb-4">Stay updated with the latest courses and offers. Subscribe now!</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <form class="d-flex flex-column flex-sm-row align-items-center bg-white p-3 shadow-sm rounded">
+            <input type="email" class="form-control mb-2 mb-sm-0 mr-sm-2 border-0" placeholder="Enter your email to get course updates" required>
+            <button type="submit" class="btn btn-primary px-4 btn-hover-animate">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    <div class="container">
+      <div class="row">
+        <!-- About Widget -->
+        <div class="col-lg-3 mr-auto">
+          <div class="widget">
+            <h3>About Shah Skill Academy<span class="text-primary">.</span></h3>
+            <p>Shah Skill Academy is dedicated to providing industry-relevant courses in SAP, Accounting, Analytics, and Business Tools. We help professionals and students upskill and stay ahead in their careers with practical training.</p>
+          </div>
+          <div class="widget">
+            <h3>Follow Us</h3>
+            <ul class="list-unstyled social">
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              <li><a href="#"><span class="icon-instagram"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-lg-2 ml-auto">
+          <div class="widget">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled float-left links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="staff.html">Recruitment</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Popular Courses -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3>Popular Courses</h3>
+            <ul class="list-unstyled float-left links">
+              <li><a href="sap-fico.html">SAP FICO</a></li>
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advanced Excel</a></li>
+              <li><a href="business-analytics.html">Business Analytics</a></li>
+              <li><a href="sap-hana.html">SAP HANA</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Contact Info -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3>Contact Us</h3>
+            <address>Shah Skill Academy, 43 Raymouth Rd., New Delhi, India</address>
+            <ul class="list-unstyled links mb-4">
+              <li><a href="tel://+911234567890">+91-12345-67890</a></li>
+              <li><a href="mailto:info@ssainstitute.com">info@ssainstitute.com</a></li>
+            </ul>
+            <p>Working Hours: Mon - Sat, 9:00AM - 6:00PM</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row mt-2">
+        <div class="col-12 text-center">
+          <p class="copyright">
+            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with ❤️ by Shah Skill Academy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/custom.js"></script>
 
   </body>
 </html>

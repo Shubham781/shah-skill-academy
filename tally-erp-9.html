@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     body {
@@ -34,7 +35,7 @@
     }
 
     .site-nav {
-        position: absolute;
+        position: relative !important;
         width: 100%;
         z-index: 9;
         top: 0;
@@ -70,15 +71,17 @@
     }
 
     .logo-sticky {
-        height: 60px;
+        max-height: 60px;
         max-width: 100%;
         object-fit: contain;
+        display: block;
     }
 
     .mobile-logo {
         height: 5.5rem;
         max-width: 100%;
         object-fit: contain;
+        display: block;
     }
 
     .btn {
@@ -299,7 +302,6 @@
 </head>
 
 <body>
-
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close">
@@ -379,14 +381,8 @@
         </div>
     </div>
 </nav>
-
-  <main class="container">
-    <h1>Tally ERP 9</h1>
-    <p>Course details coming soon.</p>
-  </main>
-
   <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
-    url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
+    url('./images/diverse-education-shoot.jpg');">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-7 text-center">

@@ -475,6 +475,46 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.info-card.h-100 {
+  padding: 40px 28px;   /* increases card height */
+}
+/* Expand + presentational tweaks for info panel */
+.info-card.h-100 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* ensure content sits from top, not vertically centered */
+  padding: 28px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* contact list + icon */
+.contact-list { list-style: none; padding: 0; margin: 0 0 6px 0; }
+.contact-list li { display: flex; gap:12px; align-items: flex-start; padding: 10px 0; color: #333; }
+.contact-list li .icon { color: #136ad5; font-size: 1.2rem; width: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-list li a { color: #136ad5; text-decoration: none; font-weight: 600; }
+.contact-list li a:hover { text-decoration: underline; }
+
+/* action buttons */
+.info-actions .btn { padding: 10px 14px; border-radius: 8px; font-weight:700; display:inline-flex; align-items:center; gap:8px; }
+.info-actions .btn-outline { background: transparent; border: 1px solid #d0d3d7; color: #111; }
+.info-actions .btn-secondary { background: #136ad5; border-color: #136ad5; color: #fff; }
+
+/* social icons */
+.social-links a { display: inline-block; margin-right: 10px; font-size: 1.05rem; color: #136ad5; text-decoration: none; }
+.social-links a:hover { opacity: .85; transform: translateY(-2px); transition: .15s; }
+
+/* small-cards (uses existing small-card classes but tighten styles) */
+.small-card { background:#fff; border:1px solid #f0f0f0; padding:10px 12px; border-radius:8px; min-width:110px; text-align:center; box-shadow: 0 2px 6px rgba(12,20,40,0.03); }
+.sc-title { font-size:0.72rem; color:#777; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.06em; }
+.sc-value { font-size:0.98rem; color:#111; font-weight:700; }
+
+/* compact layout on small screens */
+@media (max-width: 991px) {
+  .info-card.h-100 { padding: 18px; }
+  .info-row { gap:8px; }
+}
+
 
   </style>
 
@@ -697,17 +737,47 @@ body {
           </iframe>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-lg-5 order-2" data-aos="fade-up" data-aos-delay="300">
         <div class="info-card h-100">
-          <h3>Our Location</h3>
-          <p>
-            Shimla Bypass Road, Van Vihar,<br>
-            Dehradun, Uttarakhand, India
-          </p>
-          <p><strong>Phone:</strong> +91 63953 81399</p>
-          <p><strong>Email:</strong> shahskillacademy@gmail.com</p>
+          <h3 class="info-title">Our Contact Info</h3>
+      
+          <ul class="contact-list">
+            <li>
+              <span class="icon"><i class="uil uil-map-marker"></i></span>
+              <div>
+                Shimla Bypass Road, Van Vihar,<br>
+                Dehradun, Uttarakhand, India
+              </div>
+            </li>
+      
+            <li>
+              <span class="icon"><i class="uil uil-phone"></i></span>
+              <div>
+                <strong>Phone:</strong>
+                <a href="tel:+916395381399">+91 63953 81399</a>
+              </div>
+            </li>
+      
+            <li>
+              <span class="icon"><i class="uil uil-envelope"></i></span>
+              <div>
+                <strong>Email:</strong>
+                <a href="mailto:shahskillacademy@gmail.com">shahskillacademy@gmail.com</a>
+              </div>
+            </li>
+      
+            <li>
+              <span class="icon"><i class="uil uil-clock"></i></span>
+              <div>
+                <strong>Hours:</strong><br>
+                Mon – Fri: 9:30 AM — 6:30 PM<br>
+                Sat: 10:00 AM — 2:00 PM<br>
+                Sun: Closed
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
+      </div>      
     </div>
   </div>
   

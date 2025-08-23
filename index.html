@@ -368,7 +368,6 @@
         <a href="tel:+916395381399">+91 63953 81399</a>
       </span>
     </address>
-    </address>
     <div class="top-bar__right">
       <span>Connect with us on social media:</span>
       <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
@@ -409,7 +408,7 @@
                 <ul class="dropdown">
                   <li><a href="pams.html">PAMS</a></li>
                   <li class="has-children">
-                    <a href="#">SAP</a>
+                    <a href="./sap.html">SAP</a>
                     <ul class="dropdown">
                       <li><a href="sap-fico.html">SAP-FICO</a></li>
                       <li><a href="sap-hana.html">SAP-HANA</a></li>
@@ -447,11 +446,11 @@
 
 
   <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
-    url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
+    url('./images/diverse-education-shoot.jpg');">
     <div class="container mt-0">
-      <div class="row align-items-center justify-content-between">
+      <div class="row align-items-center justify-content-center">
         <!-- Left Text -->
-        <div class="col-lg-8 mb-5 mb-lg-0">
+        <div class="col-lg-8 mb-5 mb-lg-0 text-center">
           <div class="text-white">
             <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Build Your Professional Carrer<br>With Shah Skill Academy</h1>
             <h3 class="mb-3 sub-heading text-white" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 1.1px; font-family: 'Inter', sans-serif;">Advance Your Career with <span id="typed-skills"></span></h3>
@@ -467,7 +466,7 @@
   <div class="untree_co-section mt-4">
     <div class="container">
       <div class="row justify-content-between">
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400">
           <div class="bg-1"></div>
           <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
             <span class="play-wrap"><span class="icon-play"></span></span>
@@ -475,11 +474,11 @@
           </a>
         </div>
         <div class="col-lg-5 mb-5">
-          <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
-          <p data-aos="fade-up" data-aos-delay="100">
+          <h2 class="line-bottom mb-4" data-aos="fade-left" data-aos-delay="300">About Us</h2>
+          <p data-aos="fade-left" data-aos-delay="300">
             At Shah Skill Academy, we are committed to shaping future leaders in the finance and accounting industry through our specialized training programs. Our primary focus is on providing exceptional courses in SAP-FICO, Tally ERP 9, Advanced Excel, and various other accounting disciplines. We understand the crucial role these skills play in securing a successful future career, and we are here to guide you every step of the way.
           </p>
-          <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
+          <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-left" data-aos-delay="300">
             <li>Specialized training in finance and accounting</li>
             <li>Expert courses in SAP-FICO, Tally ERP 9, and Advanced Excel</li>
             <li>Guidance for a successful future career</li>
@@ -500,15 +499,15 @@
     <div class="container"> 
       <section class="courses-section">
         <div class="section-title mb-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-          <h2 class="line-bottom mb-4 text-center">The Right Course For You</h2>
+          <h2 class="line-bottom mb-4 text-center" data-aos="fade-up" data-aos-delay="200">The Right Course For You</h2>
         </div>
-        <p data-aos="fade-up" data-aos-delay="100" class="text-center mb-4">
+        <p data-aos="fade-up" data-aos-delay="300" class="text-center mb-4">
           Learn skills from experts and advance your career with our training programs.
         </p>            
 
         <div class="courses-container">
           <!-- First Card -->
-          <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="course-card" data-aos="fade-up" data-aos-delay="500">
             <div class="course-image caregiving">
               <div class="certificate-badge">CERTIFICATE</div>
               <div class="level-badge">BEGINNER</div>
@@ -531,7 +530,7 @@
           </div>
 
           <!-- Second Card -->
-          <div class="course-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="course-card" data-aos="fade-up" data-aos-delay="600">
             <div class="course-image hipaa">
               <div class="certificate-badge">CERTIFICATE</div>
               <div class="level-badge">INTERMEDIATE</div>
@@ -554,7 +553,7 @@
           </div>
 
           <!-- Third Card -->
-          <div class="course-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="course-card" data-aos="fade-up" data-aos-delay="700">
             <div class="course-image medication">
               <div class="certificate-badge">CERTIFICATE</div>
               <div class="level-badge">ADVANCED</div>
@@ -731,7 +730,7 @@
   </div> <!-- /.untree_co-section -->
 
 
-  <div class="untree_co-section bg-light>
+  <div class="untree_co-section bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 text-center mx-auto">
@@ -1019,180 +1018,95 @@
     <script>
       AOS.init({ once: true, duration: 800 });
     </script>    
-    </script>
-    
-<script>
-  document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const course = this.querySelector('select').value;
-    
-    if (!name || !email || !course) {
-      alert('Please fill in all fields');
-      return;
-    }
-    
-    alert(`Thank you ${name}! We've received your inquiry for ${this.querySelector('select option:checked').textContent}. Our team will contact you soon with course details.`);
-    this.reset();
-  });
-  </script>
-  
-    
     <script>
+      document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const course = this.querySelector('select').value;
+        if (!name || !email || !course) {
+          alert('Please fill in all fields');
+          return;
+        }
+        alert(`Thank you ${name}! We've received your inquiry for ${this.querySelector('select option:checked').textContent}. Our team will contact you soon with course details.`);
+        this.reset();
+      });
 
-  // var typedMain = new Typed("#typed-skills", {
-  //   strings: ["SAP-FICO", "Tally ERP 9", "Advanced Excel"],
-  //   typeSpeed: 60,
-  //   backSpeed: 40,
-  //   backDelay: 1200,
-  //   loop: true
-  // });
-
-        // Course card navigation functionality
+      // --- Mobile course card slider: clean, no weird arrow animation ---
+      function updateCourseCardsMobile() {
         const cards = document.querySelectorAll('.course-card');
-        const leftArrow = document.querySelector('.nav-arrow:first-child');
-        const rightArrow = document.querySelector('.nav-arrow:last-child');
-        
-        let currentIndex = 0;
-        
-        // Check if we're on mobile
+        const arrows = document.querySelectorAll('.navigation-arrows .nav-arrow');
+        if (!cards.length || !arrows.length) return;
+
         function isMobile() {
-            return window.innerWidth <= 768;
+          return window.innerWidth < 770;
         }
-        
-        function showCards() {
+
+        let current = 0;
+        let animating = false;
+
+        function showCard(idx, direction = 0) {
+          cards.forEach((card, i) => {
             if (isMobile()) {
-                // Mobile: Show only one card at a time with smooth transition
-                cards.forEach((card, index) => {
-                    if (index === currentIndex) {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateX(50px)';
-                        card.classList.add('active');
-                        card.style.display = 'block';
-                        
-                        // Animate card in
-                        setTimeout(() => {
-                            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateX(0)';
-                        }, 50);
-                    } else {
-                        card.classList.remove('active');
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateX(50px)';
-                    }
-                });
+              if (i === idx) {
+                card.style.display = 'block';
+                card.style.opacity = 0;
+                card.style.transform = `translateX(${direction === 0 ? 0 : (direction > 0 ? 40 : -40)}px)`;
+                setTimeout(() => {
+                  card.style.transition = 'opacity 0.35s, transform 0.35s';
+                  card.style.opacity = 1;
+                  card.style.transform = 'translateX(0)';
+                }, 10);
+              } else {
+                card.style.transition = 'none';
+                card.style.opacity = 0;
+                card.style.transform = `translateX(${direction > 0 ? -40 : 40}px)`;
+                card.style.display = 'none';
+              }
             } else {
-                // Desktop: Show 3 cards at a time with smooth transition
-                cards.forEach((card, index) => {
-                    if (index >= currentIndex && index < currentIndex + 3) {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        card.style.display = 'block';
-                        card.classList.remove('active');
-                        
-                        // Animate cards in with staggered delay
-                        setTimeout(() => {
-                            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, (index - currentIndex) * 100);
-                    } else {
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                    }
-                });
+              card.style.display = '';
+              card.style.opacity = '';
+              card.style.transform = '';
+              card.style.transition = '';
             }
+          });
+          // Arrow states
+          if (isMobile()) {
+            arrows[0].style.opacity = idx === 0 ? '0.5' : '1';
+            arrows[1].style.opacity = idx === cards.length - 1 ? '0.5' : '1';
+            arrows[0].style.pointerEvents = idx === 0 ? 'none' : 'auto';
+            arrows[1].style.pointerEvents = idx === cards.length - 1 ? 'none' : 'auto';
+          } else {
+            arrows[0].style.opacity = arrows[1].style.opacity = '1';
+            arrows[0].style.pointerEvents = arrows[1].style.pointerEvents = 'auto';
+          }
         }
-        
-        function updateArrowStates() {
-            if (isMobile()) {
-                // Mobile: Enable/disable arrows based on current index
-                leftArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
-                rightArrow.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
-            } else {
-                // Desktop: Enable/disable arrows based on current index
-                leftArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
-                rightArrow.style.opacity = currentIndex >= cards.length - 3 ? '0.5' : '1';
-            }
-        }
-        
-        if (leftArrow && rightArrow) {
-            leftArrow.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    // Add click animation
-                    leftArrow.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        leftArrow.style.transform = 'scale(1)';
-                    }, 150);
-                    
-                    currentIndex--;
-                    showCards();
-                    updateArrowStates();
-                }
-            });
-            
-            rightArrow.addEventListener('click', () => {
-                if (isMobile()) {
-                    if (currentIndex < cards.length - 1) {
-                        // Add click animation
-                        rightArrow.style.transform = 'scale(0.9)';
-                        setTimeout(() => {
-                            rightArrow.style.transform = 'scale(1)';
-                        }, 150);
-                        
-                        currentIndex++;
-                        showCards();
-                        updateArrowStates();
-                    }
-                } else {
-                    if (currentIndex < cards.length - 3) {
-                        // Add click animation
-                        rightArrow.style.transform = 'scale(0.9)';
-                        setTimeout(() => {
-                            rightArrow.style.transform = 'scale(1)';
-                        }, 150);
-                        
-                        currentIndex++;
-                        showCards();
-                        updateArrowStates();
-                    }
-                }
-            });
-        }
-        
-        // Initialize on page load
-        showCards();
-        updateArrowStates();
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            showCards();
-            updateArrowStates();
+
+        arrows[0].onclick = function(e) {
+          if (isMobile() && current > 0 && !animating) {
+            animating = true;
+            showCard(--current, -1);
+            setTimeout(() => { animating = false; }, 350);
+          }
+        };
+        arrows[1].onclick = function(e) {
+          if (isMobile() && current < cards.length - 1 && !animating) {
+            animating = true;
+            showCard(++current, 1);
+            setTimeout(() => { animating = false; }, 350);
+          }
+        };
+
+        window.addEventListener('resize', function() {
+          if (!isMobile()) current = 0;
+          showCard(current, 0);
         });
-        
-        // Add smooth scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-        
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+
+        // Initial state
+        showCard(current, 0);
+      }
+
+      document.addEventListener('DOMContentLoaded', updateCourseCardsMobile);
     </script>
-
   </body>
-
-  </html>
+</html>
