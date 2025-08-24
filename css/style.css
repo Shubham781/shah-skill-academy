@@ -2976,19 +2976,24 @@ button[style*="Buy Now"]:hover {
 }
 
 .course-image.caregiving {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: url('../images/closeup-marketing-expert-using-calculator.jpg') center center/cover no-repeat;
+
 }
 
 .course-image.hipaa {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  /* Business Analytics */
+  background: url('../images/futuristic-technology-concept.jpg') center center/cover no-repeat;
 }
 
 .course-image.medication {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  /* SAP */
+  background: url('../images/standard-quality-control-concept-m.jpg') center center/cover no-repeat;
 }
 
 .course-image.leadership {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  /* MIS */
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  
 }
 
 .course-image::before {
