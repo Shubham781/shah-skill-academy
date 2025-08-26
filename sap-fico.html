@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
 
@@ -24,328 +24,226 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
   <style>
-    /* Your existing CSS styles */
-    body {
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        background-color: #ffffff;
-        overflow-x: hidden !important;
-        font-size: 1rem;
-        color: #666;
+    /* --- Your Existing Nav/Footer CSS (No Changes) --- */
+    body { font-family: "Inter", sans-serif; line-height: 1.6; background-color: #fff; overflow-x: hidden !important; font-size: 1rem; color: #666; }
+    .site-nav { position: absolute; width: 100%; z-index: 9; top: 0; }
+    .site-nav .site-navigation .site-menu > li > a { font-size: 0.875rem; padding: 0.625rem 0.9375rem; display: inline-block; text-decoration: none !important; color: #000000; position: relative; }
+    .sticky-nav { transition: .3s all ease; background: white; box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1); backdrop-filter: blur(1rem); padding-top: 10px; padding-bottom: 10px; }
+    .logo-sticky { height: 60px; max-width: 100%; object-fit: contain; }
+    .mobile-logo { height: 5.5rem; max-width: 100%; object-fit: contain; }
+    .burger:before, .burger span, .burger:after { background: #000; }
+    
+    /* --- NEW PROFESSIONAL COURSE PAGE STYLES --- */
+    .course-page-wrapper {
+        padding-top: 4rem; /* Adds space below the sticky navbar */
     }
-
-    .site-nav {
-        position: absolute;
-        width: 100%;
-        z-index: 9;
-        top: 0;
+    .course-page-section {
+        background-color: #fff;
+        padding: 2rem 0 4rem 0;
     }
-
-    .site-nav .site-navigation {
-        position: relative;
+    
+    /* Right Sidebar Card */
+    .course-sidebar-card {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px; 
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        background: #fff;
     }
-
-    .site-nav .site-navigation .site-menu {
-        margin-bottom: 0;
-    }
-
-    .site-nav .site-navigation .site-menu > li {
-        display: inline-block;
-    }
-
-    .site-nav .site-navigation .site-menu > li > a {
-        font-size: 0.875rem;
-        padding: 0.625rem 0.9375rem;
-        display: inline-block;
-        text-decoration: none !important;
-        color: #000000;
-        position: relative;
-    }
-
-    .site-nav .site-navigation .site-menu > li > a:hover {
-        color: #136ad5;
-    }
-
-    .site-nav .site-navigation .site-menu > li.active > a {
-        color: #136ad5;
-    }
-
-    .logo-sticky {
-        height: 60px;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .mobile-logo {
-        height: 5.5rem;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .btn-book {
-        position: absolute;
-        right: 15px;
-        margin-top: -2px;
-    }
-
     @media (max-width: 991.98px) {
-        .btn-book {
-            position: static !important;
-            right: auto !important;
-            margin-top: 0 !important;
-        }
+      .course-sidebar-card {
+        position: static;
+        margin-top: 3rem;
+      }
     }
-
-    .btn {
-        padding-top: 0.9375rem;
-        padding-bottom: 0.9375rem;
-        padding-left: 1.875rem;
-        padding-right: 1.875rem;
-        border-radius: 1.875rem;
-        font-size: 0.6875rem;
-        text-transform: uppercase;
+    .course-sidebar-card .card-img-top {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .course-sidebar-card .card-body {
+        padding: 1.2rem 1rem;
+    }
+    .course-sidebar-card .price-tag {
+        font-size: 1.2rem;
         font-weight: 700;
-        letter-spacing: .05rem;
+        color: #2c3e50;
     }
-
-    .btn.btn-secondary {
-        background: #00aeff;
-        border-color: #00aeff;
+    .course-sidebar-card .price-tag .original-price {
+        font-size: 1rem;
+        text-decoration: line-through;
+        color: #888;
+        /* margin-left: 0.5rem; */
     }
-
-    .btn.btn-secondary:hover {
-        border-color: #14b4ff;
-        background: #14b4ff;
+    .course-sidebar-card .discount-badge {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #4caf50;
     }
-
-    .btn.btn-sm {
-        padding-top: 0.625rem;
-        padding-bottom: 0.625rem;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
-    }
-
-    /* Burger menu styles */
-    .burger {
-        width: 28px;
-        height: 32px;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .burger.light:before,
-    .burger.light span,
-    .burger.light:after {
-        background: #ffffff;
-    }
-
-    .burger:before,
-    .burger span,
-    .burger:after {
+    .course-sidebar-card .btn-buy-now {
+        background-color: #136ad5;
+        color: white;
         width: 100%;
-        height: 2px;
-        display: block;
-        background: #000;
-        border-radius: 2px;
-        position: absolute;
-        opacity: 1;
+        padding: 0.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: background-color 0.3s, transform 0.2s;
     }
-
-    .burger:before {
-        top: 4px;
-        content: "";
+    .course-sidebar-card .btn-buy-now:hover {
+        background-color: #0f5bb5;
+        transform: translateY(-2px);
     }
-
-    .burger span {
-        top: 15px;
+    .course-sidebar-card .btn-book-demo {
+        background-color: transparent;
+        color: #136ad5;
+        border: 2px solid #136ad5;
+        width: 100%;
+        padding: 0.7rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 15px;
+        transition: all 0.3s;
     }
-
-    .burger:after {
-        top: 26px;
-        content: "";
+    .course-sidebar-card .btn-book-demo:hover {
+        background-color: #136ad5;
+        color: #fff;
     }
-
-    /* Dropdown styles */
-    .site-nav .site-navigation .site-menu .has-children {
-        position: relative;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown {
-        visibility: hidden;
-        opacity: 0;
-        top: 100%;
-        z-index: 999;
-        position: absolute;
-        text-align: left;
-        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        margin-top: 20px;
-        margin-left: 0px;
-        background: #ffffff;
-        transition: 0.2s 0s;
-        min-width: 180px;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown > li {
+    .course-sidebar-card .course-includes-list {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
     }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
-        padding: 5px 20px;
-        display: block;
-        color: #000000;
+    .course-sidebar-card .course-includes-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        color: #333;
     }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
+    .course-sidebar-card .course-includes-list .uil {
+        font-size: 1.2rem;
         color: #136ad5;
+        margin-right: 0.75rem;
     }
 
-    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
-        transition-delay: 0s;
-        margin-top: 0px;
-        visibility: visible;
-        opacity: 1;
+    /* Left Main Content */
+    .breadcrumb-nav {
+        font-size: 0.9rem;
+        font-weight: 500;
     }
-
-    /* Multi-level dropdown */
-    .site-menu .dropdown .has-children > .dropdown {
-        left: 100%;
-        top: 0;
-        margin-top: 0;
-        margin-left: 0;
-        position: absolute;
-        min-width: 200px;
-        display: none;
+    .breadcrumb-nav a {
+        color: #136ad5;
+        text-decoration: none;
     }
-
-    .site-menu .dropdown .has-children:hover > .dropdown {
-        display: block;
+    .breadcrumb-nav span {
+        margin: 0 0.5rem;
+        color: #6c757d;
     }
+    .course-main-content .course-title {
+        font-family: 'Display Playfair', serif;
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: #000;
+        margin-top: 1rem;
+    }
+    @media (max-width: 767.98px) {
+        .course-main-content .course-title { font-size: 2rem; }
+    }
+    .course-main-content .course-subtitle {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 90%;
+    }
+    .course-main-content .rating-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        color: #333;
+        margin-top: 1rem;
+    }
+    .course-main-content .rating-info .rating-stars { color: #f4b400; }
+    .course-main-content .instructor-info { font-size: 1rem; margin-top: 0.5rem;}
 
-    /* Improved dropdown hover behavior */
-    .site-nav .site-navigation .site-menu .has-children .dropdown {
-        visibility: hidden;
-        opacity: 0;
-        top: 100%;
-        z-index: 999;
-        position: absolute;
-        text-align: left;
-        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        margin-top: 20px;
-        margin-left: 0px;
+    /* "What you'll learn" box */
+    .what-you-learn-box {
         background: #ffffff;
-        transition: 0.2s 0s;
-        min-width: 180px;
-        border-radius: 8px;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 2rem;
+    }
+    .what-you-learn-box h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1.5rem;
+    }
+    .what-you-learn-box .learn-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    @media (max-width: 767.98px) {
+      .what-you-learn-box .learn-list { grid-template-columns: 1fr; }
+    }
+    .what-you-learn-box .learn-list li {
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.5;
+    }
+    .what-you-learn-box .learn-list li::before {
+        content: "✓";
+        color: #136ad5;
+        font-weight: 900;
+        margin-right: 0.75rem;
+        margin-top: 1px;
     }
 
-    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
-        transition-delay: 0s;
-        margin-top: 0px;
-        visibility: visible;
-        opacity: 1;
+    /* Course Content Tabs */
+    .course-content-tabs {
+        margin-top: 3rem;
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 1rem 2rem; /* FIXED PADDING */
+    }
+    .course-content-tabs .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+    }
+    .course-content-tabs .nav-link {
+        border: 0;
+        border-bottom: 3px solid transparent;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6c757d;
+        padding: 0.75rem 0;
+        margin-right: 2rem;
+    }
+    .course-content-tabs .nav-link.active {
+        color: #136ad5;
+        border-bottom-color: #136ad5;
+    }
+    .course-content-tabs .tab-content {
+        padding: 2rem 0;
+    }
+    .course-content-tabs h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #212529;
+    }
+    
+    /* FIXED LIST STYLE */
+    .ul-check {
+      list-style: none;
+      padding-left: 0;
     }
 
-    /* Add padding to prevent dropdown from disappearing */
-    .site-nav .site-navigation .site-menu .has-children .dropdown::before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: 0;
-        right: 0;
-        height: 20px;
-    }
-
-    /* Multi-level dropdown improvements */
-    .site-menu .dropdown .has-children > .dropdown::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -20px;
-        width: 20px;
-        height: 100%;
-    }
-
-    /* Sticky navigation styles */
-    .sticky-nav {
-        transition: .3s all ease;
-        background: white;
-        box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(1rem);
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .sticky-nav .site-menu > li > a {
-        color: #000000 !important;
-    }
-
-    .sticky-nav .site-menu > li > a:hover,
-    .sticky-nav .site-menu > li > a.active {
-        color: #136ad5 !important;
-    }
-
-    .sticky-nav .burger:before,
-    .sticky-nav .burger span,
-    .sticky-nav .burger:after {
-        background: #000000;
-    }
-
-    /* Mobile styles */
-    @media (max-width: 989px) {
-        .desktop-nav-content {
-            display: none !important;
-        }
-        
-        .mobile-nav-content {
-            display: flex !important;
-        }
-    }
-
-    @media (min-width: 990px) {
-        .desktop-nav-content {
-            display: flex !important;
-        }
-        
-        .mobile-nav-content {
-            display: none !important;
-        }
-    }
-
-    .untree_co-hero {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 60px 0 90px 0;
-      display: flex;
-      align-items: center;
-      min-height: 320px;
-    }
-    .untree_co-hero .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 220px;
-    }
-    .untree_co-hero .row {
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-    .untree_co-hero .heading {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .untree_co-hero .desc {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      max-width: 600px;
-      margin: 0 auto 1rem auto;
-    }
   </style>
 
   <title>SAP FICO - Shah Skill Academy</title>
@@ -362,7 +260,7 @@
     <div class="site-mobile-menu-body"></div>
   </div>
 
-  <nav class="site-nav mb-5">
+  <nav class="site-nav">
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation">
@@ -417,208 +315,129 @@
       </div>
     </div>
   </nav>
-
-  <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('./images/diverse-education-shoot.jpg');">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-lg-7 text-center">
-          <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">SAP FICO</h1>
-          <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
-            <p>Financial Accounting and Controlling in SAP — learn ledger management, asset accounting, posting and enterprise financial reporting.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" style="max-width: 1200px; margin: auto; padding: clamp(16px, 4vw, 24px); font-family: 'Inter', sans-serif;">
-    <div class="row">
-      <!-- Main Content -->
-      <div class="col-lg-9 col-md-12" style="margin-bottom: 24px;">
-        <div class="course-info-panel d-flex flex-wrap align-items-start" style="gap: 24px;" data-aos="fade-up" data-aos-delay="200">
-          <!-- Course Thumbnail -->
-          <div style="flex: 1 1 30%; max-width: 350px;" data-aos="zoom-in" data-aos-delay="300">
-            <img src="images/1x/998_sap-768x512.webp" alt="Course Thumbnail" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <p style="text-align: center; font-size: 14px; color: #888; margin-top: 8px;" data-aos="fade-up" data-aos-delay="400">Available on Android & iOS</p>
-          </div>
-          <!-- Course Details -->
-          <div class="course-details" style="flex: 1 1 65%;" data-aos="fade-left" data-aos-delay="500">
-            <h2 class="course-title" style="font-size: clamp(24px, 3vw, 28px); font-weight: bold; color: #333; margin-bottom: 16px;">SAP FICO</h2>
-            <p class="course-rating" style="margin-bottom: 8px;">
-              <span class="rating-stars" style="color: #f4b400; font-size: 18px;">★★★★★</span> 
-              <span style="font-size: 16px; color: #555;">4.8 (120 ratings)</span>
-            </p>
-            <p class="course-instructor" style="font-size: 16px; margin-bottom: 8px;">
-              <strong>Instructor:</strong> <a href="#" style="color: #0066cc; text-decoration: none;">John Doe</a>
-            </p>
-            <p class="course-language" style="font-size: 16px; margin-bottom: 8px;">
-              <strong>Language:</strong> English
-            </p>
-            <p class="course-validity" style="font-size: 16px; margin-bottom: 16px;">
-              <strong>Validity Period:</strong> 180 days
-            </p>
-            <div class="course-pricing" style="margin-bottom: 16px;">
-              <p class="original-price" style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹5,200</p>
-              <p class="discount" style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">9% OFF</p>
-              <p class="current-price" style="font-size: 24px; font-weight: bold; color: #4caf50;">
-                ₹4,799 <span class="gst-note" style="font-size: 14px; color: #888;">Inclusive of GST</span>
-              </p>
-            </div>
-            <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Buy Now</button>
-          </div>
-        </div>
-        <!-- Navigation Tabs -->
-        <div class="tabs" style="display: flex; border-bottom: 2px solid #eeeeee; margin-top: 32px;" data-aos="fade-up" data-aos-delay="600">
-          <div id="tab-description" onclick="showTabContent('description')" style="flex: 1; text-align: center; padding: 16px; font-size: clamp(16px, 2.5vw, 18px); cursor: pointer; border-bottom: 3px solid #136ad5; color: #333;">Description</div>
-          <div id="tab-content" onclick="showTabContent('content')" style="flex: 1; text-align: center; padding: 16px; font-size: clamp(16px, 2.5vw, 18px); cursor: pointer; color: #777;">Course Content</div>
-          <div id="tab-how-to-use" onclick="showTabContent('how-to-use')" style="flex: 1; text-align: center; padding: 16px; font-size: clamp(16px, 2.5vw, 18px); cursor: pointer; color: #777;">How to Use</div>
-        </div>
-        <!-- Tab Content -->
-        <div id="description" class="tab-content" style="padding: clamp(20px, 4vw, 32px); background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" data-aos="fade-up" data-aos-delay="700">
-          <h2 style="font-size: clamp(20px, 3vw, 24px); font-weight: bold; color: #333;">SAP S/4HANA FICO Course (Finance and Controlling)</h2>
-          <p style="font-size: 16px; color: #555;"><strong>Course Overview:</strong> SAP S/4HANA FICO is one of the most important modules in SAP for managing financial transactions, accounting, and internal reporting. This course is designed for students and professionals who want to build a strong career in the field of SAP Finance and Controlling, with real-time business process integration.</p>
-          <h3 style="font-size: clamp(18px, 2.5vw, 20px); font-weight: bold; color: #333;">Key Highlights:</h3>
-          <ul style="font-size: 16px; color: #555;">
-            <li>💼 Course Type: End User & Consultant Level</li>
-            <li>🕒 Duration: 45 Hours (Weekday/Weekend Batches Available)</li>
-            <li>🎓 Eligibility: 12th Pass / Graduate / MBA / CA / B.Com / M.Com</li>
-            <li>🖥️ Mode: Online / Offline</li>
-            <li>📚 Certification: Institute Certificate + SAP Global Certification Guidance</li>
-            <li>💼 Placement Support: 100% Assistance with Interview Preparation</li>
-          </ul>
-          <h3>What You Will Learn:</h3>
-          <h4>Finance (FI) Module:</h4>
-          <ul>
-            <li>Enterprise Structure & Company Code Configuration</li>
-            <li>General Ledger (G/L) Accounting</li>
-            <li>Accounts Payable & Receivable</li>
-            <li>Asset Accounting</li>
-            <li>Bank Accounting</li>
-            <li>Tax Configuration (GST, TDS)</li>
-            <li>Integration with MM & SD Modules</li>
-            <li>Month-End and Year-End Closing Activities</li>
-          </ul>
-          <h4>Controlling (CO) Module:</h4>
-          <ul>
-            <li>Cost Center Accounting</li>
-            <li>Internal Orders</li>
-            <li>Profit Center Accounting</li>
-            <li>Product Costing Overview</li>
-            <li>Profitability Analysis (CO-PA)</li>
-            <li>Integration with FI & Other Modules</li>
-          </ul>
-          <h3>Who Should Enroll:</h3>
-          <ul>
-            <li>Aspiring SAP Consultants</li>
-            <li>Accountants & Finance Professionals</li>
-            <li>MBA Finance Students</li>
-            <li>B.Com/M.Com Graduates</li>
-            <li>Job Seekers in ERP Domain</li>
-          </ul>
-          <h3>Why Choose Us?</h3>
-          <ul>
-            <li>✅ 10+ Years of SAP Training Experience</li>
-            <li>✅ Experienced Industry Trainers</li>
-            <li>✅ Practical Scenarios & Real-Time Projects</li>
-            <li>✅ Hands-on System Access</li>
-            <li>✅ Resume Building & Interview Support</li>
-          </ul>
-        </div>
-        <div id="content" class="tab-content" style="padding: clamp(20px, 4vw, 32px); background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: none;" data-aos="fade-up" data-aos-delay="700">
-          <ul>
-            <li>SAP FI - Financial Accounting Basic Setting</li>
-            <li>General Ledger Accounting</li>
-            <li>Accounts Payable</li>
-            <li>Accounts Receivable</li>
-            <li>Asset Accounting</li>
-            <li>CO - CONTROLLING Basic settings for controlling</li>
-            <li>CO - Cost Center Accounting</li>
-            <li>CO - Internal Orders</li>
-            <li>CO - Profit Center Accounting</li>
-            <li>CO - COPA Reporting</li>
-            <li>SAP Integration</li>
-          </ul>          
-        </div>
-        <div id="how-to-use" class="tab-content" style="padding: clamp(20px, 4vw, 32px); background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: none;" data-aos="fade-up" data-aos-delay="700">
-          <p>To access the course, log in to your account and navigate to the "My Courses" section. Select the SAP FICO course and start learning at your own pace.</p>
-        </div>
-        <script>
-          function showTabContent(tabId) {
-            const tabs = ['description', 'content', 'how-to-use'];
-            tabs.forEach(id => {
-              document.getElementById(id).style.display = id === tabId ? 'block' : 'none';
-              document.getElementById(`tab-${id}`).style.borderBottom = id === tabId ? '3px solid #136ad5' : 'none';
-              document.getElementById(`tab-${id}`).style.color = id === tabId ? '#333' : '#777';
-            });
-          }
-        </script>
-      </div>
-      <!-- Sidebar -->
-      <div class="col-lg-3 col-md-12" style="background: #f9f9f9; padding: 24px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" data-aos="fade-left" data-aos-delay="800">
+  
+  <!-- =================================================================
+       MAIN CONTENT START - All changes are within this section
+       ================================================================== -->
+  <div class="course-page-wrapper mt-4">
+    <div class="untree_co-section course-page-section mt-4 py-4">
+      <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-12">
-            <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 8px; background: white; overflow: hidden;" data-aos="fade-left" data-aos-delay="900">
-              <a href="sap.html" style="text-decoration: none; color: inherit;">
-                <img src="images/1x/998_sap-768x512.webp" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                <div style="padding: 16px;" >
-                  <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">SAP Basics</h4>
-                  <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                    <strong>Instructor:</strong> Sarah Lee
-                  </p>
-                  <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                    <strong>Duration:</strong> 30 Hours
-                  </p>
-                  <div style="margin-bottom: 16px;">
-                    <p style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹5,500</p>
-                    <p style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">10% OFF</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #4caf50;">₹4,999</p>
-                  </div>
-                  <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%;">Buy Now</button>
+
+          <!-- Main Content (Left Column) -->
+          <div class="col-lg-9 course-main-content">
+
+            <div class="breadcrumb-nav" data-aos="fade-up">
+                <a href="courses.html">Courses</a><span>/</span><a href="#">SAP</a><span>/</span>SAP FICO
+            </div>
+
+            <h1 class="course-title" data-aos="fade-up" data-aos-delay="100">SAP-FICO (Financial Accounting and Controlling) </h1>
+            
+            <div class="rating-info" data-aos="fade-up" data-aos-delay="200">
+                <span class="rating-stars">★★★★★</span> 
+                <span>4.8 (120 ratings)</span>
+            </div>
+
+            <div class="instructor-info" data-aos="fade-up" data-aos-delay="250">
+                Created by: <a href="#" class="text-primary font-weight-bold">Mr. Shah Alam</a>
+            </div>
+
+            <p class="course-subtitle mt-3" data-aos="fade-up" data-aos-delay="300">
+              Master financial accounting and controlling in SAP. Learn ledger management, asset accounting, and enterprise financial reporting.
+            </p>
+
+            <div class="course-content-tabs" data-aos="fade-up" data-aos-delay="400">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="overview-tab-btn" data-toggle="tab" href="#overview-tab" role="tab" aria-controls="overview-tab" aria-selected="true">Overview</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="content-tab-btn" data-toggle="tab" href="#content-tab" role="tab" aria-controls="content-tab" aria-selected="false">Course Content</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="description-tab-btn" data-toggle="tab" href="#description-tab" role="tab" aria-controls="description-tab" aria-selected="false">Description</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="how-to-use-tab-btn" data-toggle="tab" href="#how-to-use-tab" role="tab" aria-controls="how-to-use-tab" aria-selected="false">How To Use</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="overview-tab" role="tabpanel" aria-labelledby="overview-tab-btn">
+                        <div class="what-you-learn-box">
+                            <h3>What you'll learn</h3>
+                            <ul class="learn-list">
+                                <li>Enterprise Structure & Company Code Configuration</li>
+                                <li>In-depth General Ledger (G/L) Accounting</li>
+                                <li>Accounts Payable & Receivable Management</li>
+                                <li>Comprehensive Asset Accounting</li>
+                                <li>Practical Bank Accounting & Tax Configuration (GST, TDS)</li>
+                                <li>Integration skills with MM & SD Modules</li>
+                                <li>Cost Center and Profit Center Accounting</li>
+                                <li>Real-world Month-End and Year-End Closing Activities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="content-tab" role="tabpanel" aria-labelledby="content-tab-btn">
+                        <h3>Modules Covered</h3>
+                        <ul class="ul-check primary">
+                            <li>SAP FI - Financial Accounting Basic Setting</li>
+                            <li>General Ledger Accounting</li>
+                            <li>Accounts Payable & Accounts Receivable</li>
+                            <li>Asset Accounting</li>
+                            <li>CO - CONTROLLING Basic settings for controlling</li>
+                            <li>CO - Cost Center & Internal Orders</li>
+                            <li>CO - Profit Center Accounting & COPA Reporting</li>
+                            <li>SAP Integration</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="description-tab" role="tabpanel" aria-labelledby="description-tab-btn">
+                        <h3>Course Overview</h3>
+                        <p>SAP S/4HANA FICO is a critical module for managing financial transactions. This course is designed for anyone aiming for a robust career in SAP Finance and Controlling, focusing on real-time business process integration.</p>
+                        <ul class="ul-check primary">
+                            <li><strong>Course Type:</strong> End User & Consultant Level</li>
+                            <li><strong>Duration:</strong> 45 Hours (Flexible Batches)</li>
+                            <li><strong>Mode:</strong> Online / Offline</li>
+                            <li><strong>Support:</strong> 100% Placement Assistance with Interview Preparation</li>
+                        </ul>
+                    </div>
+                     <div class="tab-pane fade" id="how-to-use-tab" role="tabpanel" aria-labelledby="how-to-use-tab-btn">
+                        <h3>Accessing Your Course</h3>
+                        <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP FICO course to access all video lectures, materials, and resources. You can learn at your own pace from any device.</p>
+                    </div>
                 </div>
-              </a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-12">
-            <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 8px; background: white; overflow: hidden;" data-aos="fade-left" data-aos-delay="900">
-              <a href="advance-excel.html" style="text-decoration: none; color: inherit;">
-                <img src="images/1x/998_sap-768x512.webp" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                <div style="padding: 16px;">
-                  <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Advanced Excel</h4>
-                  <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                    <strong>Instructor:</strong> Michael Smith
-                  </p>
-                  <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                    <strong>Duration:</strong> 25 Hours
-                  </p>
-                  <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                    <strong>Mode:</strong> Online
-                  </p>
-                  <p style="font-size: 14px; color: #555; margin-bottom: 16px;">
-                    <strong>Language:</strong> English
-                  </p>
-                  <div style="margin-bottom: 16px;">
-                    <p style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹3,000</p>
-                    <p style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">15% OFF</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #4caf50;">₹2,550</p>
-                  </div>
-                  <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%;">Buy Now</button>
+
+          <!-- Sidebar (Right Column) -->
+          <div class="col-lg-3">
+            <div class="course-sidebar-card" data-aos="fade-left" data-aos-delay="300">
+              <img src="images/1x/998_sap-768x512.webp" class="card-img-top" alt="Course thumbnail">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
+                    <span class="discount-badge">9% OFF</span>
                 </div>
-              </a>
+                <button class="btn btn-buy-now">Buy Now</button>
+                <button class="btn btn-book-demo mt-2">Book a Demo Class</button>
+                <ul class="course-includes-list">
+                    <li><i class="uil uil-clock"></i> 90-day validity period</li>
+                    <li><i class="uil uil-video"></i> 45 Hours of Training</li>
+                    <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
+                    <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
+                    <li><i class="uil uil-award"></i> Certificate of Completion</li>
+                    <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Extra Content -->
-        <div class="extra-content" style="margin-top: 24px; padding: 16px; background: #fff; border: 1px solid #eeeeee; border-radius: 4px;" data-aos="fade-left" data-aos-delay="950">
-          <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">Why SAP FICO?</h4>
-          <ul style="font-size: 14px; color: #555; line-height: 1.6;">
-            <li>Streamline financial accounting and reporting.</li>
-            <li>Enhance controlling and cost management processes.</li>
-            <li>Integrate financial data seamlessly across SAP modules.</li>
-          </ul>
+
         </div>
       </div>
     </div>
   </div>
+  <!-- =================================================================
+       MAIN CONTENT END
+       ================================================================== -->
 
   <div class="untree_co-section bg-light">
     <div class="container">
