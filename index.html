@@ -406,21 +406,97 @@
               <li class="has-children">
                 <a href="courses.html">Courses</a>
                 <ul class="dropdown">
-                  <li><a href="pams.html">PAMS</a></li>
-                  <li class="has-children">
-                    <a href="./sap.html">SAP</a>
-                    <ul class="dropdown">
-                      <li><a href="sap-fico.html">SAP-FICO</a></li>
-                      <li><a href="sap-hana.html">SAP-HANA</a></li>
-                      <li><a href="sap-mm.html">SAP-MM</a></li>
+                  <!-- COLUMN: PAMS -->
+                  <li class="mega-col">
+                    <h4>PAMS</h4>
+                    <ul>
+                      <li>
+                        <a class="course-item" href="pams.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#e8c8ea;">📘</span>
+                            <span class="course-title">PAMS</span>
+                          </div>
+                          <div class="course-desc">A 12-week real-world learning path.</div>
+                        </a>
+                      </li>
                     </ul>
                   </li>
-                  <li><a href="business-analytics.html">Business Analytics</a></li>
-                  <li class="has-children">
-                    <a href="#">Others</a>
-                    <ul class="dropdown">
-                      <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                      <li><a href="advance-excel.html">Advance Excel</a></li>
+                
+                  <!-- COLUMN: SAP -->
+                  <li class="mega-col">
+                    <h4>SAP</h4>
+                    <ul>
+                      <!-- SAP FICO -->
+                      <li>
+                        <a class="course-item" href="sap-fico.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#d8f3dc;">💰</span>
+                            <span class="course-title">SAP FICO</span>
+                          </div>
+                          <div class="course-desc">Financial accounting and controlling.</div>
+                        </a>
+                      </li>
+                      <!-- SAP HANA -->
+                      <li>
+                        <a class="course-item" href="sap-hana.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#dbeafe;">⚡️</span>
+                            <span class="course-title">SAP HANA</span>
+                          </div>
+                          <div class="course-desc">High-performance in-memory database.</div>
+                        </a>
+                      </li>
+                      <!-- SAP MM -->
+                      <li>
+                        <a class="course-item" href="sap-mm.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#ffedd5;">📦</span>
+                            <span class="course-title">SAP MM</span>
+                          </div>
+                          <div class="course-desc">Materials and inventory management.</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                
+                  <!-- COLUMN: Business Analytics -->
+                  <li class="mega-col">
+                    <h4>Business Analytics</h4>
+                    <ul>
+                      <li>
+                        <a class="course-item" href="business-analytics.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#cfeef7;">📊</span>
+                            <span class="course-title">Business Analytics</span>
+                          </div>
+                          <div class="course-desc">Tools, visualization & reporting.</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                
+                  <!-- COLUMN: Others -->
+                  <li class="mega-col">
+                    <h4>Others</h4>
+                    <ul>
+                      <li>
+                        <a class="course-item" href="tally-erp-9.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#e9f7ec;">📁</span>
+                            <span class="course-title">Tally ERP 9</span>
+                          </div>
+                          <div class="course-desc">Practical accounting & GST.</div>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="course-item" href="advance-excel.html">
+                          <div class="course-header">
+                            <span class="mm-icon" style="background:#fce8f0;">🧮</span>
+                            <span class="course-title">Advance Excel</span>
+                          </div>
+                          <div class="course-desc">Advanced formulas & dashboards.</div>
+                        </a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -1110,6 +1186,103 @@
       }
 
       document.addEventListener('DOMContentLoaded', updateCourseCardsMobile);
+
+      (function(){
+  function isDesktop(){ return window.innerWidth >= 990; }
+  var nav = document.querySelector('.site-nav .site-navigation');
+  document.querySelectorAll('.site-menu > li.has-children > a').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      if (!isDesktop()) return;
+      e.preventDefault();
+      var li = anchor.parentElement;
+      var opened = li.classList.toggle('mm-open');
+      // close other open menus
+      document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(other){
+        if (other !== li) other.classList.remove('mm-open');
+      });
+      if (nav) {
+        if (document.querySelector('.site-menu > li.has-children.mm-open')) nav.classList.add('nav-mega-open');
+        else nav.classList.remove('nav-mega-open');
+      }
+    });
+  });
+
+  // close on click outside
+  document.addEventListener('click', function(e){
+    if (!isDesktop()) return;
+    if (!e.target.closest('.site-menu > li.has-children')) {
+      document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){ li.classList.remove('mm-open'); });
+      if (nav) nav.classList.remove('nav-mega-open');
+    }
+  });
+
+  // reset on resize
+  window.addEventListener('resize', function(){
+    if (!isDesktop()) {
+      document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){ li.classList.remove('mm-open'); });
+      if (nav) nav.classList.remove('nav-mega-open');
+    }
+  });
+})();
+    </script>
+    <script>
+      (function(){
+        function isDesktop(){ return window.innerWidth >= 990; }
+        var nav = document.querySelector('.site-nav .site-navigation');
+    
+        // Function to close any open mega menu
+        function closeMegaMenu() {
+          document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){
+            li.classList.remove('mm-open');
+          });
+          if (nav) {
+            nav.classList.remove('nav-mega-open');
+          }
+        }
+    
+        // --- CLICK LISTENER (Existing) ---
+        document.querySelectorAll('.site-menu > li.has-children > a').forEach(function(anchor){
+          anchor.addEventListener('click', function(e){
+            if (!isDesktop()) return;
+            e.preventDefault();
+            var li = anchor.parentElement;
+            var wasOpen = li.classList.contains('mm-open');
+            
+            // Always close any currently open menus first
+            closeMegaMenu();
+    
+            // If the clicked menu was not the one that was open, open it
+            if (!wasOpen) {
+              li.classList.add('mm-open');
+              if (nav) nav.classList.add('nav-mega-open');
+            }
+          });
+        });
+      
+        // --- CLICK OUTSIDE LISTENER (Existing) ---
+        document.addEventListener('click', function(e){
+          if (!isDesktop()) return;
+          if (!e.target.closest('.site-menu > li.has-children')) {
+            closeMegaMenu();
+          }
+        });
+      
+        // --- RESIZE LISTENER (Existing) ---
+        window.addEventListener('resize', function(){
+          if (!isDesktop()) {
+            closeMegaMenu();
+          }
+        });
+    
+        // --- NEW: SCROLL LISTENER ---
+        // This function closes the menu when the user scrolls the page.
+        window.addEventListener('scroll', function() {
+          if (isDesktop()) {
+            closeMegaMenu();
+          }
+        });
+    
+      })();
     </script>
   </body>
 </html>

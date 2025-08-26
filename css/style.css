@@ -3790,3 +3790,113 @@ span#typed-skills {
 .top-bar__right .social-icon svg {
   fill: currentColor;
 }
+/* ==========================================
+   FINAL POLISHED GLASS MEGA MENU (>= 990px)
+   ========================================== */
+   @media (min-width: 990px) {
+    .site-nav .site-navigation .site-menu > li.has-children { position: static !important; }
+  
+    /* Main dropdown container */
+    .site-nav .site-navigation .site-menu > li.has-children > .dropdown {
+      position: absolute !important;
+      left: 50% !important;
+      top: calc(100% + 15px) !important;
+      transform: translateX(-50%) translateY(10px);
+      width: min(92vw, 1050px) !important;
+      
+      /* Increased Opacity */
+      background: rgba(22, 22, 24, 0.9) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      color: #fff !important;
+      border-radius: 18px !important;
+      padding: 24px !important;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3) !important;
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 12px !important;
+      align-items: start;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .2s ease, transform .2s ease, visibility .2s;
+      z-index: 2300;
+    }
+  
+    .site-nav .site-navigation .site-menu > li.has-children:hover > .dropdown,
+    .site-nav .site-navigation .site-menu > li.has-children.mm-open > .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  
+    /* Column styling with Full-Height Separator Line */
+    .site-nav .dropdown .mega-col {
+      padding: 0 12px;
+      position: relative;
+    }
+    .site-nav .dropdown .mega-col:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 5%;
+      bottom: 5%;
+      right: -6px; /* Centered in the gap */
+      width: 1px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .site-nav .dropdown .mega-col h4 {
+      color: #a0a0a0;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      padding-left: 10px;
+    }
+    .site-nav .dropdown .mega-col ul { list-style:none; padding:0; margin:0; }
+    
+    /* Course Item Card Styling */
+    .site-nav .dropdown .course-item {
+      display: block;
+      text-decoration: none;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 9px;
+      transition: background .2s ease;
+    }
+    .site-nav .dropdown .course-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Header: Icon + Title Alignment */
+    .site-nav .dropdown .course-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .site-nav .dropdown .mm-icon {
+      width: 40px; height: 40px;
+      border-radius: 9px;
+      font-size: 20px; /* Standardized icon size */
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .site-nav .dropdown .course-title {
+      color: #f0f0f0;
+      font-weight: 700; /* Bolder for visual balance */
+      font-size: 1rem;
+    }
+  
+    /* Description styling with perfect alignment */
+    .site-nav .dropdown .course-desc {
+      color: #a0a0a0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-top: 8px;
+      /* Aligns description text with the start of the course title */
+      /* padding-left: 54px;  */
+    }
+  }
