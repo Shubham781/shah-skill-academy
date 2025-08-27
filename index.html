@@ -342,6 +342,55 @@
         flex-wrap: wrap;
     }
 }
+/* === Top-bar social icons: clear, hover + active, no circle ===
+   Put this at the END of style.css to override earlier styles.
+*/
+.top-bar .top-bar__right .social-icon {
+  margin-left: 1rem;
+  background: none !important;       /* no circle / no background */
+  border-radius: 0 !important;       /* ensure no rounded background */
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #666 !important;            /* default icon color */
+  filter: none !important;           /* remove grayscale filter from earlier rules */
+  text-decoration: none;
+  transition: color 200ms ease, transform 120ms ease, filter 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* make <i> inherit the anchor color reliably */
+.top-bar .top-bar__right .social-icon i {
+  color: inherit !important;
+  line-height: 1;
+  font-size: 1.05rem; /* adjust size if you want */
+  transition: inherit;
+}
+
+/* Per-icon hover colors */
+.top-bar .top-bar__right .social-icon:hover i.fa-instagram    { color: #E4405F !important; }
+.top-bar .top-bar__right .social-icon:hover i.fa-youtube      { color: #FF0000 !important; }
+.top-bar .top-bar__right .social-icon:hover i.fa-facebook-f   { color: #3b5998 !important; }
+.top-bar .top-bar__right .social-icon:hover i.fa-linkedin-in  { color: #0077B5 !important; }
+
+/* Pressed (active) feedback while mouse is down / finger press */
+.top-bar .top-bar__right .social-icon:active i {
+  transform: scale(0.92);
+  opacity: 0.95;
+}
+
+/* keyboard focus (accessibility) */
+.top-bar .top-bar__right .social-icon:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(19,106,213,0.12);
+  border-radius: 4px;
+}
+
+/* If earlier inline rules still interfere, add highest specificity fallback */
+#sticky-wrapper .top-bar .top-bar__right .social-icon i { color: inherit !important; filter: none !important; }
+
+
 </style>
 
 

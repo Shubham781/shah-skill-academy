@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
 
@@ -35,7 +35,7 @@
     
     /* --- NEW PROFESSIONAL COURSE PAGE STYLES --- */
     .course-page-wrapper {
-        padding-top: 4rem; /* Adds space below the sticky navbar */
+        padding-top: 1rem; /* Adds space below the sticky navbar */
     }
     .course-page-section {
         background-color: #fff;
@@ -207,7 +207,7 @@
 
     /* Course Content Tabs */
     .course-content-tabs {
-        margin-top: 3rem;
+        margin-top: 2rem;
         background: #f8f9fa;
         border: 1px solid #e9ecef;
         border-radius: 12px;
@@ -243,6 +243,257 @@
       list-style: none;
       padding-left: 0;
     }
+    .site-nav {
+      position: relative !important;
+      width: 100%;
+      z-index: 9;
+      top: 0;
+    }
+    .site-nav .site-navigation {
+      position: relative;
+    }
+    .site-nav .site-navigation .site-menu {
+      margin-bottom: 0;
+    }
+    .site-nav .site-navigation .site-menu > li {
+      display: inline-block;
+    }
+    .site-nav .site-navigation .site-menu > li > a {
+      font-size: 0.875rem;
+      padding: 0.625rem 0.9375rem;
+      display: inline-block;
+      text-decoration: none !important;
+      color: #000000;
+      position: relative;
+    }
+    .site-nav .site-navigation .site-menu > li > a:hover {
+      color: #136ad5;
+    }
+    .site-nav .site-navigation .site-menu > li.active > a {
+      color: #136ad5;
+    }
+    
+    /* ======================
+       Logo Fix
+       ====================== */
+    .logo-sticky {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .mobile-logo {
+      height: 5.5rem;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    
+    /* ======================
+       Buttons
+       ====================== */
+    .btn-book {
+      position: absolute;
+      right: 15px;
+      margin-top: -2px;
+    }
+    @media (max-width: 991.98px) {
+      .btn-book {
+        position: static !important;
+        right: auto !important;
+        margin-top: 0 !important;
+      }
+    }
+    .btn {
+      padding-top: 0.9375rem;
+      padding-bottom: 0.9375rem;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
+      border-radius: 1.875rem;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .05rem;
+    }
+    .btn.btn-secondary {
+      background: #00aeff;
+      border-color: #00aeff;
+    }
+    .btn.btn-secondary:hover {
+      border-color: #14b4ff;
+      background: #14b4ff;
+    }
+    .btn.btn-sm {
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
+    }
+    
+    /* ======================
+       Burger Menu
+       ====================== */
+    .burger {
+      width: 28px;
+      height: 32px;
+      cursor: pointer;
+      position: relative;
+    }
+    .burger.light:before,
+    .burger.light span,
+    .burger.light:after {
+      background: #ffffff;
+    }
+    .burger:before,
+    .burger span,
+    .burger:after {
+      width: 100%;
+      height: 2px;
+      display: block;
+      background: #000;
+      border-radius: 2px;
+      position: absolute;
+      opacity: 1;
+    }
+    .burger:before { top: 4px; content: ""; }
+    .burger span { top: 15px; }
+    .burger:after { top: 26px; content: ""; }
+    
+    /* ======================
+       Dropdown
+       ====================== */
+    .site-nav .site-navigation .site-menu .has-children {
+      position: relative;
+    }
+    .site-nav .site-navigation .site-menu .has-children .dropdown {
+      visibility: hidden;
+      opacity: 0;
+      top: 100%;
+      z-index: 999;
+      position: absolute;
+      text-align: left;
+      box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      margin-top: 20px;
+      margin-left: 0px;
+      background: #ffffff;
+      transition: 0.2s 0s;
+      min-width: 180px;
+    }
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
+      padding: 5px 20px;
+      display: block;
+      color: #000000;
+    }
+    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
+      color: #136ad5;
+    }
+    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
+      transition-delay: 0s;
+      margin-top: 0px;
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    /* ======================
+       Multi-level Dropdown
+       ====================== */
+    .site-menu .dropdown .has-children > .dropdown {
+      left: 100%;
+      top: 0;
+      margin-top: 0;
+      margin-left: 0;
+      position: absolute;
+      min-width: 200px;
+      display: none;
+    }
+    .site-menu .dropdown .has-children:hover > .dropdown {
+      display: block;
+    }
+    
+    /* ======================
+       Sticky Navigation
+       ====================== */
+    .sticky-nav {
+      transition: .3s all ease;
+      background: white;
+      box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(1rem);
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .sticky-nav .site-menu > li > a {
+      color: #000000 !important;
+    }
+    .sticky-nav .site-menu > li > a:hover,
+    .sticky-nav .site-menu > li > a.active {
+      color: #136ad5 !important;
+    }
+    .sticky-nav .burger:before,
+    .sticky-nav .burger span,
+    .sticky-nav .burger:after {
+      background: #000000;
+    }
+    
+    /* ======================
+       Mobile/Desktop Nav Toggle
+       ====================== */
+    @media (max-width: 989px) {
+      .desktop-nav-content { display: none !important; }
+      .mobile-nav-content { display: flex !important; }
+    }
+    @media (min-width: 990px) {
+      .desktop-nav-content { display: flex !important; }
+      .mobile-nav-content { display: none !important; }
+    }
+    
+    /* ======================
+       Parallax Hero
+       ====================== */
+    .untree_co-hero {
+      will-change: transform;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Parallax effect for hero section */
+/* Make hero image layer GPU-friendly */
+.untree_co-hero {
+  will-change: transform; /* Hint browser for smooth animation */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Override the column-reverse for the newsletter section on small screens */
+@media (max-width: 991.98px) {
+  .newsletter-section .row {
+    flex-direction: column; /* stack normally (left then right) */
+  }
+}
+
+@media (max-width: 991.98px) {
+    .what-to-expect-section .row {
+        flex-direction: row; /* default Bootstrap row flow */
+        flex-wrap: wrap;
+    }
+}
+
+/* FIX: Remove bottom padding from the last untree_co-section */
+.untree_co-section.newsletter-section {
+    margin-bottom: 10px !important;  
+}
+
+/* Ensure the body and html do not add extra margin/padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
   </style>
 
@@ -260,7 +511,7 @@
     <div class="site-mobile-menu-body"></div>
   </div>
 
-  <nav class="site-nav">
+  <nav class="site-nav mb-5">
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation">
@@ -273,28 +524,104 @@
                 <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
               </a>
             </div>
+  
             <div class="nav-menu desktop-nav-content">
-              <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
+              <ul class=" site-menu d-flex align-items-center mb-0">
                 <li><a href="index.html">Home</a></li>
                 <li class="has-children">
                   <a href="courses.html">Courses</a>
                   <ul class="dropdown">
-                    <li><a href="pams.html">PAMS</a></li>
-                    <li class="has-children">
-                      <a href="#">SAP</a>
-                      <ul class="dropdown">
-                        <li><a href="sap-fico.html">SAP-FICO</a></li>
-                        <li><a href="sap-hana.html">SAP-HANA</a></li>
-                        <li><a href="sap-mm.html">SAP-MM</a></li>
-                        <li><a href="sap-sd.html">SAP-SD</a></li>
+                    <!-- COLUMN: PAMS -->
+                    <li class="mega-col">
+                      <h4>PAMS</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="pams.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e8c8ea;">📘</span>
+                              <span class="course-title">PAMS</span>
+                            </div>
+                            <div class="course-desc">A 12-week real-world learning path.</div>
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                    <li class="has-children">
-                      <a href="#">Others</a>
-                      <ul class="dropdown">
-                        <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                        <li><a href="advance-excel.html">Advance Excel</a></li>
+                  
+                    <!-- COLUMN: SAP -->
+                    <li class="mega-col">
+                      <h4>SAP</h4>
+                      <ul>
+                        <!-- SAP FICO -->
+                        <li>
+                          <a class="course-item" href="sap-fico.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#d8f3dc;">💰</span>
+                              <span class="course-title">SAP FICO</span>
+                            </div>
+                            <div class="course-desc">Financial accounting and controlling.</div>
+                          </a>
+                        </li>
+                        <!-- SAP HANA -->
+                        <li>
+                          <a class="course-item" href="sap-hana.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#dbeafe;">⚡️</span>
+                              <span class="course-title">SAP HANA</span>
+                            </div>
+                            <div class="course-desc">High-performance in-memory database.</div>
+                          </a>
+                        </li>
+                        <!-- SAP MM -->
+                        <li>
+                          <a class="course-item" href="sap-mm.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#ffedd5;">📦</span>
+                              <span class="course-title">SAP MM</span>
+                            </div>
+                            <div class="course-desc">Materials and inventory management.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Business Analytics -->
+                    <li class="mega-col">
+                      <h4>Business Analytics</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="business-analytics.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#cfeef7;">📊</span>
+                              <span class="course-title">Business Analytics</span>
+                            </div>
+                            <div class="course-desc">Tools, visualization & reporting.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Others -->
+                    <li class="mega-col">
+                      <h4>Others</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="tally-erp-9.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e9f7ec;">📁</span>
+                              <span class="course-title">Tally ERP 9</span>
+                            </div>
+                            <div class="course-desc">Practical accounting & GST.</div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="course-item" href="advance-excel.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#fce8f0;">🧮</span>
+                              <span class="course-title">Advance Excel</span>
+                            </div>
+                            <div class="course-desc">Advanced formulas & dashboards.</div>
+                          </a>
+                        </li>
                       </ul>
                     </li>
                   </ul>
@@ -304,6 +631,7 @@
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
+  
             <div class="nav-actions d-flex align-items-center">
               <a href="./contact.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
               <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
@@ -316,11 +644,41 @@
     </div>
   </nav>
   
+  <div class="d-none">
+    <ul class="js-clone-nav site-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-children">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown">
+          <li><a href="pams.html">PAMS</a></li>
+          <li class="has-children">
+            <a href="sap.html">SAP</a>
+            <ul class="dropdown">
+              <li><a href="sap-fico.html">SAP-FICO</a></li>
+              <li><a href="sap-hana.html">SAP-HANA</a></li>
+              <li><a href="sap-mm.html">SAP-MM</a></li>
+            </ul>
+          </li>
+          <li><a href="business-analytics.html">Business Analytics</a></li>
+          <li class="has-children">
+            <a href="#">Others</a>
+            <ul class="dropdown">
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advance Excel</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
   <!-- =================================================================
        MAIN CONTENT START - All changes are within this section
        ================================================================== -->
-  <div class="course-page-wrapper mt-4">
-    <div class="untree_co-section course-page-section mt-4 py-4">
+  <div class="course-page-wrapper">
+    <div class="untree_co-section course-page-section">
       <div class="container">
         <div class="row">
 
@@ -395,158 +753,248 @@
                         <p>SAP S/4HANA FICO is a critical module for managing financial transactions. This course is designed for anyone aiming for a robust career in SAP Finance and Controlling, focusing on real-time business process integration.</p>
                         <ul class="ul-check primary">
                             <li><strong>Course Type:</strong> End User & Consultant Level</li>
-                            <li><strong>Duration:</strong> 45 Hours (Flexible Batches)</li>
+                            <li><strong>Duration:</strong>45 Hours (Flexible Batches)</li>
                             <li><strong>Mode:</strong> Online / Offline</li>
                             <li><strong>Support:</strong> 100% Placement Assistance with Interview Preparation</li>
-                        </ul>
-                    </div>
-                     <div class="tab-pane fade" id="how-to-use-tab" role="tabpanel" aria-labelledby="how-to-use-tab-btn">
-                        <h3>Accessing Your Course</h3>
-                        <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP FICO course to access all video lectures, materials, and resources. You can learn at your own pace from any device.</p>
-                    </div>
-                </div>
+                            </ul>
+                            </div>
+                            <div class="tab-pane fade" id="how-to-use-tab" role="tabpanel" aria-labelledby="how-to-use-tab-btn">
+                            <h3>Accessing Your Course</h3>
+                            <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP FICO course to access all video lectures, materials, and resources. You can learn at your own pace from any device.</p>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                                  <!-- Sidebar (Right Column) -->
+      <div class="col-lg-3">
+        <div class="course-sidebar-card" data-aos="fade-left" data-aos-delay="300">
+          <img src="images/1x/998_sap-768x512.webp" class="card-img-top" alt="Course thumbnail">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
+                <span class="discount-badge">9% OFF</span>
             </div>
+            <button class="btn btn-buy-now">Buy Now</button>
+            <button class="btn btn-book-demo mt-2">Book a Demo Class</button>
+            <ul class="course-includes-list">
+                <li><i class="uil uil-clock"></i> 90-day validity period</li>
+                <li><i class="uil uil-video"></i> 45 Hours of Training</li>
+                <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
+                <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
+                <li><i class="uil uil-award"></i> Certificate of Completion</li>
+                <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
+            </ul>
           </div>
-
-          <!-- Sidebar (Right Column) -->
-          <div class="col-lg-3">
-            <div class="course-sidebar-card" data-aos="fade-left" data-aos-delay="300">
-              <img src="images/1x/998_sap-768x512.webp" class="card-img-top" alt="Course thumbnail">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
-                    <span class="discount-badge">9% OFF</span>
-                </div>
-                <button class="btn btn-buy-now">Buy Now</button>
-                <button class="btn btn-book-demo mt-2">Book a Demo Class</button>
-                <ul class="course-includes-list">
-                    <li><i class="uil uil-clock"></i> 90-day validity period</li>
-                    <li><i class="uil uil-video"></i> 45 Hours of Training</li>
-                    <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
-                    <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
-                    <li><i class="uil uil-award"></i> Certificate of Completion</li>
-                    <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
+
     </div>
   </div>
-  <!-- =================================================================
-       MAIN CONTENT END
-       ================================================================== -->
-
-  <div class="untree_co-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-lg-7 text-center">
-          <h2 class="line-bottom text-center mb-3">Subscribe to Our Newsletter</h2>
-          <p class="mb-4">Stay updated with the latest courses and offers. Subscribe now!</p>
-        </div>
+</div>
+</div>
+<div class="untree_co-section newsletter-section bg-light">
+  <div class="container" style="background: url(./images/internet-lessons-searching-remote-university-educational-programs-online-classes-website-high-school/20944332.jpg);">
+    <div class=" row  align-items-center bg-light">
+      
+      <!-- Left Content -->
+      <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="line-bottom mb-4">Inquire About Our Courses</h2>
+        <p>
+          Sign up with your primary email to receive our skill development tips and updates on our latest professional courses.
+        </p>
+        <ul class="list-unstyled ul-check primary mt-4">
+          <li>Expert-led courses with practical industry experience</li>
+          <li>Flexible learning schedules to fit your lifestyle</li>
+          <li>Certificate upon completion with job placement support</li>
+        </ul>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 col-sm-10">
-          <form class="d-flex flex-column flex-sm-row align-items-center bg-white p-3 shadow-sm rounded">
-            <input type="email" class="form-control mb-2 mb-sm-0 mr-sm-2 border-0" placeholder="Enter your email to get course updates" required>
-            <button type="submit" class="btn btn-primary px-4 btn-hover-animate">Subscribe Now</button>
+
+      <!-- Right Form -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 p-lg-5 bg-white rounded shadow-sm">
+          <form id="newsletterForm">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="email" class="form-control" placeholder="Email Address" required>
+            </div>
+            <div class="form-group mb-4">
+              <select class="form-control" required>
+                <option value="">Select Course Interest</option>
+                <option value="advance-excel">Advance Excel</option>
+                <option value="tally-prime">Tally Prime</option>
+                <option value="zoho-books">ZOHO Books</option>
+                <option value="gst">GST</option>
+                <option value="busy-software">Busy Software</option>
+                <option value="power-bi">Power BI</option>
+                <option value="sap-fico">SAP S4HANA FICO</option>
+                <option value="sap-mm">SAP S4HANA MM</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-block w-100">
+              Submit Inquiry
+            </button>
           </form>
         </div>
       </div>
+
     </div>
   </div>
+</div>
 
-  <div class="site-footer">
-    <div class="container">
-      <div class="row">
-        <!-- About Widget -->
-        <div class="col-lg-3 mr-auto">
-          <div class="widget">
-            <h3>About Shah Skill Academy<span class="text-primary">.</span></h3>
-            <p>Shah Skill Academy is dedicated to providing industry-relevant courses in SAP, Accounting, Analytics, and Business Tools. We help professionals and students upskill and stay ahead in their careers with practical training.</p>
-          </div>
-          <div class="widget">
-            <h3>Follow Us</h3>
-            <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-facebook"></span></a></li>
-              <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              <li><a href="#"><span class="icon-instagram"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
-            </ul>
-          </div>
+<div class="site-footer">
+  <div class="container">
+    <div class="row">
+      <!-- About Widget -->
+      <div class="col-lg-3 mr-auto">
+        <div class="widget">
+          <h3>About Shah Skill Academy<span class="text-primary">.</span></h3>
+          <p>Shah Skill Academy is dedicated to providing industry-relevant courses in SAP, Accounting, Analytics, and Business Tools. We help professionals and students upskill and stay ahead in their careers with practical training.</p>
         </div>
-  
-        <!-- Quick Links -->
-        <div class="col-lg-2 ml-auto">
-          <div class="widget">
-            <h3>Quick Links</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="staff.html">Recruitment</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-  
-        <!-- Popular Courses -->
-        <div class="col-lg-3">
-          <div class="widget">
-            <h3>Popular Courses</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="sap-fico.html">SAP FICO</a></li>
-              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-              <li><a href="advance-excel.html">Advanced Excel</a></li>
-              <li><a href="business-analytics.html">Business Analytics</a></li>
-              <li><a href="sap-hana.html">SAP HANA</a></li>
-            </ul>
-          </div>
-        </div>
-  
-        <!-- Contact Info -->
-        <div class="col-lg-3">
-          <div class="widget">
-            <h3>Contact Us</h3>
-            <address>Shah Skill Academy, 43 Raymouth Rd., New Delhi, India</address>
-            <ul class="list-unstyled links mb-4">
-              <li><a href="tel://+911234567890">+91-12345-67890</a></li>
-              <li><a href="mailto:info@ssainstitute.com">info@ssainstitute.com</a></li>
-            </ul>
-            <p>Working Hours: Mon - Sat, 9:00AM - 6:00PM</p>
-          </div>
+        <div class="widget">
+          <h3>Follow Us</h3>
+          <ul class="list-unstyled social">
+            <li><a href="#"><span class="icon-facebook"></span></a></li>
+            <li><a href="#"><span class="icon-linkedin"></span></a></li>
+            <li><a href="#"><span class="icon-instagram"></span></a></li>
+            <li><a href="#"><span class="icon-twitter"></span></a></li>
+          </ul>
         </div>
       </div>
-  
-      <div class="row mt-2">
-        <div class="col-12 text-center">
-          <p class="copyright">
-            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with ❤️ by Shah Skill Academy.
-          </p>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 ml-auto">
+        <div class="widget">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled float-left links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="staff.html">Recruitment</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
+      </div>
+
+      <!-- Popular Courses -->
+      <div class="col-lg-3">
+        <div class="widget">
+          <h3>Popular Courses</h3>
+          <ul class="list-unstyled float-left links">
+            <li><a href="sap-fico.html">SAP FICO</a></li>
+            <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+            <li><a href="advance-excel.html">Advanced Excel</a></li>
+            <li><a href="business-analytics.html">Business Analytics</a></li>
+            <li><a href="sap-hana.html">SAP HANA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-3">
+        <div class="widget">
+          <h3>Contact Us</h3>
+          <address>Shimla Bypass Road, Van Vihar, Dehradun</address>
+          <ul class="list-unstyled links mb-4">
+            <li><a href="tel://+916395381399">+91 63953 81399</a></li>
+            <li><a href="mailto:shahskillacademy@gmail.com">shahskillacademy@gmail.com</a></li>
+          </ul>
+          <p>Working Hours: Mon - Sat, 9:00AM - 6:00PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-12 text-center">
+        <p class="copyright">
+          &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with by Shah Skill Academy.
+        </p>
       </div>
     </div>
   </div>
+</div>
+<div id="overlayer"></div>
+<div class="loader">
+<div class="spinner-border" role="status">
+<span class="sr-only">Loading...</span>
+</div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+duration: 800,
+easing: 'slide',
+once: true
+});
+</script>
+<script>
+(function(){
+function isDesktop(){ return window.innerWidth >= 990; }
+var nav = document.querySelector('.site-nav .site-navigation');
+    // Function to close any open mega menu
+    function closeMegaMenu() {
+      document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){
+        li.classList.remove('mm-open');
+      });
+      if (nav) {
+        nav.classList.remove('nav-mega-open');
+      }
+    }
 
-  <div id="overlayer"></div>
-    <div class="loader">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
+    // --- CLICK LISTENER (Existing) ---
+    document.querySelectorAll('.site-menu > li.has-children > a').forEach(function(anchor){
+      anchor.addEventListener('click', function(e){
+        if (!isDesktop()) return;
+        e.preventDefault();
+        var li = anchor.parentElement;
+        var wasOpen = li.classList.contains('mm-open');
+        
+        // Always close any currently open menus first
+        closeMegaMenu();
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/custom.js"></script>
+        // If the clicked menu was not the one that was open, open it
+        if (!wasOpen) {
+          li.classList.add('mm-open');
+          if (nav) nav.classList.add('nav-mega-open');
+        }
+      });
+    });
+  
+    // --- CLICK OUTSIDE LISTENER (Existing) ---
+    document.addEventListener('click', function(e){
+      if (!isDesktop()) return;
+      if (!e.target.closest('.site-menu > li.has-children')) {
+        closeMegaMenu();
+      }
+    });
+  
+    // --- RESIZE LISTENER (Existing) ---
+    window.addEventListener('resize', function(){
+      if (!isDesktop()) {
+        closeMegaMenu();
+      }
+    });
 
+    // --- NEW: SCROLL LISTENER ---
+    // This function closes the menu when the user scrolls the page.
+    window.addEventListener('scroll', function() {
+      if (isDesktop()) {
+        closeMegaMenu();
+      }
+    });
+
+  })();
+</script>
 </body>
 </html>
