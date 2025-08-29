@@ -1,6 +1,3 @@
-/* =========================
-   Global Styles & Utilities
-   ========================= */
 html,
 body {
   overflow-x: hidden;
@@ -300,9 +297,7 @@ h4,
     margin-left: -15px;
     margin-right: -15px;
   }
-  .untree_co-section .row .newsletter-section{
-    flex-direction: column;
-  }
+  /* REMOVED: .untree_co-section .row .newsletter-section{ flex-direction: column; } - This rule was incorrect and potentially conflicting */
 }
 
 .gutter-v1>.col,
@@ -1301,6 +1296,33 @@ h4,
   }
 }
 
+@media (max-width: 770px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .untree_co-section .why-section {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+  }
+
+  .untree_co-hero .container {
+    text-align: center;
+  }
+}
+
 .untree_co-section .heading h3 {
   font-size: 2.1875rem;
   color: #000000;
@@ -1312,8 +1334,14 @@ h4,
     font-size: 1.25rem;
   }
 
-  .untree_co-section .row {
-    flex-direction: column-reverse;
+  /* Specific override for course-page-section to ensure standard column order */
+  .course-page-section .row {
+    flex-direction: column; /* Ensure main content (col-lg-9) comes first */
+  }
+
+  /* Specific override for newsletter-section to ensure standard column order */
+  .newsletter-section .row {
+    flex-direction: column; /* Ensure left content is above right form on mobile */
   }
 }
 
@@ -3900,3 +3928,1074 @@ span#typed-skills {
       /* padding-left: 54px;  */
     }
   }
+
+/* --- NEW PROFESSIONAL COURSE PAGE STYLES --- */
+.course-page-wrapper {
+    padding-top: 1rem; /* Adds space below the sticky navbar */
+}
+.course-page-section {
+    background-color: #fff;
+    padding: 2rem 0 4rem 0;
+}
+
+/* Right Sidebar Card (Desktop default, then mobile overrides) */
+.course-sidebar-card {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    background: #fff;
+    padding: 0; /* Reset padding for internal control */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Default stack items vertically */
+}
+
+/* Styles for desktop sidebar's card-img-top and card-body */
+.course-sidebar-card.d-lg-block .card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.course-sidebar-card.d-lg-block .card-body {
+    padding: 1.2rem 1rem;
+}
+.course-sidebar-card .price-tag {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+.course-sidebar-card .price-tag .original-price {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #888;
+}
+.course-sidebar-card .discount-badge {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4caf50;
+}
+.course-sidebar-card .btn-buy-now {
+    background-color: #136ad5;
+    color: white;
+    width: 100%;
+    padding: 0.8rem; /* Adjusted for desktop sidebar */
+    font-size: 1rem; /* Adjusted for desktop sidebar */
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.course-sidebar-card .btn-buy-now:hover {
+    background-color: #0f5bb5;
+    transform: translateY(-2px);
+}
+.course-sidebar-card .btn-book-demo {
+    background-color: transparent;
+    color: #136ad5;
+    border: 2px solid #136ad5;
+    width: 100%;
+    padding: 0.7rem; /* Adjusted for desktop sidebar */
+    font-size: 1rem; /* Adjusted for desktop sidebar */
+    font-weight: 600;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+.course-sidebar-card .btn-book-demo:hover {
+    background-color: #136ad5;
+    color: #fff;
+}
+.course-sidebar-card .course-includes-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+.course-sidebar-card .course-includes-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+.course-sidebar-card .course-includes-list .uil {
+    font-size: 1.2rem;
+    color: #136ad5;
+    margin-right: 0.75rem;
+}
+
+/* Left Main Content */
+.breadcrumb-nav {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.breadcrumb-nav a {
+    color: #136ad5;
+    text-decoration: none;
+}
+.breadcrumb-nav span {
+    margin: 0 0.5rem;
+    color: #6c757d;
+}
+.course-main-content .course-title {
+    font-family: 'Display Playfair', serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #000;
+    margin-top: 1rem;
+}
+.course-main-content .course-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 90%;
+}
+.course-main-content .rating-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 1rem;
+}
+.course-main-content .rating-info .rating-stars { color: #f4b400; }
+.course-main-content .instructor-info { font-size: 1rem; margin-top: 0.5rem;}
+
+/* "What you'll learn" box - removed specific border/shadow/padding when nested */
+.what-you-learn-box {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2rem;
+}
+.what-you-learn-box h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+.what-you-learn-box .learn-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Course Content Tabs (Desktop) */
+.course-content-tabs {
+    margin-top: 2rem;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+}
+.course-content-tabs .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+.course-content-tabs .nav-link {
+    border: 0;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6c757d;
+    padding: 0.75rem 0;
+    margin-right: 2rem;
+}
+.course-content-tabs .nav-link.active {
+    color: #136ad5;
+    border-bottom-color: #136ad5;
+}
+.course-content-tabs .tab-content {
+    padding: 2rem 0;
+}
+.course-content-tabs h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+/* Custom Accordion for Mobile Tabs */
+.course-content-accordion {
+    margin-top: 2rem;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+.course-content-accordion .card {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+}
+.course-content-accordion .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0;
+}
+.course-content-accordion .card-header:last-child {
+  border-bottom: none; /* No bottom border on the last header */
+}
+.course-content-accordion .card-header .btn-link {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.course-content-accordion .card-header .btn-link:hover {
+    color: #136ad5;
+}
+.course-content-accordion .card-header .btn-link[aria-expanded="true"] {
+    color: #136ad5;
+    background-color: #eef3f7;
+}
+.course-content-accordion .card-header .btn-link .accordion-icon {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+.course-content-accordion .card-header .btn-link[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+}
+.course-content-accordion .collapse.show .card-body {
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+}
+.course-content-accordion .card-body {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+/* Ensure ul-check inside accordion body looks correct */
+.course-content-accordion .card-body .ul-check {
+    padding-left: 0;
+    list-style: none;
+}
+.course-content-accordion .card-body .ul-check li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+.course-content-accordion .card-body .ul-check li:before {
+    content: "\e5ca";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-size: 1.1em;
+    color: #136ad5;
+}
+.course-content-accordion .card-body .what-you-learn-box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.course-content-accordion .card-body .what-you-learn-box .learn-list li {
+  font-size: 0.9rem;
+}
+
+
+/* General list style fix */
+.ul-check {
+  list-style: none;
+  padding-left: 0;
+}
+.site-nav {
+  position: relative !important;
+  width: 100%;
+  z-index: 9;
+  top: 0;
+}
+.site-nav .site-navigation {
+  position: relative;
+}
+.site-nav .site-navigation .site-menu {
+  margin-bottom: 0;
+}
+.site-nav .site-navigation .site-menu > li {
+  display: inline-block;
+}
+.site-nav .site-navigation .site-menu > li > a {
+  font-size: 0.875rem;
+  padding: 0.625rem 0.9375rem;
+  display: inline-block;
+  text-decoration: none !important;
+  color: #000000;
+  position: relative;
+}
+.site-nav .site-navigation .site-menu > li > a:hover {
+  color: #136ad5;
+}
+.site-nav .site-navigation .site-menu > li.active > a {
+  color: #136ad5;
+}
+
+/* ======================
+   Logo Fix
+   ====================== */
+.logo-sticky {
+  max-height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+.mobile-logo {
+  height: 5.5rem;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ======================
+   Buttons
+   ====================== */
+.btn-book {
+  position: absolute;
+  right: 15px;
+  margin-top: -2px;
+}
+@media (max-width: 991.98px) {
+  .btn-book {
+    position: static !important;
+    right: auto !important;
+    margin-top: 0 !important;
+  }
+}
+.btn {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  border-radius: 1.875rem;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .05rem;
+}
+.btn.btn-secondary {
+  background: #00aeff;
+  border-color: #00aeff;
+}
+.btn.btn-secondary:hover {
+  border-color: #14b4ff;
+  background: #14b4ff;
+}
+.btn.btn-sm {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+/* ======================
+   Burger Menu
+   ====================== */
+.burger {
+  width: 28px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+}
+.burger.light:before,
+.burger.light span,
+.burger.light:after {
+  background: #ffffff;
+}
+.burger:before,
+.burger span,
+.burger:after {
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #000;
+  border-radius: 2px;
+  position: absolute;
+  opacity: 1;
+}
+.burger:before { top: 4px; content: ""; }
+.burger span { top: 15px; }
+.burger:after { top: 26px; content: ""; }
+
+/* ======================
+   Dropdown
+   ====================== */
+.site-nav .site-navigation .site-menu .has-children {
+  position: relative;
+}
+.site-nav .site-navigation .site-menu .has-children .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  top: 100%;
+  z-index: 999;
+  position: absolute;
+  text-align: left;
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  margin-top: 20px;
+  margin-left: 0px;
+  background: #ffffff;
+  transition: 0.2s 0s;
+  min-width: 180px;
+}
+.site-nav .site-navigation .site-menu .has-children .dropdown > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
+  padding: 5px 20px;
+  display: block;
+  color: #000000;
+}
+.site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
+  color: #136ad5;
+}
+.site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
+  transition-delay: 0s;
+  margin-top: 0px;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ======================
+   Multi-level Dropdown
+   ====================== */
+.site-menu .dropdown .has-children > .dropdown {
+  left: 100%;
+  top: 0;
+  margin-top: 0;
+  margin-left: 0;
+  position: absolute;
+  min-width: 200px;
+  display: none;
+}
+.site-menu .dropdown .has-children:hover > .dropdown {
+  display: block;
+}
+
+/* ======================
+   Sticky Navigation
+   ====================== */
+.sticky-nav {
+  transition: .3s all ease;
+  background: white;
+  box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1rem);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.sticky-nav .site-menu > li > a {
+  color: #000000 !important;
+}
+.sticky-nav .site-menu > li > a:hover,
+.sticky-nav .site-menu > li > a.active {
+  color: #136ad5 !important;
+}
+.sticky-nav .burger:before,
+.sticky-nav .burger span,
+.sticky-nav .burger:after {
+  background: #000000;
+}
+
+/* ======================
+   Mobile/Desktop Nav Toggle
+   ====================== */
+@media (max-width: 989px) {
+  .desktop-nav-content { display: none !important; }
+  .mobile-nav-content { display: flex !important; }
+}
+@media (min-width: 990px) {
+  .desktop-nav-content { display: flex !important; }
+  .mobile-nav-content { display: none !important; }
+}
+
+/* ======================
+   Parallax Hero
+   ====================== */
+.untree_co-hero {
+  will-change: transform;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Parallax effect for hero section */
+/* Make hero image layer GPU-friendly */
+.untree_co-hero {
+  will-change: transform; /* Hint browser for smooth animation */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Override the column-reverse for the newsletter section on small screens */
+@media (max-width: 991.98px) {
+  .newsletter-section .row {
+    flex-direction: column; /* stack normally (left then right) */
+  }
+}
+
+@media (max-width: 991.98px) {
+    .what-to-expect-section .row {
+        flex-direction: row; /* default Bootstrap row flow */
+        flex-wrap: wrap;
+    }
+}
+
+/* FIX: Remove bottom padding from the last untree_co-section */
+.untree_co-section.newsletter-section {
+    margin-bottom: 10px !important;  
+}
+
+/* Ensure the body and html do not add extra margin/padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Responsive Font Size Adjustments --- */
+@media (max-width: 991.98px) {
+    .course-main-content .course-title {
+        font-size: 2.2rem; /* Adjusted for tablet */
+    }
+    .course-main-content .course-subtitle {
+        font-size: 1rem; /* Adjusted for tablet */
+    }
+    .course-main-content .rating-info,
+    .course-main-content .instructor-info {
+        font-size: 0.9rem; /* Adjusted for tablet */
+    }
+    .what-you-learn-box h3 {
+        font-size: 1.3rem; /* Adjusted for tablet */
+    }
+    .what-you-learn-box .learn-list li {
+        font-size: 0.9rem; /* Adjusted for tablet */
+    }
+    .course-content-tabs .nav-link {
+        font-size: 0.9rem; /* Adjusted for tablet */
+        margin-right: 1.5rem;
+    }
+    .course-content-accordion .card-header .btn-link {
+      font-size: 0.9rem;
+      padding: 0.8rem 1.2rem;
+    }
+    .course-content-accordion .card-body {
+      font-size: 0.85rem;
+      padding: 1rem 1.2rem;
+    }
+    .course-content-tabs h3 {
+        font-size: 1.3rem;
+    }
+    .course-content-tabs .tab-content p,
+    .course-content-tabs .ul-check li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .course-main-content .course-title {
+        font-size: 1.8rem; /* Adjusted for mobile */
+    }
+    .course-main-content .course-subtitle {
+        font-size: 0.9rem; /* Adjusted for mobile */
+    }
+    .course-main-content .rating-info,
+    .course-main-content .instructor-info {
+        font-size: 0.85rem; /* Adjusted for mobile */
+    }
+    .what-you-learn-box {
+        padding: 1.5rem;
+    }
+    .what-you-learn-box h3 {
+        font-size: 1.2rem; /* Adjusted for mobile */
+    }
+    .what-you-learn-box .learn-list li {
+        font-size: 0.85rem; /* Adjusted for mobile */
+    }
+    .course-content-tabs {
+        padding: 1rem;
+    }
+    .course-content-tabs .nav-link {
+        font-size: 0.85rem; /* Adjusted for mobile */
+        margin-right: 1rem;
+    }
+    .course-content-accordion .card-header .btn-link {
+      font-size: 0.85rem;
+      padding: 0.7rem 1rem;
+    }
+    .course-content-accordion .card-body {
+      font-size: 0.8rem;
+      padding: 0.8rem 1rem;
+    }
+    .course-content-tabs h3 {
+        font-size: 1.2rem;
+    }
+    .course-content-tabs .tab-content p,
+    .course-content-tabs .ul-check li {
+        font-size: 0.85rem;
+    }
+    .course-page-section {
+        padding: 1rem 0 2rem 0; /* Reduce overall section padding on mobile */
+    }
+    .breadcrumb-nav {
+      font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .course-main-content .course-title {
+        font-size: 1.5rem; /* Further adjustment for very small mobile */
+    }
+    .course-main-content .course-subtitle {
+        font-size: 0.85rem;
+    }
+    .course-content-tabs .nav-link {
+        font-size: 0.8rem;
+        margin-right: 0.8rem;
+    }
+    .course-content-accordion .card-header .btn-link {
+      font-size: 0.8rem;
+      padding: 0.6rem 0.8rem;
+    }
+    .course-content-accordion .card-body {
+      font-size: 0.75rem;
+      padding: 0.6rem 0.8rem;
+    }
+}
+
+/* --- Mobile Sidebar Layouts (for d-lg-none) --- */
+
+.mobile-sidebar-container {
+    position: static; /* Override sticky */
+    margin-top: 2rem; /* Space from content above */
+    padding: 1rem; /* Overall padding for the card */
+    display: flex; /* Enable flexbox for internal layout */
+    flex-direction: column; /* Default stack direct children vertically */
+}
+
+/* For screens smaller than 991.98px and greater than or equal to 476px (matches new Image 1) */
+@media (max-width: 991.98px) and (min-width: 476px) {
+  .mobile-sidebar-container {
+    flex-direction: column; /* Main sections still stack */
+  }
+
+  .mobile-sidebar-top-content {
+    display: flex; /* Image and list side-by-side */
+    flex-direction: row;
+    align-items: flex-start; /* Align content to the top */
+    margin-bottom: 1rem; /* Space between top content and price/buttons */
+  }
+
+  .mobile-sidebar-image {
+    width: 50%; /* Image takes 50% width */
+    height: 120px; /* Fixed height for image */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem; /* Space between image and list */
+    flex-shrink: 0; /* Prevent image from shrinking */
+  }
+
+  .mobile-sidebar-list-group {
+    flex-grow: 1; /* List takes remaining 50% space */
+    padding-left: 0;
+    margin-top: 0;
+    font-size: 0.85rem; /* Adjust font size */
+    text-align: left; /* Ensure list items are left-aligned */
+  }
+  .mobile-sidebar-list-group li {
+    margin-bottom: 0.3rem; /* Reduced line spacing */
+    line-height: 1.3;
+    display: flex; /* For icon alignment */
+    align-items: flex-start;
+  }
+  .mobile-sidebar-list-group li .uil {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-sidebar-price-buttons {
+    width: 100%; /* Spans full width below top content */
+  }
+  .mobile-sidebar-price-wrap {
+    text-align: left; /* Keep price left-aligned */
+    margin-bottom: 0.8rem;
+  }
+  .mobile-sidebar-buttons-wrap {
+    display: flex; /* Buttons side-by-side */
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .mobile-sidebar-buttons-wrap .btn {
+    flex: 1; /* Buttons share space */
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 20px;
+    margin: 0 !important; /* Remove extra margins */
+  }
+}
+
+/* For screens smaller than or equal to 475.98px (matches new Image 2) */
+@media (max-width: 475.98px) {
+  .mobile-sidebar-container {
+    flex-direction: column; /* All content stacked vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text within the card */
+  }
+
+  .mobile-sidebar-top-content {
+    display: flex;
+    flex-direction: column; /* Image stacked above list */
+    align-items: center; /* Center horizontally */
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .mobile-sidebar-image {
+    width: 100%; /* Image full width */
+    height: auto;
+    max-height: 150px; /* Limit max height */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 0; /* No side margin */
+    margin-bottom: 1rem; /* Space below image */
+  }
+
+  .mobile-sidebar-list-group {
+    width: 100%; /* List takes full width */
+    padding-left: 0;
+    margin-top: 0;
+    text-align: left; /* Left align list items as per image */
+    font-size: 0.8rem; /* Adjust font size */
+  }
+  .mobile-sidebar-list-group li {
+    justify-content: flex-start; /* Align icons and text to the left */
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+  .mobile-sidebar-list-group li .uil {
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+  }
+
+  .mobile-sidebar-price-buttons {
+    width: 100%; /* Spans full width below list */
+  }
+  .mobile-sidebar-price-wrap {
+    text-align: center; /* Center price text */
+    margin-bottom: 0.8rem;
+    display: flex; /* For price and discount alignment */
+    justify-content: center; /* Center the price and discount */
+    gap: 0.5rem; /* Space between price and discount */
+  }
+  /* Specific adjustment to ensure original price is to the left of discount when centered */
+  .mobile-sidebar-price-wrap .price-tag {
+    display: flex;
+    align-items: baseline;
+    gap: 5px; /* Space between current and original price */
+  }
+  .mobile-sidebar-price-wrap .price-tag .original-price {
+    font-size: 0.9rem; /* Adjusted for consistency */
+  }
+
+
+  .mobile-sidebar-buttons-wrap {
+    display: flex;
+    flex-direction: column; /* Buttons stacked vertically */
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .mobile-sidebar-buttons-wrap .btn {
+    width: 100%; /* Full width buttons */
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 20px;
+    margin: 0 !important; /* Remove extra margins */
+  }
+}
+/* --- Mobile Sidebar Layouts (for d-lg-none) --- */
+
+.mobile-sidebar-container {
+  position: static; /* Override sticky */
+  margin-top: 2rem; /* Space from content above */
+  padding: 1rem; /* Overall padding for the card */
+  display: flex; /* Enable flexbox for internal layout */
+  flex-direction: column; /* Default stack direct children vertically */
+}
+
+/* For screens smaller than 991.98px and greater than or equal to 476px (matches new Image 1) */
+@media (max-width: 991.98px) and (min-width: 476px) {
+.mobile-sidebar-container {
+  flex-direction: column; /* Main sections still stack */
+}
+
+.mobile-sidebar-top-content {
+  display: flex; /* Image and list side-by-side */
+  flex-direction: row;
+  align-items: flex-start; /* Align content to the top */
+  margin-bottom: 1rem; /* Space between top content and price/buttons */
+}
+
+.mobile-sidebar-image {
+  width: 50%; /* Image takes 50% width */
+  height: 120px; /* Fixed height for image */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem; /* Space between image and list */
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.mobile-sidebar-list-group {
+  flex-grow: 1; /* List takes remaining 50% space */
+  padding-left: 0;
+  margin-top: 0;
+  font-size: 0.85rem; /* Adjust font size */
+  text-align: left; /* Ensure list items are left-aligned */
+}
+.mobile-sidebar-list-group li {
+  margin-bottom: 0.3rem; /* Reduced line spacing */
+  line-height: 1.3;
+  display: flex; /* For icon alignment */
+  align-items: flex-start;
+}
+.mobile-sidebar-list-group li .uil {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.mobile-sidebar-price-buttons {
+  width: 100%; /* Spans full width below top content */
+}
+.mobile-sidebar-price-wrap {
+  text-align: left; /* Keep price left-aligned */
+  margin-bottom: 0.8rem;
+}
+.mobile-sidebar-buttons-wrap {
+  display: flex; /* Buttons side-by-side */
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
+}
+.mobile-sidebar-buttons-wrap .btn {
+  flex: 1; /* Buttons share space */
+  font-size: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 20px;
+  margin: 0 !important; /* Remove extra margins */
+}
+}
+
+/* For screens smaller than or equal to 475.98px (matches new Image 2) */
+@media (max-width: 475.98px) {
+.mobile-sidebar-container {
+  flex-direction: column; /* All content stacked vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within the card */
+}
+
+.mobile-sidebar-top-content {
+  display: flex;
+  flex-direction: column; /* Image stacked above list */
+  align-items: center; /* Center horizontally */
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.mobile-sidebar-image {
+  width: 100%; /* Image full width */
+  height: auto;
+  max-height: 150px; /* Limit max height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 0; /* No side margin */
+  margin-bottom: 1rem; /* Space below image */
+}
+
+.mobile-sidebar-list-group {
+  width: 100%; /* List takes full width */
+  padding-left: 0;
+  margin-top: 0;
+  text-align: left; /* Left align list items as per image */
+  font-size: 0.8rem; /* Adjust font size */
+}
+.mobile-sidebar-list-group li {
+  justify-content: flex-start; /* Align icons and text to the left */
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+.mobile-sidebar-list-group li .uil {
+  font-size: 0.9rem;
+  margin-right: 0.4rem;
+}
+
+.mobile-sidebar-price-buttons {
+  width: 100%; /* Spans full width below list */
+}
+.mobile-sidebar-price-wrap {
+  text-align: center; /* Center price text */
+  margin-bottom: 0.8rem;
+  display: flex; /* For price and discount alignment */
+  justify-content: center; /* Center the price and discount */
+  gap: 0.5rem; /* Space between price and discount */
+}
+/* Specific adjustment to ensure original price is to the left of discount when centered */
+.mobile-sidebar-price-wrap .price-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 5px; /* Space between current and original price */
+}
+.mobile-sidebar-price-wrap .price-tag .original-price {
+  font-size: 0.9rem; /* Adjusted for consistency */
+}
+
+
+.mobile-sidebar-buttons-wrap {
+  display: flex;
+  flex-direction: column; /* Buttons stacked vertically */
+  gap: 0.5rem;
+  width: 100%;
+}
+.mobile-sidebar-buttons-wrap .btn {
+  width: 100%; /* Full width buttons */
+  font-size: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 20px;
+  margin: 0 !important; /* Remove extra margins */
+}
+}
+.mobile-sidebar-container {
+  position: static;
+  margin-top: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common styles for elements */
+.mobile-sidebar-image-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-sidebar-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.mobile-sidebar-price-wrap {
+  margin-top: 0.8rem;
+}
+.mobile-sidebar-list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mobile-sidebar-list-group li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+.mobile-sidebar-list-group li .uil {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  color: #136ad5;
+  flex-shrink: 0;
+}
+.mobile-sidebar-buttons-wrap {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  margin-top: 0.rem;
+}
+.mobile-sidebar-buttons-wrap .btn {
+  flex: 1;
+  font-size: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 20px;
+  margin: 0 !important;
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .course-sidebar-card .course-includes-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+} 
+.course-sidebar-card .course-includes-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+.mobile-sidebar-buttons-wrap{
+  margin-top: 0rem;
+}
+}
+/* Tablet Layout: 991.98px down to 576px (First Wireframe) */
+@media (max-width: 991.98px) and (min-width: 576px) {
+  .mobile-sidebar-top-content {
+      display: flex;
+      flex-direction: row;
+      /* align-items: flex-start; */
+      gap: 1rem;
+  }
+  .mobile-sidebar-image-wrap {
+      width: 50%;
+      flex-shrink: 0;
+  }
+  .mobile-sidebar-price-wrap {
+      text-align: left;
+      justify-content: space-between;
+  }
+  .mobile-sidebar-list-group {
+      width: 50%;
+      font-size: 0.85rem;
+  }
+  .mobile-sidebar-buttons-wrap {
+      flex-direction: row;
+  }
+}
+
+/* Mobile Layout: < 576px (Second Wireframe) */
+@media (max-width: 575.98px) {
+  .mobile-sidebar-container {
+      align-items: center; /* Center all content */
+  }
+  .mobile-sidebar-top-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  }
+  .mobile-sidebar-image-wrap {
+      width: 100%;
+  }
+  .mobile-sidebar-image {
+      max-height: 150px;
+  }
+  .mobile-sidebar-price-wrap {
+      text-align: center;
+      display: flex;
+      justify-content:space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+  }
+  .mobile-sidebar-list-group {
+      width: 100%;
+      margin-top: 1rem; /* Space between price and list */
+      font-size: 0.8rem;
+      text-align: left;
+  }
+  .mobile-sidebar-buttons-wrap {
+      flex-direction: column;
+  }
+   .mobile-sidebar-buttons-wrap .btn {
+      width: 100%;
+  }
+}

@@ -85,8 +85,8 @@
         background-color: #136ad5;
         color: white;
         width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
+        padding: 0.6rem;
+        font-size: 0.8rem;
         font-weight: 600;
         border-radius: 30px;
         transition: background-color 0.3s, transform 0.2s;
@@ -100,8 +100,8 @@
         color: #136ad5;
         border: 2px solid #136ad5;
         width: 100%;
-        padding: 0.7rem;
-        font-size: 1rem;
+        padding: 0.6rem;
+        font-size: 0.8rem;
         font-weight: 600;
         border-radius: 15px;
         transition: all 0.3s;
@@ -461,7 +461,6 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-    /* Parallax effect for hero section */
 /* Make hero image layer GPU-friendly */
 .untree_co-hero {
   will-change: transform; /* Hint browser for smooth animation */
@@ -704,7 +703,42 @@ html, body {
               Master financial accounting and controlling in SAP. Learn ledger management, asset accounting, and enterprise financial reporting.
             </p>
 
-            <div class="course-content-tabs" data-aos="fade-up" data-aos-delay="400">
+            <!-- Mobile Sidebar Card (visible below lg, hidden above) -->
+            <div class="course-sidebar-card d-lg-none mt-4 mobile-sidebar-container" data-aos="fade-up" data-aos-delay="350">
+              
+              <div class="mobile-sidebar-top-content">
+                <!-- Image and Price are now grouped together -->
+                <div class="mobile-sidebar-image-wrap">
+                  <img src="images/1x/998_sap-768x512.webp" class="mobile-sidebar-image" alt="Course thumbnail">
+                  <div class="mobile-sidebar-price-wrap">
+                      <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
+                      <span class="discount-badge">9% OFF</span>
+                  </div>
+                </div>
+                
+                <!-- The list of course features -->
+                <ul class="course-includes-list mobile-sidebar-list-group">
+                    <li><i class="uil uil-clock"></i> 90-day validity period</li>
+                    <li><i class="uil uil-video"></i> 45 Hours of Training</li>
+                    <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
+                    <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
+                    <li><i class="uil uil-award"></i> Certificate of Completion</li>
+                    <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
+                </ul>
+              </div>
+
+              <!-- Buttons are now in a separate wrapper at the bottom -->
+              <div class="mobile-sidebar-buttons-wrap">
+                  <button class="btn btn-buy-now">Buy Now</button>
+                  <button class="btn btn-book-demo">Book a Demo Class</button>
+              </div>
+
+            </div>
+            <!-- End Mobile Sidebar Card -->
+
+
+            <!-- Desktop Tabs (visible only above lg) -->
+            <div class="course-content-tabs d-none d-lg-block" data-aos="fade-up" data-aos-delay="400">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="overview-tab-btn" data-toggle="tab" href="#overview-tab" role="tab" aria-controls="overview-tab" aria-selected="true">Overview</a>
@@ -721,7 +755,7 @@ html, body {
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="overview-tab" role="tabpanel" aria-labelledby="overview-tab-btn">
-                        <div class="what-you-learn-box">
+                        <div class="what-you-learn-box border-0 shadow-none p-0 bg-transparent">
                             <h3>What you'll learn</h3>
                             <ul class="learn-list">
                                 <li>Enterprise Structure & Company Code Configuration</li>
@@ -757,40 +791,139 @@ html, body {
                             <li><strong>Mode:</strong> Online / Offline</li>
                             <li><strong>Support:</strong> 100% Placement Assistance with Interview Preparation</li>
                             </ul>
+                    </div>
+                    <div class="tab-pane fade" id="how-to-use-tab" role="tabpanel" aria-labelledby="how-to-use-tab-btn">
+                        <h3>Accessing Your Course</h3>
+                        <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP FICO course to access all video lectures, materials, and resources. You can learn at your own pace from any device.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Desktop Tabs -->
+
+            <!-- Mobile Accordion (visible only below lg) -->
+            <div class="course-content-accordion d-lg-none mt-4" id="courseAccordion" data-aos="fade-up" data-aos-delay="400">
+                <!-- Overview Accordion Item -->
+                <div class="card">
+                    <div class="card-header" id="headingOverviewMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOverviewMobile" aria-expanded="true" aria-controls="collapseOverviewMobile">
+                                Overview <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOverviewMobile" class="collapse show" aria-labelledby="headingOverviewMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <div class="what-you-learn-box border-0 shadow-none p-0 bg-transparent">
+                                <h3>What you'll learn</h3>
+                                <ul class="learn-list">
+                                    <li>Enterprise Structure & Company Code Configuration</li>
+                                    <li>In-depth General Ledger (G/L) Accounting</li>
+                                    <li>Accounts Payable & Receivable Management</li>
+                                    <li>Comprehensive Asset Accounting</li>
+                                    <li>Practical Bank Accounting & Tax Configuration (GST, TDS)</li>
+                                    <li>Integration skills with MM & SD Modules</li>
+                                    <li>Cost Center and Profit Center Accounting</li>
+                                    <li>Real-world Month-End and Year-End Closing Activities</li>
+                                </ul>
                             </div>
-                            <div class="tab-pane fade" id="how-to-use-tab" role="tabpanel" aria-labelledby="how-to-use-tab-btn">
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Content Accordion Item -->
+                <div class="card">
+                    <div class="card-header" id="headingContentMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseContentMobile" aria-expanded="false" aria-controls="collapseContentMobile">
+                                Course Content <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseContentMobile" class="collapse" aria-labelledby="headingContentMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <h3>Modules Covered</h3>
+                            <ul class="ul-check primary">
+                                <li>SAP FI - Financial Accounting Basic Setting</li>
+                                <li>General Ledger Accounting</li>
+                                <li>Accounts Payable & Accounts Receivable</li>
+                                <li>Asset Accounting</li>
+                                <li>CO - CONTROLLING Basic settings for controlling</li>
+                                <li>CO - Cost Center & Internal Orders</li>
+                                <li>CO - Profit Center Accounting & COPA Reporting</li>
+                                <li>SAP Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description Accordion Item -->
+                <div class="card">
+                    <div class="card-header" id="headingDescriptionMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseDescriptionMobile" aria-expanded="false" aria-controls="collapseDescriptionMobile">
+                                Description <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseDescriptionMobile" class="collapse" aria-labelledby="headingDescriptionMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <h3>Course Overview</h3>
+                            <p>SAP S/4HANA FICO is a critical module for managing financial transactions. This course is designed for anyone aiming for a robust career in SAP Finance and Controlling, focusing on real-time business process integration.</p>
+                            <ul class="ul-check primary">
+                                <li><strong>Course Type:</strong> End User & Consultant Level</li>
+                                <li><strong>Duration:</strong>45 Hours (Flexible Batches)</li>
+                                <li><strong>Mode:</strong> Online / Offline</li>
+                                <li><strong>Support:</strong> 100% Placement Assistance with Interview Preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- How To Use Accordion Item -->
+                <div class="card">
+                    <div class="card-header" id="headingHowToUseMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHowToUseMobile" aria-expanded="false" aria-controls="collapseHowToUseMobile">
+                                How To Use <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseHowToUseMobile" class="collapse" aria-labelledby="headingHowToUseMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
                             <h3>Accessing Your Course</h3>
                             <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP FICO course to access all video lectures, materials, and resources. You can learn at your own pace from any device.</p>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                                  <!-- Sidebar (Right Column) -->
-      <div class="col-lg-3">
-        <div class="course-sidebar-card" data-aos="fade-left" data-aos-delay="300">
-          <img src="images/1x/998_sap-768x512.webp" class="card-img-top" alt="Course thumbnail">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
-                <span class="discount-badge">9% OFF</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-buy-now">Buy Now</button>
-            <button class="btn btn-book-demo mt-2">Book a Demo Class</button>
-            <ul class="course-includes-list">
-                <li><i class="uil uil-clock"></i> 90-day validity period</li>
-                <li><i class="uil uil-video"></i> 45 Hours of Training</li>
-                <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
-                <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
-                <li><i class="uil uil-award"></i> Certificate of Completion</li>
-                <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
-            </ul>
+            <!-- End Mobile Accordion -->
+
           </div>
+
+          <!-- Sidebar for Desktop Screens (hidden below lg, visible above) -->
+          <div class="col-lg-3">
+            <div class="course-sidebar-card d-none d-lg-block" data-aos="fade-left" data-aos-delay="300">
+              <img src="images/1x/998_sap-768x512.webp" class="card-img-top" alt="Course thumbnail">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
+                    <span class="discount-badge">9% OFF</span>
+                </div>
+                <button class="btn btn-buy-now">Buy Now</button>
+                <button class="btn btn-book-demo mt-2">Book a Demo Class</button>
+                <ul class="course-includes-list">
+                    <li><i class="uil uil-clock"></i> 90-day validity period</li>
+                    <li><i class="uil uil-video"></i> 45 Hours of Training</li>
+                    <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
+                    <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
+                    <li><i class="uil uil-award"></i> Certificate of Completion</li>
+                    <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
     </div>
   </div>
-</div>
 </div>
 <div class="untree_co-section newsletter-section bg-light">
   <div class="container" style="background: url(./images/internet-lessons-searching-remote-university-educational-programs-online-classes-website-high-school/20944332.jpg);">

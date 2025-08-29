@@ -272,6 +272,12 @@
             display: none !important;
         }
     }
+
+    /* Ensure the body and html do not add extra margin/padding */
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
   </style>
 
   <title>About Us - Shah Skill Academy</title>
@@ -288,77 +294,169 @@
     <div class="site-mobile-menu-body"></div>
   </div>
 
-  
   <nav class="site-nav mb-5">
     <div class="sticky-nav js-sticky-header">
-        <div class="container position-relative">
-            <div class="site-navigation">
-                
-                <!-- Single unified navigation row -->
-                <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
-                    
-                    <!-- Logo - Left side -->
-                    <div class="nav-logo">
-                        <!-- Desktop Logo -->
-                        <a href="index.html" class="desktop-nav-content">
-                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
-                        </a>
-                        <!-- Mobile Logo -->
-                        <a href="index.html" class="mobile-nav-content">
-                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
-                        </a>
-                    </div>
-
-                    <!-- Desktop Menu - Center -->
-                    <div class="nav-menu desktop-nav-content">
-                        <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="has-children">
-                                <a href="courses.html">Courses</a>
-                                <ul class="dropdown">
-                                    <li><a href="pams.html">PAMS</a></li>
-                                    <li class="has-children">
-                                        <a href="#">SAP</a>
-                                        <ul class="dropdown">
-                                            <li><a href="sap-fico.html">SAP-FICO</a></li>
-                                            <li><a href="sap-hana.html">SAP-HANA</a></li>
-                                            <li><a href="sap-mm.html">SAP-MM</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Others</a>
-                                        <ul class="dropdown">
-                                            <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                                            <li><a href="advance-excel.html">Advance Excel</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li class="active"><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right side - Button and Mobile Menu -->
-                    <div class="nav-actions d-flex align-items-center">
-                        <!-- Enroll Button -->
-                        <a href="./register.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
-                        
-                        <!-- Mobile Menu Toggle -->
-                        <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" 
-                           data-toggle="collapse" data-target="#main-navbar">
-                            <span></span>
-                        </a>
-                    </div>
-
-                </div>
-                
+      <div class="container position-relative">
+        <div class="site-navigation">
+          <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
+            <div class="nav-logo">
+              <a href="index.html" class="desktop-nav-content">
+                <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
+              </a>
+              <a href="index.html" class="mobile-nav-content">
+                <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
+              </a>
             </div>
+  
+            <div class="nav-menu desktop-nav-content">
+              <ul class=" site-menu d-flex align-items-center mb-0">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <a href="courses.html">Courses</a>
+                  <ul class="dropdown">
+                    <!-- COLUMN: PAMS -->
+                    <li class="mega-col">
+                      <h4>PAMS</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="pams.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e8c8ea;">📘</span>
+                              <span class="course-title">PAMS</span>
+                            </div>
+                            <div class="course-desc">A 12-week real-world learning path.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: SAP -->
+                    <li class="mega-col">
+                      <h4>SAP</h4>
+                      <ul>
+                        <!-- SAP FICO -->
+                        <li>
+                          <a class="course-item" href="sap-fico.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#d8f3dc;">💰</span>
+                              <span class="course-title">SAP FICO</span>
+                            </div>
+                            <div class="course-desc">Financial accounting and controlling.</div>
+                          </a>
+                        </li>
+                        <!-- SAP HANA -->
+                        <li>
+                          <a class="course-item" href="sap-hana.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#dbeafe;">⚡️</span>
+                              <span class="course-title">SAP HANA</span>
+                            </div>
+                            <div class="course-desc">High-performance in-memory database.</div>
+                          </a>
+                        </li>
+                        <!-- SAP MM -->
+                        <li>
+                          <a class="course-item" href="sap-mm.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#ffedd5;">📦</span>
+                              <span class="course-title">SAP MM</span>
+                            </div>
+                            <div class="course-desc">Materials and inventory management.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Business Analytics -->
+                    <li class="mega-col">
+                      <h4>Business Analytics</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="business-analytics.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#cfeef7;">📊</span>
+                              <span class="course-title">Business Analytics</span>
+                            </div>
+                            <div class="course-desc">Tools, visualization & reporting.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Others -->
+                    <li class="mega-col">
+                      <h4>Others</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="tally-erp-9.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e9f7ec;">📁</span>
+                              <span class="course-title">Tally ERP 9</span>
+                            </div>
+                            <div class="course-desc">Practical accounting & GST.</div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="course-item" href="advance-excel.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#fce8f0;">🧮</span>
+                              <span class="course-title">Advance Excel</span>
+                            </div>
+                            <div class="course-desc">Advanced formulas & dashboards.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+  
+            <div class="nav-actions d-flex align-items-center">
+              <a href="./contact.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
+              <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</nav>
+  </nav>
+  
+  <div class="d-none">
+    <ul class="js-clone-nav site-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-children">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown">
+          <li><a href="pams.html">PAMS</a></li>
+          <li class="has-children">
+            <a href="sap.html">SAP</a>
+            <ul class="dropdown">
+              <li><a href="sap-fico.html">SAP-FICO</a></li>
+              <li><a href="sap-hana.html">SAP-HANA</a></li>
+              <li><a href="sap-mm.html">SAP-MM</a></li>
+            </ul>
+          </li>
+          <li><a href="business-analytics.html">Business Analytics</a></li>
+          <li class="has-children">
+            <a href="#">Others</a>
+            <ul class="dropdown">
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advance Excel</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
 
   <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
@@ -477,142 +575,82 @@
     </div>
   </div> <!-- /.untree_co-section -->
 
-  <div class="untree_co-section"></div>
-    <div class="container"> 
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="line-bottom text-center mb-4">Training Methodology & Features</h2>
-          <p>Shah Skill Academy is dedicated to equipping students with practical skills to thrive in the industry. Our training approach revolves around the 3 P’s – Practical Learning, Project Work, and Placement Assistance. Students actively participate in hands-on assignments for each subject and complete industry-relevant projects upon finishing specific modules. After successfully completing the course and passing exams, students receive a certificate and placement assistance to help them secure rewarding career opportunities.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature">
-            <span class="uil uil-file-alt"></span>
-            <h3>Class Assignments</h3>
-            <p>Class assignments aim to enhance students' knowledge, improve their skills, and prepare them for upcoming lessons. They encourage applying learned concepts to new situations and integrating various skills into a single task.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature">
-            <span class="uil uil-flask"></span>
-            <h3>Lab Assignments</h3>
-            <p>Lab assignments focus on understanding the experiment's purpose, techniques, and results. They aim to develop practical skills and provide clear conclusions based on observations.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature">
-            <span class="uil uil-clipboard-notes"></span>
-            <h3>Project Description</h3>
-            <p>Project descriptions aim to create a clear understanding of the project among all stakeholders, ensuring smooth planning and development processes.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature">
-            <span class="uil uil-briefcase"></span>
-            <h3>Placement Assistance</h3>
-            <p>Shah Skill Academy offers placement assistance as a complimentary service to students who complete job-oriented courses, helping them secure promising career opportunities.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature">
-            <span class="uil uil-presentation-line"></span>
-            <h3>Interactive Workshops</h3>
-            <p>Interactive workshops engage students in hands-on activities and discussions, fostering a deeper understanding of concepts and encouraging collaborative learning.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature">
-            <span class="uil uil-graduation-cap"></span>
-            <h3>Certification Programs</h3>
-            <p>Shah Skill Academy provides certification programs that validate students' skills and knowledge, enhancing their career prospects and professional credibility.</p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- /.container -->
-  </div> <!-- /.untree_co-section -->
-
-
-  
-
   <div class="untree_co-section">
     <div class="container">
-      <div class="row"></div>
-    <div class="container">
       <div class="row">
-      <div class="col-lg-5 mr-auto mb-5 mb-lg-0"  data-aos="fade-up" data-aos-delay="0">
-        <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid">
-      </div>
-      <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="line-bottom mb-4">Why Choose Us</h3>
+        <div class="col-lg-5 mr-auto mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="0">
+          <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid">
+        </div>
+        <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="line-bottom mb-4">Why Choose Us</h3>
 
-        <div class="custom-accordion" id="accordion_1">
-        <div class="accordion-item">
-          <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Govt. Recognized Institute</button>
-          </h2>
+          <div class="custom-accordion" id="accordion_1">
+            <div class="accordion-item">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Govt. Recognized Institute</button>
+              </h2>
 
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
-          <div class="accordion-body">
-            <div class="d-flex">
-            <div class="accordion-img mr-4">
-              <img src="images/img-school-1-min.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div>
-              <p>Our institute is recognized by the government, ensuring credibility and quality education for all students.</p>
-              <p>We adhere to the highest standards of training and certification.</p>
-            </div>
-            </div>
-          </div>
-          </div>
-        </div> <!-- .accordion-item -->
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
+                <div class="accordion-body">
+                  <div class="d-flex">
+                    <div class="accordion-img mr-4">
+                      <img src="images/img-school-1-min.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div>
+                      <p>Our institute is recognized by the government, ensuring credibility and quality education for all students.</p>
+                      <p>We adhere to the highest standards of training and certification.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .accordion-item -->
 
-        <div class="accordion-item">
-          <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Practical Training & Project Work</button>
-          </h2>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
-          <div class="accordion-body">
-            <div class="d-flex">
-            <div class="accordion-img mr-4">
-              <img src="images/img-school-2-min.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div>
-              <p>We focus on hands-on practical training to ensure students gain real-world skills.</p>
-              <p>Our project-based approach prepares students for industry challenges and enhances their problem-solving abilities.</p>
-            </div>
-            </div>
-          </div>
-          </div>
-        </div> <!-- .accordion-item -->
-        <div class="accordion-item">
-          <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Placement Assistance</button>
-          </h2>
+            <div class="accordion-item">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Practical Training & Project Work</button>
+              </h2>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
+                <div class="accordion-body">
+                  <div class="d-flex">
+                    <div class="accordion-img mr-4">
+                      <img src="images/img-school-2-min.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div>
+                      <p>We focus on hands-on practical training to ensure students gain real-world skills.</p>
+                      <p>Our project-based approach prepares students for industry challenges and enhances their problem-solving abilities.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .accordion-item -->
+            <div class="accordion-item">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Placement Assistance</button>
+              </h2>
 
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
-          <div class="accordion-body">
-            <div class="d-flex">
-            <div class="accordion-img mr-4">
-              <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div>
-              <p>We provide dedicated placement assistance to help students secure rewarding career opportunities.</p>
-              <p>Our strong industry connections and experienced management team ensure successful placements.</p>
-            </div>
-            </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
+                <div class="accordion-body">
+                  <div class="d-flex">
+                    <div class="accordion-img mr-4">
+                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div>
+                      <p>We provide dedicated placement assistance to help students secure rewarding career opportunities.</p>
+                      <p>Our strong industry connections and experienced management team ensure successful placements.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div> <!-- .accordion-item -->
 
           </div>
-          </div>
-
-        </div> <!-- .accordion-item -->
 
         </div>
-
-      </div>
       </div>
     </div>
-    </div> <!-- /.untree_co-section -->
+  </div> <!-- /.untree_co-section -->
 
   <div class="site-footer">
     <div class="container">
@@ -704,7 +742,64 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/custom.js"></script>
-
+    <script>
+      (function(){
+      function isDesktop(){ return window.innerWidth >= 990; }
+      var nav = document.querySelector('.site-nav .site-navigation');
+          // Function to close any open mega menu
+          function closeMegaMenu() {
+            document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){
+              li.classList.remove('mm-open');
+            });
+            if (nav) {
+              nav.classList.remove('nav-mega-open');
+            }
+          }
+      
+          // --- CLICK LISTENER (Existing) ---
+          document.querySelectorAll('.site-menu > li.has-children > a').forEach(function(anchor){
+            anchor.addEventListener('click', function(e){
+              if (!isDesktop()) return;
+              e.preventDefault();
+              var li = anchor.parentElement;
+              var wasOpen = li.classList.contains('mm-open');
+              
+              // Always close any currently open menus first
+              closeMegaMenu();
+      
+              // If the clicked menu was not the one that was open, open it
+              if (!wasOpen) {
+                li.classList.add('mm-open');
+                if (nav) nav.classList.add('nav-mega-open');
+              }
+            });
+          });
+        
+          // --- CLICK OUTSIDE LISTENER (Existing) ---
+          document.addEventListener('click', function(e){
+            if (!isDesktop()) return;
+            if (!e.target.closest('.site-menu > li.has-children')) {
+              closeMegaMenu();
+            }
+          });
+        
+          // --- RESIZE LISTENER (Existing) ---
+          window.addEventListener('resize', function(){
+            if (!isDesktop()) {
+              closeMegaMenu();
+            }
+          });
+      
+          // --- NEW: SCROLL LISTENER ---
+          // This function closes the menu when the user scrolls the page.
+          window.addEventListener('scroll', function() {
+            if (isDesktop()) {
+              closeMegaMenu();
+            }
+          });
+      
+        })();
+      </script>
   </body>
 
   </html>

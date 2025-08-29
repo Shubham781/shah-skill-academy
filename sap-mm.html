@@ -23,274 +23,6 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-  <style>
-    body {
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        background-color: #ffffff;
-        overflow-x: hidden !important;
-        font-size: 1rem;
-        color: #666;
-    }
-
-    .site-nav {
-        position: absolute;
-        width: 100%;
-        z-index: 9;
-        top: 0;
-    }
-
-    .site-nav .site-navigation {
-        position: relative;
-    }
-
-    .site-nav .site-navigation .site-menu {
-        margin-bottom: 0;
-    }
-
-    .site-nav .site-navigation .site-menu > li {
-        display: inline-block;
-    }
-
-    .site-nav .site-navigation .site-menu > li > a {
-        font-size: 0.875rem;
-        padding: 0.625rem 0.9375rem;
-        display: inline-block;
-        text-decoration: none !important;
-        color: #000000;
-        position: relative;
-    }
-
-    .site-nav .site-navigation .site-menu > li > a:hover {
-        color: #136ad5;
-    }
-
-    .site-nav .site-navigation .site-menu > li.active > a {
-        color: #136ad5;
-    }
-
-    .logo-sticky {
-        height: 60px;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .mobile-logo {
-        height: 5.5rem;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .btn {
-        padding-top: 0.9375rem;
-        padding-bottom: 0.9375rem;
-        padding-left: 1.875rem;
-        padding-right: 1.875rem;
-        border-radius: 1.875rem;
-        font-size: 0.6875rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: .05rem;
-    }
-
-    .btn.btn-secondary {
-        background: #00aeff;
-        border-color: #00aeff;
-    }
-
-    .btn.btn-secondary:hover {
-        border-color: #14b4ff;
-        background: #14b4ff;
-    }
-
-    .btn.btn-sm {
-        padding-top: 0.625rem;
-        padding-bottom: 0.625rem;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
-    }
-
-    /* Burger menu styles */
-    .burger {
-        width: 28px;
-        height: 32px;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .burger.light:before,
-    .burger.light span,
-    .burger.light:after {
-        background: #ffffff;
-    }
-
-    .burger:before,
-    .burger span,
-    .burger:after {
-        width: 100%;
-        height: 2px;
-        display: block;
-        background: #000;
-        border-radius: 2px;
-        position: absolute;
-        opacity: 1;
-    }
-
-    .burger:before {
-        top: 4px;
-        content: "";
-    }
-
-    .burger span {
-        top: 15px;
-    }
-
-    .burger:after {
-        top: 26px;
-        content: "";
-    }
-
-    /* Dropdown styles */
-    .site-nav .site-navigation .site-menu .has-children {
-        position: relative;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown {
-        visibility: hidden;
-        opacity: 0;
-        top: 100%;
-        z-index: 999;
-        position: absolute;
-        text-align: left;
-        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        margin-top: 20px;
-        margin-left: 0px;
-        background: #ffffff;
-        transition: 0.2s 0s;
-        min-width: 180px;
-        border-radius: 8px;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown > li {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
-        padding: 5px 20px;
-        display: block;
-        color: #000000;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
-        color: #136ad5;
-    }
-
-    .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
-        transition-delay: 0s;
-        margin-top: 0px;
-        visibility: visible;
-        opacity: 1;
-    }
-
-    /* Multi-level dropdown */
-    .site-menu .dropdown .has-children > .dropdown {
-        left: 100%;
-        top: 0;
-        margin-top: 0;
-        margin-left: 0;
-        position: absolute;
-        min-width: 200px;
-        display: none;
-    }
-
-    .site-menu .dropdown .has-children:hover > .dropdown {
-        display: block;
-    }
-
-    /* Add padding to prevent dropdown from disappearing */
-    .site-nav .site-navigation .site-menu .has-children .dropdown::before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: 0;
-        right: 0;
-        height: 20px;
-    }
-
-    /* Multi-level dropdown improvements */
-    .site-menu .dropdown .has-children > .dropdown::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -20px;
-        width: 20px;
-        height: 100%;
-    }
-
-    /* Sticky navigation styles */
-    .sticky-nav {
-        transition: .3s all ease;
-        background: white;
-        box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(1rem);
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .sticky-nav .site-menu > li > a {
-        color: #000000 !important;
-    }
-
-    .sticky-nav .site-menu > li > a:hover,
-    .sticky-nav .site-menu > li > a.active {
-        color: #136ad5 !important;
-    }
-
-    .sticky-nav .burger:before,
-    .sticky-nav .burger span,
-    .sticky-nav .burger:after {
-        background: #000000;
-    }
-
-    /* Mobile styles */
-    @media (max-width: 989px) {
-        .desktop-nav-content {
-            display: none !important;
-        }
-        
-        .mobile-nav-content {
-            display: flex !important;
-        }
-    }
-
-    @media (min-width: 990px) {
-        .desktop-nav-content {
-            display: flex !important;
-        }
-        
-        .mobile-nav-content {
-            display: none !important;
-        }
-    }
-
-    /* Fix for content visibility */
-    .untree_co-hero {
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .untree_co-section {
-        padding: 5rem 0;
-    }
-
-    
-  </style>
-
   <title>SAP MM - Shah Skill Academy</title>
 </head>
 
@@ -318,28 +50,104 @@
                 <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
               </a>
             </div>
+  
             <div class="nav-menu desktop-nav-content">
-              <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
+              <ul class=" site-menu d-flex align-items-center mb-0">
                 <li><a href="index.html">Home</a></li>
                 <li class="has-children">
                   <a href="courses.html">Courses</a>
                   <ul class="dropdown">
-                    <li><a href="pams.html">PAMS</a></li>
-                    <li class="has-children">
-                      <a href="#">SAP</a>
-                      <ul class="dropdown">
-                        <li><a href="sap-fico.html">SAP-FICO</a></li>
-                        <li><a href="sap-hana.html">SAP-HANA</a></li>
-                        <li><a href="sap-mm.html">SAP-MM</a></li>
-                        <li><a href="sap-sd.html">SAP-SD</a></li>
+                    <!-- COLUMN: PAMS -->
+                    <li class="mega-col">
+                      <h4>PAMS</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="pams.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e8c8ea;">📘</span>
+                              <span class="course-title">PAMS</span>
+                            </div>
+                            <div class="course-desc">A 12-week real-world learning path.</div>
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                    <li class="has-children">
-                      <a href="#">Others</a>
-                      <ul class="dropdown">
-                        <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                        <li><a href="advance-excel.html">Advance Excel</a></li>
+                  
+                    <!-- COLUMN: SAP -->
+                    <li class="mega-col">
+                      <h4>SAP</h4>
+                      <ul>
+                        <!-- SAP FICO -->
+                        <li>
+                          <a class="course-item" href="sap-fico.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#d8f3dc;">💰</span>
+                              <span class="course-title">SAP FICO</span>
+                            </div>
+                            <div class="course-desc">Financial accounting and controlling.</div>
+                          </a>
+                        </li>
+                        <!-- SAP HANA -->
+                        <li>
+                          <a class="course-item" href="sap-hana.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#dbeafe;">⚡️</span>
+                              <span class="course-title">SAP HANA</span>
+                            </div>
+                            <div class="course-desc">High-performance in-memory database.</div>
+                          </a>
+                        </li>
+                        <!-- SAP MM -->
+                        <li>
+                          <a class="course-item" href="sap-mm.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#ffedd5;">📦</span>
+                              <span class="course-title">SAP MM</span>
+                            </div>
+                            <div class="course-desc">Materials and inventory management.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Business Analytics -->
+                    <li class="mega-col">
+                      <h4>Business Analytics</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="business-analytics.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#cfeef7;">📊</span>
+                              <span class="course-title">Business Analytics</span>
+                            </div>
+                            <div class="course-desc">Tools, visualization & reporting.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Others -->
+                    <li class="mega-col">
+                      <h4>Others</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="tally-erp-9.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e9f7ec;">📁</span>
+                              <span class="course-title">Tally ERP 9</span>
+                            </div>
+                            <div class="course-desc">Practical accounting & GST.</div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="course-item" href="advance-excel.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#fce8f0;">🧮</span>
+                              <span class="course-title">Advance Excel</span>
+                            </div>
+                            <div class="course-desc">Advanced formulas & dashboards.</div>
+                          </a>
+                        </li>
                       </ul>
                     </li>
                   </ul>
@@ -349,6 +157,7 @@
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
+  
             <div class="nav-actions d-flex align-items-center">
               <a href="./contact.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
               <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
@@ -360,201 +169,313 @@
       </div>
     </div>
   </nav>
+  
+  <div class="d-none">
+    <ul class="js-clone-nav site-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-children">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown">
+          <li><a href="pams.html">PAMS</a></li>
+          <li class="has-children">
+            <a href="sap.html">SAP</a>
+            <ul class="dropdown">
+              <li><a href="sap-fico.html">SAP-FICO</a></li>
+              <li><a href="sap-hana.html">SAP-HANA</a></li>
+              <li><a href="sap-mm.html">SAP-MM</a></li>
+            </ul>
+          </li>
+          <li><a href="business-analytics.html">Business Analytics</a></li>
+          <li class="has-children">
+            <a href="#">Others</a>
+            <ul class="dropdown">
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advance Excel</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
-  <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
-    url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-lg-7 text-center">
-          <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">SAP Materials Management (MM)</h1>
-          <h3 class="mb-3 text-white" data-aos="fade-up" data-aos-delay="200">Master Procurement and Inventory Management with SAP MM Training</h3>
-          <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
-          <a href="#" class="btn btn-secondary">Learn SAP MM</a>
+  <div class="course-page-wrapper">
+    <div class="untree_co-section course-page-section">
+      <div class="container">
+        <div class="row">
+
+          <!-- Main Content (Left Column) -->
+          <div class="col-lg-9 course-main-content">
+
+            <div class="breadcrumb-nav" data-aos="fade-up">
+                <a href="courses.html">Courses</a><span>/</span><a href="#">SAP</a><span>/</span>SAP MM
+            </div>
+
+            <h1 class="course-title" data-aos="fade-up" data-aos-delay="100">SAP MM (Materials Management)</h1>
+            
+            <div class="rating-info" data-aos="fade-up" data-aos-delay="200">
+                <span class="rating-stars">★★★★★</span> 
+                <span>4.8 (120 ratings)</span>
+            </div>
+
+            <div class="instructor-info" data-aos="fade-up" data-aos-delay="250">
+                Created by: <a href="#" class="text-primary font-weight-bold">Mr. Shah Alam</a>
+            </div>
+
+            <p class="course-subtitle mt-3" data-aos="fade-up" data-aos-delay="300">
+              Master SAP Materials Management. Learn procurement, inventory, and supplier management processes.
+            </p>
+
+            <!-- Mobile Sidebar Card (visible below lg, hidden above) -->
+            <div class="course-sidebar-card d-lg-none mt-4 mobile-sidebar-container" data-aos="fade-up" data-aos-delay="350">
+              <div class="mobile-sidebar-top-content">
+                <div class="mobile-sidebar-image-wrap">
+                  <img src="images/1x/998_sap-768x512.webp" class="mobile-sidebar-image" alt="Course thumbnail">
+                  <div class="mobile-sidebar-price-wrap">
+                      <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
+                      <span class="discount-badge">9% OFF</span>
+                  </div>
+                </div>
+                <ul class="course-includes-list mobile-sidebar-list-group">
+                    <li><i class="uil uil-clock"></i> 90-day validity period</li>
+                    <li><i class="uil uil-video"></i> 45 Hours of Training</li>
+                    <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
+                    <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
+                    <li><i class="uil uil-award"></i> Certificate of Completion</li>
+                    <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
+                </ul>
+              </div>
+              <div class="mobile-sidebar-buttons-wrap">
+                  <button class="btn btn-buy-now">Buy Now</button>
+                  <button class="btn btn-book-demo">Book a Demo Class</button>
+              </div>
+            </div>
+            <!-- End Mobile Sidebar Card -->
+
+            <!-- Desktop Tabs (visible only above lg) -->
+            <div class="course-content-tabs d-none d-lg-block" data-aos="fade-up" data-aos-delay="400">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="overview-tab-btn" data-toggle="tab" href="#overview-tab" role="tab" aria-controls="overview-tab" aria-selected="true">Overview</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="content-tab-btn" data-toggle="tab" href="#content-tab" role="tab" aria-controls="content-tab" aria-selected="false">Course Content</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="description-tab-btn" data-toggle="tab" href="#description-tab" role="tab" aria-controls="description-tab" aria-selected="false">Description</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="how-to-use-tab-btn" data-toggle="tab" href="#how-to-use-tab" role="tab" aria-controls="how-to-use-tab" aria-selected="false">How To Use</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="overview-tab" role="tabpanel" aria-labelledby="overview-tab-btn">
+                        <div class="what-you-learn-box border-0 shadow-none p-0 bg-transparent">
+                            <h3>What you'll learn</h3>
+                            <ul class="learn-list">
+                                <li>Master Data Configuration (Material, Vendor)</li>
+                                <li>Procurement Process (PR, PO, RFQ)</li>
+                                <li>Inventory Management (Goods Receipt, Issue, Transfer)</li>
+                                <li>Valuation Methods & Account Determination</li>
+                                <li>Invoice Verification & Logistics Integration</li>
+                                <li>Purchasing Information System & Reporting</li>
+                                <li>MRP & Planning Fundamentals</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="content-tab" role="tabpanel" aria-labelledby="content-tab-btn">
+                        <h3>Modules Covered</h3>
+                        <ul class="ul-check primary">
+                            <li>SAP MM Introduction</li>
+                            <li>Master Data Management</li>
+                            <li>Purchasing Functionality</li>
+                            <li>Inventory Management</li>
+                            <li>Invoice Verification</li>
+                            <li>Material Valuation</li>
+                            <li>MRP & Planning</li>
+                            <li>SAP MM Integration with FI/CO</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="description-tab" role="tabpanel" aria-labelledby="description-tab-btn">
+                        <h3>Course Overview</h3>
+                        <p>SAP MM is a vital module for managing an organization's procurement and inventory. This course provides hands-on experience with key MM processes, from requisition to invoice verification.</p>
+                        <ul class="ul-check primary">
+                            <li><strong>Course Type:</strong> End User & Consultant Level</li>
+                            <li><strong>Duration:</strong>45 Hours (Flexible Batches)</li>
+                            <li><strong>Mode:</strong> Online / Offline</li>
+                            <li><strong>Support:</strong> 100% Placement Assistance with Interview Preparation</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="how-to-use-tab" role="tabpanel" aria-labelledby="how-to-use-tab-btn">
+                        <h3>Accessing Your Course</h3>
+                        <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP MM course to access all video lectures, materials, and resources. Learn at your own pace from any device.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Desktop Tabs -->
+
+            <!-- Mobile Accordion (visible only below lg) -->
+            <div class="course-content-accordion d-lg-none mt-4" id="courseAccordion" data-aos="fade-up" data-aos-delay="400">
+                <div class="card">
+                    <div class="card-header" id="headingOverviewMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOverviewMobile" aria-expanded="true" aria-controls="collapseOverviewMobile">
+                                Overview <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOverviewMobile" class="collapse show" aria-labelledby="headingOverviewMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <div class="what-you-learn-box border-0 shadow-none p-0 bg-transparent">
+                                <h3>What you'll learn</h3>
+                                <ul class="learn-list">
+                                  <li>Master Data Configuration (Material, Vendor)</li>
+                                  <li>Procurement Process (PR, PO, RFQ)</li>
+                                  <li>Inventory Management (Goods Receipt, Issue, Transfer)</li>
+                                  <li>Valuation Methods & Account Determination</li>
+                                  <li>Invoice Verification & Logistics Integration</li>
+                                  <li>Purchasing Information System & Reporting</li>
+                                  <li>MRP & Planning Fundamentals</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingContentMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseContentMobile" aria-expanded="false" aria-controls="collapseContentMobile">
+                                Course Content <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseContentMobile" class="collapse" aria-labelledby="headingContentMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <h3>Modules Covered</h3>
+                            <ul class="ul-check primary">
+                                <li>SAP MM Introduction</li>
+                                <li>Master Data Management</li>
+                                <li>Purchasing Functionality</li>
+                                <li>Inventory Management</li>
+                                <li>Invoice Verification</li>
+                                <li>Material Valuation</li>
+                                <li>MRP & Planning</li>
+                                <li>SAP MM Integration with FI/CO</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingDescriptionMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseDescriptionMobile" aria-expanded="false" aria-controls="collapseDescriptionMobile">
+                                Description <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseDescriptionMobile" class="collapse" aria-labelledby="headingDescriptionMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <h3>Course Overview</h3>
+                            <p>SAP MM is a vital module for managing an organization's procurement and inventory. This course provides hands-on experience with key MM processes, from requisition to invoice verification.</p>
+                            <ul class="ul-check primary">
+                                <li><strong>Course Type:</strong> End User & Consultant Level</li>
+                                <li><strong>Duration:</strong>45 Hours (Flexible Batches)</li>
+                                <li><strong>Mode:</strong> Online / Offline</li>
+                                <li><strong>Support:</strong> 100% Placement Assistance with Interview Preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingHowToUseMobile">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHowToUseMobile" aria-expanded="false" aria-controls="collapseHowToUseMobile">
+                                How To Use <span class="accordion-icon uil uil-angle-down"></span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseHowToUseMobile" class="collapse" aria-labelledby="headingHowToUseMobile" data-parent="#courseAccordion">
+                        <div class="card-body">
+                            <h3>Accessing Your Course</h3>
+                            <p>After purchase, log in to your account and navigate to the "My Courses" section. Select the SAP MM course to access all video lectures, materials, and resources. Learn at your own pace from any device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Mobile Accordion -->
+
+          </div>
+          <!-- Sidebar (Right Column) -->
+          <div class="col-lg-3">
+            <div class="course-sidebar-card d-none d-lg-block" data-aos="fade-left" data-aos-delay="300">
+              <img src="images/1x/998_sap-768x512.webp" class="card-img-top" alt="Course thumbnail">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="price-tag">₹4,799 <span class="original-price">₹5,200</span></span>
+                    <span class="discount-badge">9% OFF</span>
+                </div>
+                <button class="btn btn-buy-now">Buy Now</button>
+                <button class="btn btn-book-demo mt-2">Book a Demo Class</button>
+                <ul class="course-includes-list">
+                    <li><i class="uil uil-clock"></i> 90-day validity period</li>
+                    <li><i class="uil uil-video"></i> 45 Hours of Training</li>
+                    <li><i class="uil uil-presentation-play"></i> Live & Recorded Classes</li>
+                    <li><i class="uil uil-mobile-android"></i> Access on mobile and desktop</li>
+                    <li><i class="uil uil-award"></i> Certificate of Completion</li>
+                    <li><i class="uil uil-user-check"></i> 100% Placement Support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="untree_co-section newsletter-section bg-light">
+    <div class="container" style="background: url(./images/internet-lessons-searching-remote-university-educational-programs-online-classes-website-high-school/20944332.jpg);">
+      <div class=" row  align-items-center bg-light">
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="line-bottom mb-4">Inquire About Our Courses</h2>
+          <p>
+            Sign up with your primary email to receive our skill development tips and updates on our latest professional courses.
           </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" style="max-width: 1200px; margin: auto; padding: 16px; font-family: 'Inter', sans-serif;">
-    <div class="row">
-      <!-- Main Content -->
-      <div class="col-lg-9 col-md-12" style="margin-bottom: 24px;">
-        <div class="course-info-panel d-flex flex-wrap align-items-start" style="gap: 24px;" data-aos="fade-up" data-aos-delay="200">
-          <!-- Course Thumbnail -->
-          <div style="flex: 1 1 30%; max-width: 350px;" data-aos="zoom-in" data-aos-delay="300">
-            <img src="images/1x/998_sap-768x512.webp" alt="Course Thumbnail" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <p style="text-align: center; font-size: 14px; color: #888; margin-top: 8px;" data-aos="fade-up" data-aos-delay="400">Available on Android & iOS</p>
-          </div>
-          <!-- Course Details -->
-          <div class="course-details" style="flex: 1 1 65%;" data-aos="fade-left" data-aos-delay="500">
-            <h2 class="course-title" style="font-size: 28px; font-weight: bold; color: #333; margin-bottom: 16px;">SAP MM</h2>
-            <p class="course-rating" style="margin-bottom: 8px;">
-              <span class="rating-stars" style="color: #f4b400; font-size: 18px;">★★★★★</span> 
-              <span style="font-size: 16px; color: #555;">4.8 (120 ratings)</span>
-            </p>
-            <p class="course-instructor" style="font-size: 16px; margin-bottom: 8px;">
-              <strong>Instructor:</strong> <a href="#" style="color: #0066cc; text-decoration: none;">Sarah Lee</a>
-            </p>
-            <p class="course-language" style="font-size: 16px; margin-bottom: 8px;">
-              <strong>Language:</strong> English
-            </p>
-            <p class="course-validity" style="font-size: 16px; margin-bottom: 16px;">
-              <strong>Validity Period:</strong> 180 days
-            </p>
-            <div class="course-pricing" style="margin-bottom: 16px;">
-              <p class="original-price" style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹5,200</p>
-              <p class="discount" style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">9% OFF</p>
-              <p class="current-price" style="font-size: 24px; font-weight: bold; color: #4caf50;">
-                ₹4,799 <span class="gst-note" style="font-size: 14px; color: #888;">Inclusive of GST</span>
-              </p>
-            </div>
-            <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Buy Now</button>
-          </div>
-        </div>
-        <!-- Navigation Tabs -->
-        <div class="tabs" style="display: flex; border-bottom: 1px solid #eeeeee; margin-top: 24px;" data-aos="fade-up" data-aos-delay="600">
-          <div id="tab-description" onclick="showTabContent('description')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; border-bottom: 2px solid #4f46e5; color: #333;">Description</div>
-          <div id="tab-content" onclick="showTabContent('content')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">Course Content</div>
-          <div id="tab-how-to-use" onclick="showTabContent('how-to-use')" style="flex: 1; text-align: center; padding: 12px 24px; font-size: 16px; cursor: pointer; color: #777;">How to Use</div>
-        </div>
-        <!-- Tab Content -->
-        <div id="description" class="tab-content" style="padding: 24px; z-index: 1;" data-aos="fade-up" data-aos-delay="700">
-          <h2>SAP S/4HANA MM Course (Materials Management)</h2>
-          <p><strong>Course Overview:</strong> SAP S/4HANA MM is a core module in SAP that deals with procurement processes, inventory management, and material planning in an enterprise.</p>
-          <h3>Key Highlights:</h3>
-          <ul>
-            <li>💼 Course Type: End User & Consultant Level</li>
-            <li>🕒 Duration: 45 Hours (Weekday/Weekend Batches Available)</li>
-            <li>🎓 Eligibility: 12th Pass / Graduate / MBA / BBA / B.Com / Engineers</li>
-            <li>🖥️ Mode: Online / Offline</li>
-            <li>📚 Certification: Institute Certificate + SAP Global Certification Guidance</li>
-            <li>💼 Placement Support: 100% Assistance with Interview Preparation</li>
-          </ul>
-          <h3>What You Will Learn:</h3>
-          <ul>
-            <li><strong>Master Data:</strong> Material Master, Vendor Master, Purchasing Info Records</li>
-            <li><strong>Procurement Process:</strong> Purchase Requisition, Purchase Order, RFQ</li>
-            <li><strong>Inventory Management:</strong> Stock Overview, Goods Issue/Transfer</li>
-            <li><strong>Integration:</strong> Integration with FI, SD, PP, and WM Modules</li>
-          </ul>
-          <h3>Who Should Enroll:</h3>
-          <ul>
-            <li>Aspiring SAP MM Consultants</li>
-            <li>Procurement Professionals</li>
-            <li>Supply Chain & Logistics Personnel</li>
-          </ul>
-          <h3>Why Choose Us?</h3>
-          <ul>
-            <li>✅ 10+ Years of SAP Training Expertise</li>
-            <li>✅ Real-Time Business Process Simulation</li>
-            <li>✅ Hands-on Practice with SAP System</li>
+          <ul class="list-unstyled ul-check primary mt-4">
+            <li>Expert-led courses with practical industry experience</li>
+            <li>Flexible learning schedules to fit your lifestyle</li>
+            <li>Certificate upon completion with job placement support</li>
           </ul>
         </div>
-        <div id="content" class="tab-content" style="padding: 24px; z-index: 0; display: none;" data-aos="fade-up" data-aos-delay="700">
-          <!-- Course Content -->
-          <ul>
-            <li>Introduction to SAP MM</li>
-            <li>Enterprise Structure</li>
-            <li>Master Data</li>
-            <li>Pricing Procedure</li>
-            <li>Purchasing</li>
-            <li>Inventory Management</li>
-            <li>Invoice Verification</li>
-            <li>Physical Inventory</li>
-            <li>Integration Concepts</li>
-            <li>External Service Management</li>
-          </ul>          
-        </div>
-        <div id="how-to-use" class="tab-content" style="padding: 24px; z-index: 0; display: none;" data-aos="fade-up" data-aos-delay="700">
-          <p>To access the course, log in to your account and navigate to the "My Courses" section. Select the SAP MM course and start learning at your own pace.</p>
-        </div>
-        <script>
-          function showTabContent(tabId) {
-            const tabs = ['description', 'content', 'how-to-use'];
-            tabs.forEach(id => {
-              document.getElementById(id).style.display = id === tabId ? 'block' : 'none';
-              document.getElementById(`tab-${id}`).style.borderBottom = id === tabId ? '2px solid #4f46e5' : 'none';
-              document.getElementById(`tab-${id}`).style.color = id === tabId ? '#333' : '#777';
-            });
-          }
-        </script>
-      </div>
-      <!-- Sidebar -->
-      <div class="col-lg-3 col-md-12" style="background: #f9f9f9; padding: 24px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" data-aos="fade-left" data-aos-delay="800">
-        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 8px; background: white; overflow: hidden;" data-aos="fade-left" data-aos-delay="900">
-          <a href="sap.html" style="text-decoration: none; color: inherit;">
-            <img src="images/1x/998_sap-768x512.webp" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            <div style="padding: 16px;" >
-              <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">SAP Basics</h4>
-              <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                <strong>Instructor:</strong> Sarah Lee
-              </p>
-              <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                <strong>Duration:</strong> 30 Hours
-              </p>
-              <div style="margin-bottom: 16px;">
-                <p style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹5,500</p>
-                <p style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">10% OFF</p>
-                <p style="font-size: 20px; font-weight: bold; color: #4caf50;">₹4,999</p>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-4 p-lg-5 bg-white rounded shadow-sm">
+            <form id="newsletterForm">
+              <div class="form-group mb-3">
+                <input type="text" class="form-control" placeholder="Full Name" required>
               </div>
-              <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%;">Buy Now</button>
-            </div>
-          </a>
-        </div>
-        <div class="course-card" style="margin-bottom: 24px; border: 1px solid #eeeeee; border-radius: 8px; background: white; overflow: hidden;" data-aos="fade-left" data-aos-delay="900">
-          <a href="advance-excel.html" style="text-decoration: none; color: inherit;">
-            <img src="images/1x/998_sap-768x512.webp" alt="Related Course" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            <div style="padding: 16px;">
-              <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Advanced Excel</h4>
-              <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                <strong>Instructor:</strong> Michael Smith
-              </p>
-              <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                <strong>Duration:</strong> 25 Hours
-              </p>
-              <p style="font-size: 14px; color: #555; margin-bottom: 8px;">
-                <strong>Mode:</strong> Online
-              </p>
-              <p style="font-size: 14px; color: #555; margin-bottom: 16px;">
-                <strong>Language:</strong> English
-              </p>
-              <div style="margin-bottom: 16px;">
-                <p style="font-size: 14px; text-decoration: line-through; color: #888; margin-bottom: 4px;">₹3,000</p>
-                <p style="font-size: 14px; color: #4caf50; margin-bottom: 4px;">15% OFF</p>
-                <p style="font-size: 20px; font-weight: bold; color: #4caf50;">₹2,550</p>
+              <div class="form-group mb-3">
+                <input type="email" class="form-control" placeholder="Email Address" required>
               </div>
-              <button class="btn-add-to-cart" style="background: #136ad5; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; font-family: 'Inter', sans-serif; cursor: pointer; width: 100%;">Buy Now</button>
-            </div>
-          </a>
-        </div>
-        <!-- Extra Content -->
-        <div class="extra-content" style="margin-top: 24px; padding: 16px; background: #fff; border: 1px solid #eeeeee; border-radius: 4px;" data-aos="fade-left" data-aos-delay="950">
-          <h4 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 12px;">Why SAP MM?</h4>
-          <ul style="font-size: 14px; color: #555; line-height: 1.6;">
-            <li>Optimize procurement and inventory processes.</li>
-            <li>Ensure efficient material management.</li>
-            <li>Integrate seamlessly with other SAP modules.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="untree_co-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-lg-7 text-center">
-          <h2 class="line-bottom text-center mb-3">Subscribe to Our Newsletter</h2>
-          <p class="mb-4">Stay updated with the latest courses and offers. Subscribe now!</p>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 col-sm-10">
-          <form class="d-flex flex-column flex-sm-row align-items-center bg-white p-3 shadow-sm rounded">
-            <input type="email" class="form-control mb-2 mb-sm-0 mr-sm-2 border-0" placeholder="Enter your email to get course updates" required>
-            <button type="submit" class="btn btn-primary px-4 btn-hover-animate">Subscribe Now</button>
-          </form>
+              <div class="form-group mb-4">
+                <select class="form-control" required>
+                  <option value="">Select Course Interest</option>
+                  <option value="advance-excel">Advance Excel</option>
+                  <option value="tally-prime">Tally Prime</option>
+                  <option value="zoho-books">ZOHO Books</option>
+                  <option value="gst">GST</option>
+                  <option value="busy-software">Busy Software</option>
+                  <option value="power-bi">Power BI</option>
+                  <option value="sap-fico">SAP S4HANA FICO</option>
+                  <option value="sap-mm">SAP S4HANA MM</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-secondary btn-block w-100">
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -612,10 +533,10 @@
         <div class="col-lg-3">
           <div class="widget">
             <h3>Contact Us</h3>
-            <address>Shah Skill Academy, 43 Raymouth Rd., New Delhi, India</address>
+            <address>Shimla Bypass Road, Van Vihar, Dehradun</address>
             <ul class="list-unstyled links mb-4">
-              <li><a href="tel://+911234567890">+91-12345-67890</a></li>
-              <li><a href="mailto:info@ssainstitute.com">info@ssainstitute.com</a></li>
+              <li><a href="tel://+916395381399">+91 63953 81399</a></li>
+              <li><a href="mailto:shahskillacademy@gmail.com">shahskillacademy@gmail.com</a></li>
             </ul>
             <p>Working Hours: Mon - Sat, 9:00AM - 6:00PM</p>
           </div>
@@ -625,7 +546,7 @@
       <div class="row mt-2">
         <div class="col-12 text-center">
           <p class="copyright">
-            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with ❤️ by Shah Skill Academy.
+            &copy;<script>document.write(new Date().getFullYear());</script> Shah Skill Academy. All Rights Reserved. Designed with by Shah Skill Academy.
           </p>
         </div>
       </div>
@@ -649,14 +570,62 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'slide',
+        once: true
+      });
+    </script>
   <script>
-    // Initialize AOS with modern settings to avoid deprecated event listeners
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 100,
-      easing: 'ease-in-out'
-    });
+    (function(){
+      function isDesktop(){ return window.innerWidth >= 990; }
+      var nav = document.querySelector('.site-nav .site-navigation');
+      function closeMegaMenu() {
+        document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){
+          li.classList.remove('mm-open');
+        });
+        if (nav) {
+          nav.classList.remove('nav-mega-open');
+        }
+      }
+  
+      document.querySelectorAll('.site-menu > li.has-children > a').forEach(function(anchor){
+        anchor.addEventListener('click', function(e){
+          if (!isDesktop()) return;
+          e.preventDefault();
+          var li = anchor.parentElement;
+          var wasOpen = li.classList.contains('mm-open');
+          
+          closeMegaMenu();
+  
+          if (!wasOpen) {
+            li.classList.add('mm-open');
+            if (nav) nav.classList.add('nav-mega-open');
+          }
+        });
+      });
+    
+      document.addEventListener('click', function(e){
+        if (!isDesktop()) return;
+        if (!e.target.closest('.site-menu > li.has-children')) {
+          closeMegaMenu();
+        }
+      });
+    
+      window.addEventListener('resize', function(){
+        if (!isDesktop()) {
+          closeMegaMenu();
+        }
+      });
+  
+      window.addEventListener('scroll', function() {
+        if (isDesktop()) {
+          closeMegaMenu();
+        }
+      });
+    })();
   </script>
 </body>
 </html>

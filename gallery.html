@@ -10,9 +10,7 @@
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
   <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Replace with local hosting if necessary -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -25,256 +23,481 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-
   <style>
-    /* Your existing CSS styles */
-    body {
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        background-color: #ffffff;
-        overflow-x: hidden !important;
-        font-size: 1rem;
-        color: #666;
+    /* --- Your Existing Nav/Footer CSS (No Changes) --- */
+    body { font-family: "Inter", sans-serif; line-height: 1.6; background-color: #fff; overflow-x: hidden !important; font-size: 1rem; color: #666; }
+    .site-nav { position: absolute; width: 100%; z-index: 9; top: 0; }
+    .site-nav .site-navigation .site-menu > li > a { font-size: 0.875rem; padding: 0.625rem 0.9375rem; display: inline-block; text-decoration: none !important; color: #000000; position: relative; }
+    .sticky-nav { transition: .3s all ease; background: white; box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1); backdrop-filter: blur(1rem); padding-top: 10px; padding-bottom: 10px; }
+    .logo-sticky { height: 60px; max-width: 100%; object-fit: contain; }
+    .mobile-logo { height: 5.5rem; max-width: 100%; object-fit: contain; }
+    .burger:before, .burger span, .burger:after { background: #000; }
+    
+    /* --- NEW PROFESSIONAL COURSE PAGE STYLES --- */
+    .course-page-wrapper {
+        padding-top: 1rem; /* Adds space below the sticky navbar */
     }
-
-    .site-nav {
-        position: absolute;
-        width: 100%;
-        z-index: 9;
-        top: 0;
+    .course-page-section {
+        background-color: #fff;
+        padding: 2rem 0 4rem 0;
     }
-
-    .site-nav .site-navigation {
-        position: relative;
+    
+    /* Right Sidebar Card */
+    .course-sidebar-card {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px; 
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        background: #fff;
     }
-
-    .site-nav .site-navigation .site-menu {
-        margin-bottom: 0;
-    }
-
-    .site-nav .site-navigation .site-menu > li {
-        display: inline-block;
-    }
-
-    .site-nav .site-navigation .site-menu > li > a {
-        font-size: 0.875rem;
-        padding: 0.625rem 0.9375rem;
-        display: inline-block;
-        text-decoration: none !important;
-        color: #000000;
-        position: relative;
-    }
-
-    .site-nav .site-navigation .site-menu > li > a:hover {
-        color: #136ad5;
-    }
-
-    .site-nav .site-navigation .site-menu > li.active > a {
-        color: #136ad5;
-    }
-
-    .logo-sticky {
-        height: 60px;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .mobile-logo {
-        height: 5.5rem;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .btn-book {
-        position: absolute;
-        right: 15px;
-        margin-top: -2px;
-    }
-
     @media (max-width: 991.98px) {
-        .btn-book {
-            position: static !important;
-            right: auto !important;
-            margin-top: 0 !important;
-        }
+      .course-sidebar-card {
+        position: static;
+        margin-top: 3rem;
+      }
     }
-
-    .btn {
-        padding-top: 0.9375rem;
-        padding-bottom: 0.9375rem;
-        padding-left: 1.875rem;
-        padding-right: 1.875rem;
-        border-radius: 1.875rem;
-        font-size: 0.6875rem;
-        text-transform: uppercase;
+    .course-sidebar-card .card-img-top {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    .course-sidebar-card .card-body {
+        padding: 1.2rem 1rem;
+    }
+    .course-sidebar-card .price-tag {
+        font-size: 1.2rem;
         font-weight: 700;
-        letter-spacing: .05rem;
+        color: #2c3e50;
+    }
+    .course-sidebar-card .price-tag .original-price {
+        font-size: 1rem;
+        text-decoration: line-through;
+        color: #888;
+        /* margin-left: 0.5rem; */
+    }
+    .course-sidebar-card .discount-badge {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #4caf50;
+    }
+    .course-sidebar-card .btn-buy-now {
+        background-color: #136ad5;
+        color: white;
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    .course-sidebar-card .btn-buy-now:hover {
+        background-color: #0f5bb5;
+        transform: translateY(-2px);
+    }
+    .course-sidebar-card .btn-book-demo {
+        background-color: transparent;
+        color: #136ad5;
+        border: 2px solid #136ad5;
+        width: 100%;
+        padding: 0.7rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 15px;
+        transition: all 0.3s;
+    }
+    .course-sidebar-card .btn-book-demo:hover {
+        background-color: #136ad5;
+        color: #fff;
+    }
+    .course-sidebar-card .course-includes-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+    }
+    .course-sidebar-card .course-includes-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        color: #333;
+    }
+    .course-sidebar-card .course-includes-list .uil {
+        font-size: 1.2rem;
+        color: #136ad5;
+        margin-right: 0.75rem;
     }
 
+    /* Left Main Content */
+    .breadcrumb-nav {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    .breadcrumb-nav a {
+        color: #136ad5;
+        text-decoration: none;
+    }
+    .breadcrumb-nav span {
+        margin: 0 0.5rem;
+        color: #6c757d;
+    }
+    .course-main-content .course-title {
+        font-family: 'Display Playfair', serif;
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: #000;
+        margin-top: 1rem;
+    }
+    @media (max-width: 767.98px) {
+        .course-main-content .course-title { font-size: 2rem; }
+    }
+    .course-main-content .course-subtitle {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 90%;
+    }
+    .course-main-content .rating-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        color: #333;
+        margin-top: 1rem;
+    }
+    .course-main-content .rating-info .rating-stars { color: #f4b400; }
+    .course-main-content .instructor-info { font-size: 1rem; margin-top: 0.5rem;}
+
+    /* "What you'll learn" box */
+    .what-you-learn-box {
+        background: #ffffff;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 2rem;
+    }
+    .what-you-learn-box h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1.5rem;
+    }
+    .what-you-learn-box .learn-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    @media (max-width: 767.98px) {
+      .what-you-learn-box .learn-list { grid-template-columns: 1fr; }
+    }
+    .what-you-learn-box .learn-list li {
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.5;
+    }
+    .what-you-learn-box .learn-list li::before {
+        content: "✓";
+        color: #136ad5;
+        font-weight: 900;
+        margin-right: 0.75rem;
+        margin-top: 1px;
+    }
+
+    /* Course Content Tabs */
+    .course-content-tabs {
+        margin-top: 2rem;
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 1rem 2rem; /* FIXED PADDING */
+    }
+    .course-content-tabs .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+    }
+    .course-content-tabs .nav-link {
+        border: 0;
+        border-bottom: 3px solid transparent;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6c757d;
+        padding: 0.75rem 0;
+        margin-right: 2rem;
+    }
+    .course-content-tabs .nav-link.active {
+        color: #136ad5;
+        border-bottom-color: #136ad5;
+    }
+    .course-content-tabs .tab-content {
+        padding: 2rem 0;
+    }
+    .course-content-tabs h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #212529;
+    }
+    
+    /* FIXED LIST STYLE */
+    .ul-check {
+      list-style: none;
+      padding-left: 0;
+    }
+    .site-nav {
+      position: relative !important;
+      width: 100%;
+      z-index: 9;
+      top: 0;
+    }
+    .site-nav .site-navigation {
+      position: relative;
+    }
+    .site-nav .site-navigation .site-menu {
+      margin-bottom: 0;
+    }
+    .site-nav .site-navigation .site-menu > li {
+      display: inline-block;
+    }
+    .site-nav .site-navigation .site-menu > li > a {
+      font-size: 0.875rem;
+      padding: 0.625rem 0.9375rem;
+      display: inline-block;
+      text-decoration: none !important;
+      color: #000000;
+      position: relative;
+    }
+    .site-nav .site-navigation .site-menu > li > a:hover {
+      color: #136ad5;
+    }
+    .site-nav .site-navigation .site-menu > li.active > a {
+      color: #136ad5;
+    }
+    
+    /* ======================
+       Logo Fix
+       ====================== */
+    .logo-sticky {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .mobile-logo {
+      height: 5.5rem;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    
+    /* ======================
+       Buttons
+       ====================== */
+    .btn-book {
+      position: absolute;
+      right: 15px;
+      margin-top: -2px;
+    }
+    @media (max-width: 991.98px) {
+      .btn-book {
+        position: static !important;
+        right: auto !important;
+        margin-top: 0 !important;
+      }
+    }
+    .btn {
+      padding-top: 0.9375rem;
+      padding-bottom: 0.9375rem;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
+      border-radius: 1.875rem;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .05rem;
+    }
     .btn.btn-secondary {
-        background: #00aeff;
-        border-color: #00aeff;
+      background: #00aeff;
+      border-color: #00aeff;
     }
-
     .btn.btn-secondary:hover {
-        border-color: #14b4ff;
-        background: #14b4ff;
+      border-color: #14b4ff;
+      background: #14b4ff;
     }
-
     .btn.btn-sm {
-        padding-top: 0.625rem;
-        padding-bottom: 0.625rem;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
     }
-
-    /* Burger menu styles */
+    
+    /* ======================
+       Burger Menu
+       ====================== */
     .burger {
-        width: 28px;
-        height: 32px;
-        cursor: pointer;
-        position: relative;
+      width: 28px;
+      height: 32px;
+      cursor: pointer;
+      position: relative;
     }
-
     .burger.light:before,
     .burger.light span,
     .burger.light:after {
-        background: #ffffff;
+      background: #ffffff;
     }
-
     .burger:before,
     .burger span,
     .burger:after {
-        width: 100%;
-        height: 2px;
-        display: block;
-        background: #000;
-        border-radius: 2px;
-        position: absolute;
-        opacity: 1;
+      width: 100%;
+      height: 2px;
+      display: block;
+      background: #000;
+      border-radius: 2px;
+      position: absolute;
+      opacity: 1;
     }
-
-    .burger:before {
-        top: 4px;
-        content: "";
-    }
-
-    .burger span {
-        top: 15px;
-    }
-
-    .burger:after {
-        top: 26px;
-        content: "";
-    }
-
-    /* Dropdown styles */
+    .burger:before { top: 4px; content: ""; }
+    .burger span { top: 15px; }
+    .burger:after { top: 26px; content: ""; }
+    
+    /* ======================
+       Dropdown
+       ====================== */
     .site-nav .site-navigation .site-menu .has-children {
-        position: relative;
+      position: relative;
     }
-
     .site-nav .site-navigation .site-menu .has-children .dropdown {
-        visibility: hidden;
-        opacity: 0;
-        top: 100%;
-        z-index: 999;
-        position: absolute;
-        text-align: left;
-        box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        margin-top: 20px;
-        margin-left: 0px;
-        background: #ffffff;
-        transition: 0.2s 0s;
-        min-width: 180px;
+      visibility: hidden;
+      opacity: 0;
+      top: 100%;
+      z-index: 999;
+      position: absolute;
+      text-align: left;
+      box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      margin-top: 20px;
+      margin-left: 0px;
+      background: #ffffff;
+      transition: 0.2s 0s;
+      min-width: 180px;
     }
-
     .site-nav .site-navigation .site-menu .has-children .dropdown > li {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-
     .site-nav .site-navigation .site-menu .has-children .dropdown > li > a {
-        padding: 5px 20px;
-        display: block;
-        color: #000000;
+      padding: 5px 20px;
+      display: block;
+      color: #000000;
     }
-
     .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
-        color: #136ad5;
+      color: #136ad5;
     }
-
     .site-nav .site-navigation .site-menu .has-children:hover > .dropdown {
-        transition-delay: 0s;
-        margin-top: 0px;
-        visibility: visible;
-        opacity: 1;
+      transition-delay: 0s;
+      margin-top: 0px;
+      visibility: visible;
+      opacity: 1;
     }
-
-    /* Multi-level dropdown */
+    
+    /* ======================
+       Multi-level Dropdown
+       ====================== */
     .site-menu .dropdown .has-children > .dropdown {
-        left: 100%;
-        top: 0;
-        margin-top: 0;
-        margin-left: 0;
-        position: absolute;
-        min-width: 200px;
-        display: none;
+      left: 100%;
+      top: 0;
+      margin-top: 0;
+      margin-left: 0;
+      position: absolute;
+      min-width: 200px;
+      display: none;
     }
-
     .site-menu .dropdown .has-children:hover > .dropdown {
-        display: block;
+      display: block;
     }
-
-    /* Sticky navigation styles */
+    
+    /* ======================
+       Sticky Navigation
+       ====================== */
     .sticky-nav {
-        transition: .3s all ease;
-        background: white;
-        box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(1rem);
-        padding-top: 10px;
-        padding-bottom: 10px;
+      transition: .3s all ease;
+      background: white;
+      box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(1rem);
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
-
     .sticky-nav .site-menu > li > a {
-        color: #000000 !important;
+      color: #000000 !important;
     }
-
     .sticky-nav .site-menu > li > a:hover,
     .sticky-nav .site-menu > li > a.active {
-        color: #136ad5 !important;
+      color: #136ad5 !important;
     }
-
     .sticky-nav .burger:before,
     .sticky-nav .burger span,
     .sticky-nav .burger:after {
-        background: #000000;
+      background: #000000;
     }
-
-    /* Mobile styles */
+    
+    /* ======================
+       Mobile/Desktop Nav Toggle
+       ====================== */
     @media (max-width: 989px) {
-        .desktop-nav-content {
-            display: none !important;
-        }
-        
-        .mobile-nav-content {
-            display: flex !important;
-        }
+      .desktop-nav-content { display: none !important; }
+      .mobile-nav-content { display: flex !important; }
     }
-
     @media (min-width: 990px) {
-        .desktop-nav-content {
-            display: flex !important;
-        }
-        
-        .mobile-nav-content {
-            display: none !important;
-        }
+      .desktop-nav-content { display: flex !important; }
+      .mobile-nav-content { display: none !important; }
     }
+    
+    /* ======================
+       Parallax Hero
+       ====================== */
+    .untree_co-hero {
+      will-change: transform;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Parallax effect for hero section */
+/* Make hero image layer GPU-friendly */
+.untree_co-hero {
+  will-change: transform; /* Hint browser for smooth animation */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Override the column-reverse for the newsletter section on small screens */
+@media (max-width: 991.98px) {
+  .newsletter-section .row {
+    flex-direction: column; /* stack normally (left then right) */
+  }
+}
+
+@media (max-width: 991.98px) {
+    .what-to-expect-section .row {
+        flex-direction: row; /* default Bootstrap row flow */
+        flex-wrap: wrap;
+    }
+}
+
+/* FIX: Remove bottom padding from the last untree_co-section */
+.untree_co-section.newsletter-section {
+    margin-bottom: 10px !important;  
+}
+
+/* Ensure the body and html do not add extra margin/padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
   </style>
 
-  <title>Gallery - Shah Skill Academy</title>
+  <title>Our Gallery</title>
 </head>
 
 <body>
@@ -288,78 +511,169 @@
     <div class="site-mobile-menu-body"></div>
   </div>
 
-  
   <nav class="site-nav mb-5">
     <div class="sticky-nav js-sticky-header">
-        <div class="container position-relative">
-            <div class="site-navigation">
-                
-                <!-- Single unified navigation row -->
-                <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
-                    
-                    <!-- Logo - Left side -->
-                    <div class="nav-logo">
-                        <!-- Desktop Logo -->
-                        <a href="index.html" class="desktop-nav-content">
-                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
-                        </a>
-                        <!-- Mobile Logo -->
-                        <a href="index.html" class="mobile-nav-content">
-                            <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
-                        </a>
-                    </div>
-
-                    <!-- Desktop Menu - Center -->
-                    <div class="nav-menu desktop-nav-content">
-                        <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="has-children">
-                                <a href="courses.html">Courses</a>
-                                <ul class="dropdown">
-                                    <li><a href="pams.html">PAMS</a></li>
-                                    <li class="has-children">
-                                        <a href="#">SAP</a>
-                                        <ul class="dropdown">
-                                            <li><a href="sap-fico.html">SAP-FICO</a></li>
-                                            <li><a href="sap-hana.html">SAP-HANA</a></li>
-                                            <li><a href="sap-mm.html">SAP-MM</a></li>
-                                            <li><a href="sap-sd.html">SAP-SD</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Others</a>
-                                        <ul class="dropdown">
-                                            <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                                            <li><a href="advance-excel.html">Advance Excel</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right side - Button and Mobile Menu -->
-                    <div class="nav-actions d-flex align-items-center">
-                        <!-- Enroll Button -->
-                        <a href="./contact.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
-                        
-                        <!-- Mobile Menu Toggle -->
-                        <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" 
-                           data-toggle="collapse" data-target="#main-navbar">
-                            <span></span>
-                        </a>
-                    </div>
-
-                </div>
-                
+      <div class="container position-relative">
+        <div class="site-navigation">
+          <div class="d-flex align-items-center justify-content-between w-100" style="min-height: 60px;">
+            <div class="nav-logo">
+              <a href="index.html" class="desktop-nav-content">
+                <img src="images/1000001414.png" alt="Shah Skill Academy" class="logo-sticky">
+              </a>
+              <a href="index.html" class="mobile-nav-content">
+                <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
+              </a>
             </div>
+  
+            <div class="nav-menu desktop-nav-content">
+              <ul class=" site-menu d-flex align-items-center mb-0">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <a href="courses.html">Courses</a>
+                  <ul class="dropdown">
+                    <!-- COLUMN: PAMS -->
+                    <li class="mega-col">
+                      <h4>PAMS</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="pams.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e8c8ea;">📘</span>
+                              <span class="course-title">PAMS</span>
+                            </div>
+                            <div class="course-desc">A 12-week real-world learning path.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: SAP -->
+                    <li class="mega-col">
+                      <h4>SAP</h4>
+                      <ul>
+                        <!-- SAP FICO -->
+                        <li>
+                          <a class="course-item" href="sap-fico.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#d8f3dc;">💰</span>
+                              <span class="course-title">SAP FICO</span>
+                            </div>
+                            <div class="course-desc">Financial accounting and controlling.</div>
+                          </a>
+                        </li>
+                        <!-- SAP HANA -->
+                        <li>
+                          <a class="course-item" href="sap-hana.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#dbeafe;">⚡️</span>
+                              <span class="course-title">SAP HANA</span>
+                            </div>
+                            <div class="course-desc">High-performance in-memory database.</div>
+                          </a>
+                        </li>
+                        <!-- SAP MM -->
+                        <li>
+                          <a class="course-item" href="sap-mm.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#ffedd5;">📦</span>
+                              <span class="course-title">SAP MM</span>
+                            </div>
+                            <div class="course-desc">Materials and inventory management.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Business Analytics -->
+                    <li class="mega-col">
+                      <h4>Business Analytics</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="business-analytics.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#cfeef7;">📊</span>
+                              <span class="course-title">Business Analytics</span>
+                            </div>
+                            <div class="course-desc">Tools, visualization & reporting.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Others -->
+                    <li class="mega-col">
+                      <h4>Others</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="tally-erp-9.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e9f7ec;">📁</span>
+                              <span class="course-title">Tally ERP 9</span>
+                            </div>
+                            <div class="course-desc">Practical accounting & GST.</div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="course-item" href="advance-excel.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#fce8f0;">🧮</span>
+                              <span class="course-title">Advance Excel</span>
+                            </div>
+                            <div class="course-desc">Advanced formulas & dashboards.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+  
+            <div class="nav-actions d-flex align-items-center">
+              <a href="./contact.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
+              <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</nav>
+  </nav>
+  
+  <div class="d-none">
+    <ul class="js-clone-nav site-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-children">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown">
+          <li><a href="pams.html">PAMS</a></li>
+          <li class="has-children">
+            <a href="sap.html">SAP</a>
+            <ul class="dropdown">
+              <li><a href="sap-fico.html">SAP-FICO</a></li>
+              <li><a href="sap-hana.html">SAP-HANA</a></li>
+              <li><a href="sap-mm.html">SAP-MM</a></li>
+            </ul>
+          </li>
+          <li><a href="business-analytics.html">Business Analytics</a></li>
+          <li class="has-children">
+            <a href="#">Others</a>
+            <ul class="dropdown">
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advance Excel</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
 
   <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
@@ -544,7 +858,64 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/custom.js"></script>
-
+    <script>
+      (function(){
+      function isDesktop(){ return window.innerWidth >= 990; }
+      var nav = document.querySelector('.site-nav .site-navigation');
+          // Function to close any open mega menu
+          function closeMegaMenu() {
+            document.querySelectorAll('.site-menu > li.has-children.mm-open').forEach(function(li){
+              li.classList.remove('mm-open');
+            });
+            if (nav) {
+              nav.classList.remove('nav-mega-open');
+            }
+          }
+      
+          // --- CLICK LISTENER (Existing) ---
+          document.querySelectorAll('.site-menu > li.has-children > a').forEach(function(anchor){
+            anchor.addEventListener('click', function(e){
+              if (!isDesktop()) return;
+              e.preventDefault();
+              var li = anchor.parentElement;
+              var wasOpen = li.classList.contains('mm-open');
+              
+              // Always close any currently open menus first
+              closeMegaMenu();
+      
+              // If the clicked menu was not the one that was open, open it
+              if (!wasOpen) {
+                li.classList.add('mm-open');
+                if (nav) nav.classList.add('nav-mega-open');
+              }
+            });
+          });
+        
+          // --- CLICK OUTSIDE LISTENER (Existing) ---
+          document.addEventListener('click', function(e){
+            if (!isDesktop()) return;
+            if (!e.target.closest('.site-menu > li.has-children')) {
+              closeMegaMenu();
+            }
+          });
+        
+          // --- RESIZE LISTENER (Existing) ---
+          window.addEventListener('resize', function(){
+            if (!isDesktop()) {
+              closeMegaMenu();
+            }
+          });
+      
+          // --- NEW: SCROLL LISTENER ---
+          // This function closes the menu when the user scrolls the page.
+          window.addEventListener('scroll', function() {
+            if (isDesktop()) {
+              closeMegaMenu();
+            }
+          });
+      
+        })();
+      </script>
   </body>
 
   </html>
