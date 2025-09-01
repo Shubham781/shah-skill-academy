@@ -302,28 +302,104 @@
                 <img src="images/1000001414.png" alt="Shah Skill Academy" class="mobile-logo">
               </a>
             </div>
+  
             <div class="nav-menu desktop-nav-content">
-              <ul class="js-clone-nav site-menu d-flex align-items-center mb-0">
+              <ul class=" site-menu d-flex align-items-center mb-0">
                 <li><a href="index.html">Home</a></li>
                 <li class="has-children">
                   <a href="courses.html">Courses</a>
                   <ul class="dropdown">
-                    <li><a href="pams.html">PAMS</a></li>
-                    <li class="has-children">
-                      <a href="#">SAP</a>
-                      <ul class="dropdown">
-                        <li><a href="sap-fico.html">SAP-FICO</a></li>
-                        <li><a href="sap-hana.html">SAP-HANA</a></li>
-                        <li><a href="sap-mm.html">SAP-MM</a></li>
-                        <li><a href="sap-sd.html">SAP-SD</a></li>
+                    <!-- COLUMN: PAMS -->
+                    <li class="mega-col">
+                      <h4>PAMS</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="pams.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e8c8ea;">📘</span>
+                              <span class="course-title">PAMS</span>
+                            </div>
+                            <div class="course-desc">A 12-week real-world learning path.</div>
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li><a href="business-analytics.html">Business Analytics</a></li>
-                    <li class="has-children">
-                      <a href="#">Others</a>
-                      <ul class="dropdown">
-                        <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
-                        <li><a href="advance-excel.html">Advance Excel</a></li>
+                  
+                    <!-- COLUMN: SAP -->
+                    <li class="mega-col">
+                      <h4>SAP</h4>
+                      <ul>
+                        <!-- SAP FICO -->
+                        <li>
+                          <a class="course-item" href="sap-fico.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#d8f3dc;">💰</span>
+                              <span class="course-title">SAP FICO</span>
+                            </div>
+                            <div class="course-desc">Financial accounting and controlling.</div>
+                          </a>
+                        </li>
+                        <!-- SAP HANA -->
+                        <li>
+                          <a class="course-item" href="sap-hana.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#dbeafe;">⚡️</span>
+                              <span class="course-title">SAP HANA</span>
+                            </div>
+                            <div class="course-desc">High-performance in-memory database.</div>
+                          </a>
+                        </li>
+                        <!-- SAP MM -->
+                        <li>
+                          <a class="course-item" href="sap-mm.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#ffedd5;">📦</span>
+                              <span class="course-title">SAP MM</span>
+                            </div>
+                            <div class="course-desc">Materials and inventory management.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Business Analytics -->
+                    <li class="mega-col">
+                      <h4>Business Analytics</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="business-analytics.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#cfeef7;">📊</span>
+                              <span class="course-title">Business Analytics</span>
+                            </div>
+                            <div class="course-desc">Tools, visualization & reporting.</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    <!-- COLUMN: Others -->
+                    <li class="mega-col">
+                      <h4>Others</h4>
+                      <ul>
+                        <li>
+                          <a class="course-item" href="tally-erp-9.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#e9f7ec;">📁</span>
+                              <span class="course-title">Tally ERP 9</span>
+                            </div>
+                            <div class="course-desc">Practical accounting & GST.</div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="course-item" href="advance-excel.html">
+                            <div class="course-header">
+                              <span class="mm-icon" style="background:#fce8f0;">🧮</span>
+                              <span class="course-title">Advance Excel</span>
+                            </div>
+                            <div class="course-desc">Advanced formulas & dashboards.</div>
+                          </a>
+                        </li>
                       </ul>
                     </li>
                   </ul>
@@ -333,6 +409,7 @@
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
+  
             <div class="nav-actions d-flex align-items-center">
               <a href="./contact.html" class="btn btn-secondary btn-sm mr-3">Enroll Now</a>
               <a href="#" class="burger site-menu-toggle js-menu-toggle d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
@@ -344,6 +421,37 @@
       </div>
     </div>
   </nav>
+  
+  <div class="d-none">
+    <ul class="js-clone-nav site-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-children">
+        <a href="courses.html">Courses</a>
+        <ul class="dropdown">
+          <li><a href="pams.html">PAMS</a></li>
+          <li class="has-children">
+            <a href="sap.html">SAP</a>
+            <ul class="dropdown">
+              <li><a href="sap-fico.html">SAP-FICO</a></li>
+              <li><a href="sap-hana.html">SAP-HANA</a></li>
+              <li><a href="sap-mm.html">SAP-MM</a></li>
+            </ul>
+          </li>
+          <li><a href="business-analytics.html">Business Analytics</a></li>
+          <li class="has-children">
+            <a href="#">Others</a>
+            <ul class="dropdown">
+              <li><a href="tally-erp-9.html">Tally ERP 9</a></li>
+              <li><a href="advance-excel.html">Advance Excel</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 
   <div class="untree_co-hero overlay" style="background-image: linear-gradient(to right, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 100%), 
     url('./images/diverse-education-shoot.jpg'); padding: 40px 0 90px 0;">
@@ -377,7 +485,7 @@
           </ul>
         </div>
         <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-left" data-aos-delay="400" >
-          <img src="images/1x/998_sap-768x512.webp" alt="Accounting and Taxation" class="img-fluid">
+          <img src="../images/closeup-marketing-expert-using-calculator_83781925.webp" alt="Accounting and Taxation" class="img-fluid">
         </div>
       </div>
     </div>
