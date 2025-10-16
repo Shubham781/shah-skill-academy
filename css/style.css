@@ -5626,3 +5626,135 @@ justify-content: center;
     object-fit: cover;    /* KEY: Prevent the image from distorting by cropping it to fit */
   }
 }
+
+/* ========== START: TRENDING COURSES STYLES ========== */
+
+.trending-courses-section {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.trending-courses-heading {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.trending-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  padding: 10px 25px 30px 25px; /* Added bottom padding for scrollbar */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Custom scrollbar styling for a modern look */
+.trending-scroll-container::-webkit-scrollbar { height: 12px; }
+.trending-scroll-container::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 10px; }
+.trending-scroll-container::-webkit-scrollbar-thumb { background: #136ad5; border-radius: 10px; }
+.trending-scroll-container::-webkit-scrollbar-thumb:hover { background: #0f5bb5; }
+
+.trending-card {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  padding: 25px;
+  width: 320px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trending-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.trending-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.trending-card .card-icon {
+  font-size: 2rem; /* Emoji icon size */
+}
+
+.trending-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+  text-align: left;
+}
+
+.course-description-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  text-align: left;
+  flex-grow: 1; /* Ensures cards have same height by filling space */
+}
+
+.trending-card .card-footer {
+  margin-top: auto; /* Pushes button to the bottom */
+}
+
+/* Reusing the purple button style from combo packs */
+.trending-card .btn-know-more {
+  display: block;
+  background-color: #8E44AD;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+.trending-card .btn-know-more:hover {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+/* Call to Action button styling */
+.cta-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #fff;
+  color: #136ad5;
+  border: 2px solid #136ad5;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #136ad5;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(19, 106, 213, 0.3);
+}
+
+.cta-button span {
+  margin-left: 5px;
+}
+
+/* ========== END: TRENDING COURSES STYLES ========== */
