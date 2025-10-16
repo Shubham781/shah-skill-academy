@@ -5581,3 +5581,48 @@ justify-content: center;
 .combo-packs-section::before { width: 400px; height: 400px; top: -150px; left: -100px; }
 .combo-packs-section::after { width: 300px; height: 300px; bottom: -100px; right: -80px; }
 
+/* ========== START: WHY CHOOSE US LIST STYLES ========== */
+
+.why-choose-list {
+  margin-top: 30px;
+}
+
+.why-choose-list li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.05rem; /* Slightly larger font for readability */
+  color: #333;
+  margin-bottom: 18px; /* Space between list items */
+}
+
+.why-choose-list .icon {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  margin-top: 2px; /* Fine-tune vertical alignment */
+}
+
+.why-choose-list .text {
+  flex: 1; /* Allows text to wrap correctly */
+}
+
+.why-choose-list .text strong {
+  font-weight: 700;
+  color: #136ad5; /* Your theme's primary color */
+}
+
+/* Optional: Add a subtle shadow to the image */
+.why-section img.shadow {
+  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 992px) {
+  .why-section {
+    display: flex; /* Ensures the column itself is a flex container */
+    align-items: stretch;
+  }
+
+  .why-section img {
+    height: 100%;         /* KEY: Make the image fill the full height of its column */
+    object-fit: cover;    /* KEY: Prevent the image from distorting by cropping it to fit */
+  }
+}

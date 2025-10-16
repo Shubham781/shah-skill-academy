@@ -392,6 +392,29 @@
 /* If earlier inline rules still interfere, add highest specificity fallback */
 #sticky-wrapper .top-bar .top-bar__right .social-icon i { color: inherit !important; filter: none !important; }
 
+  /* About Us list with icons */
+  .about-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .about-list .about-list-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #eaf2fe;
+    color: #136ad5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+    margin-top: 2px;
+    font-size: 14px;
+  }
+  .about-list li strong { margin-right: 6px; }
+
 
 </style>
 
@@ -608,7 +631,7 @@
         <!-- Left Text -->
         <div class="col-lg-8 mb-5 mb-lg-0 text-center">
           <div class="text-white">
-            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Build Your Professional Carrer<br>With Shah Skill Academy</h1>
+            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100"> Learn Job-Ready Skills with </br>India’s Trusted Training Academy</h1>
             <h3 class="mb-3 sub-heading text-white" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 1.1px; font-family: 'Inter', sans-serif;">Advance Your Career with <span id="typed-skills"></span></h3>
             <p class="mb-0" data-aos="fade-up" data-aos-delay="300">
             <a href="./contact.html" class="btn btn-secondary" style="font-family: 'Inter', sans-serif;">Enroll Now</a>
@@ -631,13 +654,17 @@
         </div>
         <div class="col-lg-5 mb-5">
           <h2 class="line-bottom mb-4" data-aos="fade-left" data-aos-delay="300">About Us</h2>
-          <p data-aos="fade-left" data-aos-delay="300">
-            At Shah Skill Academy, we are committed to shaping future leaders in the finance and accounting industry through our specialized training programs. Our primary focus is on providing exceptional courses in SAP-FICO, Tally ERP 9, Advanced Excel, and various other accounting disciplines. We understand the crucial role these skills play in securing a successful future career, and we are here to guide you every step of the way.
-          </p>
-          <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-left" data-aos-delay="300">
-            <li>Specialized training in finance and accounting</li>
-            <li>Expert courses in SAP-FICO, Tally ERP 9, and Advanced Excel</li>
-            <li>Guidance for a successful future career</li>
+          <p data-aos="fade-left" data-aos-delay="300">SHAH Skill Academy is a professional training institute based in Dehradun, dedicated to empowering students and professionals with practical, job-oriented skills.</p>
+          <p data-aos="fade-left" data-aos-delay="300">For the past 10 years, we’ve helped hundreds of learners become career-ready through our expert-led courses in SAP S/4HANA FICO & MM, Tally Prime with GST, Advanced Excel, and Power BI.</p>
+          <ul class="list-unstyled mb-4 primary about-list" data-aos="fade-left" data-aos-delay="300">
+            <li>
+              <span class="about-list-icon"><i class="fa-solid fa-bullseye"></i></span>
+              <span><strong>Mission:</strong> To make professional software and accounting training affordable, practical, and career-focused for every learner.</span>
+            </li>
+            <li>
+              <span class="about-list-icon"><i class="fa-solid fa-lightbulb"></i></span>
+              <span><strong>Vision:</strong> To build a generation of confident, skilled professionals ready for global career opportunities.</span>
+            </li>
           </ul>
 
           <p data-aos="fade-up" data-aos-delay="200">
@@ -919,7 +946,7 @@
 </div>
 <!-- ========== END: COMBO PACKS SECTION ========== -->
 
-  <div class="untree_co-section what-to-expect-section bg-light">
+  <div class="untree_co-section what-to-expect-section">
     <div class="container"> 
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
@@ -976,6 +1003,56 @@
 </div>
  <!-- /section -->
 
+  <!-- ========== START: WHY CHOOSE US SECTION ========== -->
+<div class="untree_co-section bg-light">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      
+      <!-- Left Side Image -->
+      <div class="col-lg-5 mb-5 mb-lg-0 why-section" data-aos="fade-up" data-aos-delay="0">
+        <img src="./images/img_8.jpg" alt="A professional training session at Shah Skill Academy" class="img-fluid rounded shadow">
+      </div>
+
+      <!-- Right Side Content -->
+      <div class="col-lg-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="line-bottom mb-4">Why Choose SHAH Skill Academy?</h2>
+        
+        <ul class="list-unstyled why-choose-list">
+          <li>
+            <span class="icon">✅</span>
+            <span class="text"><strong>10+ Years</strong> of Industry Training Experience</span>
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            <span class="text"><strong>100% Practical & Project-Based</strong> Learning</span>
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            <span class="text">Placement Assistance & <strong>Internship Support</strong></span>
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            <span class="text">Experienced Trainers (<strong>MBA, LLB, SAP Certified</strong>)</span>
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            <span class="text">Affordable Fees with <strong>Installment Facility</strong></span>
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            <span class="text"><strong>Online + Offline</strong> Learning Options</span>
+          </li>
+          <li>
+            <span class="icon">✅</span>
+            <span class="text"><strong>Lifetime Access</strong> to Recorded Sessions</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ========== END: WHY CHOOSE US SECTION ========== -->
   
   <div class="untree_co-section">
     <div class="container">
@@ -1016,7 +1093,7 @@
     </div>
   </div> <!-- /.untree_co-section -->
 
-  <div class="section">
+  <div class="section bg-light">
     <div class="container">
       <div class="row justify-content-center">
         <!-- This uses the full width as you requested -->
@@ -1054,9 +1131,9 @@
   <!-- ========== END: FINAL VIDEO REVIEWS SECTION ========== -->
   
   <!-- ========== START: TESTIMONIALS GRID SECTION ========== -->
-  <div class="untree_co_section bg-light testimonials-wrapper">
+  <div class="untree_co_section testimonials-wrapper">
     <div class="container-fluid">
-      <div class="row justify-content-center">s
+      <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="testimonials-grid-heading">Testimonials</h2>
           <div class="testimonials-grid-container">
@@ -1138,85 +1215,6 @@
         </div>
     </div>
 </div>
-
-  <!-- <div class="untree_co-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mr-auto mb-5 mb-lg-0 why-section"  data-aos="fade-up" data-aos-delay="0">
-          <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid">
-        </div>
-        <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="line-bottom mb-4">Why Choose Us</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-
-          <div class="custom-accordion" id="accordion_1">
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Good Teachers and Staffs</button>
-              </h2>
-
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <div class="accordion-img mr-4 mb-4">
-                      <img src="images/img-school-1-min.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We Value Good Characters</button>
-              </h2>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <div class="accordion-img mr-4 mb-4">
-                      <img src="images/img-school-2-min.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Your Children are Safe</button>
-              </h2>
-
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <div class="accordion-img mr-4 mb-4">
-                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                      <p>Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div> 
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>  -->
-
 
   <!-- Newsletter / Inquiry Section -->
 <div class=" newsletter-section ">
