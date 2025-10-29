@@ -271,7 +271,7 @@ $(function(){
 		
 		$('.count-numbers').waypoint( function( direction ) {
 
-			if( direction === 'down' && !$(this.element).hasClass('ut-animated') ) {
+			if( !$(this.element).hasClass('ut-animated') ) {
 
 				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
 				$('.counter > span').each(function(){
@@ -281,13 +281,14 @@ $(function(){
 					{
 						number: num,
 						numberStep: comma_separator_number_step
-					}, 5000
+					}, 1500
 					);
 				});
 				
+				$(this.element).addClass('ut-animated');
 			}
 
-		} , { offset: '95%' } );
+		} , { offset: '80%' } );
 
 	}
 	counter();
@@ -342,5 +343,6 @@ $(function(){
 			}
 		});
 	});
+
 
 })

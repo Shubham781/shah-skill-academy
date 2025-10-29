@@ -1013,8 +1013,8 @@ h4,
 }
 
 #sticky-wrapper.is-sticky .sticky-nav {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
   background: white;
   -webkit-box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
   box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
@@ -1172,8 +1172,8 @@ h4,
 .untree_co-hero>.container>.row,
 .bg-img,
 .bg-img>.container>.row {
-  height: 100vh;
-  min-height: 650px;
+  /* height: 100vh; */
+  min-height: 675px;
 }
 
 @media (max-width: 767.98px) {
@@ -1182,7 +1182,7 @@ h4,
   .untree_co-hero>.container>.row,
   .bg-img,
   .bg-img>.container>.row {
-    min-height: 750px;
+    max-height: 700px;
   }
 }
 
@@ -2922,6 +2922,10 @@ button[style*="Buy Now"]:hover {
   .flip-card-back h3 {
     font-size: 0.95rem;
   }
+  .site-nav .nav-actions > a.btn{
+    display: none;
+  }
+
 
   .flip-card-back p {
     font-size: 0.8rem;
@@ -4389,8 +4393,8 @@ span#typed-skills {
   background: white;
   box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(1rem);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
 }
 .sticky-nav .site-menu > li > a {
   color: #000000 !important;
@@ -5196,6 +5200,12 @@ html, body {
   color: #136ad5;
 }
 
+.video-slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .review-card {
   padding: 0 12px;
 }
@@ -5330,7 +5340,6 @@ justify-content: center;
 
 .testimonials-grid-heading {
   font-size: 38px;
-  font-weight: 700;
   color: #136ad5; /* Purple color */
   margin-bottom: 50px;
 }
@@ -5596,15 +5605,14 @@ justify-content: center;
 /* ========== START: COURSE CARD STYLES ========== */
 
 .courses-section {
-  padding: 80px 0;
+  /* padding: 80px 0; */
   background: #f8f9fa;
   overflow: hidden;
   position: relative;
 }
 
 .courses-section .section-title h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
   color: #136ad5;
   margin-bottom: 1rem;
 }
@@ -6139,4 +6147,349 @@ justify-content: center;
 }
 
 /* ========== END: MODERN COURSE CARD STYLES ========== */
-s
+
+/* ========== START: WHY CHOOSE US FEATURE ITEMS ========== */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(5px);
+}
+
+.feature-icon-left {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 24px;
+  color: #00aef7;
+  background: transparent;
+  padding: 8px;
+}
+
+.feature-content-right {
+  flex: 1;
+  padding-top: 5px;
+}
+
+.feature-content-right h4 {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.feature-content-right p {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-item {
+    padding: 15px 0;
+  }
+  
+  .feature-icon-left {
+    font-size: 20px;
+    margin-right: 15px;
+    padding: 6px;
+  }
+  
+  .feature-content-right h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  
+  .feature-content-right p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-item {
+    padding: 12px 0;
+  }
+  
+  .feature-icon-left {
+    font-size: 18px;
+    margin-right: 12px;
+    padding: 5px;
+  }
+  
+  .feature-content-right h4 {
+    font-size: 15px;
+  }
+  
+  .feature-content-right p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .feature-icon-left {
+    margin: 0 auto 15px auto;
+    font-size: 22px;
+    padding: 8px;
+  }
+  
+  .feature-content-right {
+    padding-top: 0;
+  }
+}
+
+/* ========== END: WHY CHOOSE US FEATURE ITEMS ========== */
+
+/* ========== START: HERO SECTION BUTTON STYLES ========== */
+.hero-buttons .btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-buttons .btn i {
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.hero-buttons .btn-secondary {
+  background: #007bff;
+  border: 2px solid #007bff;
+  color: white;
+  border-radius: 25px;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.hero-buttons .btn-outline-light {
+  background: transparent;
+  border: 2px solid #25D366;
+  color: white;
+  border-radius: 25px;
+}
+
+.hero-buttons .btn-outline-light:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.hero-buttons .btn-outline-light .fab.fa-whatsapp {
+  color: #25D366;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-outline-light:hover .fab.fa-whatsapp {
+  color: white;
+}
+
+/* Responsive adjustments for hero buttons */
+@media (max-width: 768px) {
+  .hero-buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-buttons .btn i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-buttons .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    display: inline-flex;
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  
+  .hero-buttons .btn:last-child {
+    margin-right: 0;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* ========== END: HERO SECTION BUTTON STYLES ========== */
+
+/* ========== START: FOUNDER TITLE STYLES ========== */
+.founder-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6c757d;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ========== END: FOUNDER TITLE STYLES ========== */
+
+/* ========== START: PLACEMENT & CAREER OPPORTUNITIES SECTION ========== */
+.career-opportunities-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-opportunities-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.career-opportunities-card .card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border: none;
+}
+
+.career-opportunities-card .card-header h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.career-opportunities-card .card-header i {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+.career-opportunities-card .card-body {
+  padding: 2.5rem;
+}
+
+.sector-item {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  height: 100%;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.sector-item:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.sector-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.sector-item:hover .sector-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.sector-icon i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.sector-item h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.sector-item p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .career-opportunities-card .card-header {
+    padding: 1.5rem;
+  }
+  
+  .career-opportunities-card .card-header h4 {
+    font-size: 1.3rem;
+  }
+  
+  .career-opportunities-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .sector-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sector-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .sector-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .sector-item h5 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 989.98px) {
+.sticky-nav{
+  padding-top: 0;
+padding-bottom: 0;
+}
+}
