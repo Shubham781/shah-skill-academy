@@ -5405,6 +5405,7 @@ justify-content: center;
   .testimonials-grid-container {
       -webkit-mask-image: none;
       mask-image: none;
+      padding: 0px 2rem;
   }
 }
 
