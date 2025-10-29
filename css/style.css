@@ -6493,3 +6493,13 @@ justify-content: center;
 padding-bottom: 0;
 }
 }
+
+/* Hide feature icons on screens smaller than 769px */
+@media (max-width: 768.98px) {
+.feature span[class*="uil"] {
+  display: none !important;
+}
+.feature p{
+  padding: 2px 5px;
+}
+}
