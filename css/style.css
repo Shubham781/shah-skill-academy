@@ -1758,6 +1758,7 @@ h4,
 
 .block-testimonial .author .position {
   font-size: 0.875rem;
+  text-align: center;
 }
 
 .wide-slider-testimonial .owl-dots {
@@ -3266,7 +3267,7 @@ button[style*="Buy Now"]:hover {
   }
 
   .course-meta {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     gap: 4px;
     font-size: 0.75rem;
@@ -3274,8 +3275,9 @@ button[style*="Buy Now"]:hover {
   }
 
   .course-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 6px;
+    margin-top: 0;
   }
 
   .course-actions .btn {
@@ -3441,7 +3443,7 @@ button[style*="Buy Now"]:hover {
 /* Fix button overlapping on small screens */
 @media (max-width: 769px) {
   .course-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
     width: 100%;
   }
@@ -3665,10 +3667,21 @@ span#typed-skills {
     text-align: center;
     box-sizing: border-box;
   }
-  .learn-more-btn {
+  /* .learn-more-btn {
     margin-bottom: 8px !important;
+  } */
+}
+
+/* Override for screens 767px and smaller - buttons in row */
+@media (max-width: 767px) {
+  .course-actions,
+  .course-actions-btns {
+    flex-direction: row !important;
+    gap: 8px;
+    width: 100%;
   }
 }
+
 /* --------------------------
    Top-bar & mobile nav fixes
    Cleaned & non-conflicting
@@ -5796,7 +5809,7 @@ justify-content: center;
 .course-actions {
   display: flex;
   gap: 8px;
-  margin-top: auto; /* ADD this line */
+  /* margin-top: auto;  */
   flex-shrink: 0;
 }
 
@@ -6040,7 +6053,7 @@ justify-content: center;
   }
   
   .course-actions {
-    /* flex-direction: column; */
+    flex-direction: row;
     gap: 8px;
   }
   
@@ -6067,9 +6080,9 @@ justify-content: center;
   }
   
   .course-card {
-    min-height: 600px;
     margin: 0 8px;
     width: calc(100% - 16px);
+    height: auto !important;
   }
   
   .course-image {
@@ -6117,9 +6130,9 @@ justify-content: center;
   }
   
   .course-card {
-    min-height: 600px;
     margin: 0 5px;
     width: calc(100% - 10px);
+    height: auto !important;
   }
   
   .course-image {
@@ -6229,19 +6242,20 @@ justify-content: center;
   }
   
   .feature-content-right h4 {
-    font-size: 15px;
+    text-align: left;
+    font-size: 20px;
   }
   
   .feature-content-right p {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .feature-item {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
   }
   
   .feature-icon-left {
@@ -6251,7 +6265,11 @@ justify-content: center;
   }
   
   .feature-content-right {
-    padding-top: 0;
+    padding-top: 7px;
+  }
+  
+  .col-lg-6.col-md-6.mb-4 {
+    margin-bottom: 0.5rem !important;
   }
 }
 
