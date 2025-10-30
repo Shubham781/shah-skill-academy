@@ -1746,8 +1746,10 @@ h4,
 .block-testimonial .author img {
   margin: 0 auto;
   width: 80px;
+  height: 80px;
   margin-bottom: 20px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .block-testimonial .author h3 {
